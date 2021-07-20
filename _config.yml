@@ -1,113 +1,48 @@
-# Site settings
-title: Andrew Yang 's  Blog
-SEOTitle: Andrew Yang | Andrew Yang 's  Blog
-header-img: img/post-bg-desk.jpg
-email: andrewygmarket@gmail.com
-description: "这是个人的网站,中文名：石洋洋，欢迎大家访问"
-keyword: "Andrew Yang  石洋洋的博客"
-url: "http://andrewyghub.github.io"          # your host, for absolute URL
-baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/andrewyghub/andrewyghub.github.io.git" # you code repository
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
-# Sidebar settings
-sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "苟利国家生死以，岂因祸福避趋之~"
-sidebar-avatar: /img/avatar_binggan.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+# 以下为自定义的全局变量，可以在 HTML 文件中引用，
+# 比如代码：<h1>{{ site.title }}</h1> 
+# 将会展示为设定的值，也可以自行添加其他自定义全局变量。
+title: AndrewYG的博客 # 网站的标题
+description: > # 网站的描述，可能会出现在搜索引擎展示结果中
+  基于 jekyll 的 Github Pages 个人博客网站，技术的学习、总结、分享与提升
+url: "https://andrewyghub.github.io" # 网站地址
+github_repo: "https://github.com/andrewyghub/andrewyghub.github.io"
+github_profile: "https://github.com/andrewyghub" # GitHub 个人主页
+user: "石洋洋" # 用于侧栏展示的名字
+user_email: "andrewygmarket@gmail.com" # 侧栏展示的联系方式
+paginate: 5 # 主页展示的博客文章数量
+nick_name: "安琪" # 昵称
+english_name: "Knight"
+# valine 评论插件配置
+valine:
+  leancloud_appid: "4XY3DoTJmibNe3rHeAKOxqzl-gzGzoHsz"
+  leancloud_appkey: "vjothQHALvgTQF9GrSgj577a"
 
-
-
-# SNS settings
-RSS: false
-# weibo_username:     暂无
-zhihu_username:     暂无
-github_username:    暂无
-facebook_username:  暂无
-jianshu_username:   暂无
-#twitter_username:   暂无
-
-
-
-
-# Build settings
-# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
-permalink: pretty
-paginate: 10
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
-anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
-
-
-
-# Gems
-# from PR#40, to support local preview for Jekyll 3.0
-gems: [jekyll-paginate]
-
-
-
-
-# Markdown settings
-# replace redcarpet to kramdown,
-# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
-# document: http://jekyllrb.com/docs/configuration/#kramdown
+# jekyll 相关配置
 markdown: kramdown
-highlighter: rouge
-#redcarpet:
-#    extensions: [ "hard_wrap","autolink", "tables", "strikethrough", "superscript", "with_toc_data", "highlight", "prettify","no_intra_emphasis"]
-kramdown:
-  input: GFM                            # use Github Flavored Markdown !important
-
-# 评论系统
-# Disqus（https://disqus.com/）
-# disqus_username: qiubaiying
-
-# Gitalk
-gitalk:
-  enable: true    #是否开启Gitalk评论
-  clientID:                             #生成的clientID
-  clientSecret:     #生成的clientSecret
-  repo: andrewyghub.github.io    #仓库名称
-  owner: andrewyghub    #github用户名
-  admin: andrewyghub
-  distractionFreeMode: true #是否启用类似FB的阴影遮罩
-
-
-# 统计
-
-# Analytics settings
-# Baidu Analytics
-ba_track_id: 
-# Google Analytics
-ga_track_id:             # Format: UA-xxxxxx-xx
-ga_domain:                # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
-
-
-
-
-
-# Featured Tags
-featured-tags: true                     # 是否使用首页标签
-featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
-
-
-
-# Progressive Web Apps
-chrome-tab-theme-color: "#000000"
-service-worker: true
-
-
-
-# Friends
-friends: [
-    {
-        title: "andrewyghub",
-        href: "https://andrewyghub.ink"
-    },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
-    },{
-        title: "Apple",
-        href: "https://apple.com"
-    },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
-    }
-]
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - COPYING
+  - vendor
+sass:
+  style: compressed
+lang: zh_CN
+future: true
+permalink: /:year/:month/:day/:title
+theme: jekyll-theme-slate
