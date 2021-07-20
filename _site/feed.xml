@@ -6,7 +6,7 @@
         <link>http://localhost:8899</link>
         <description>基于 jekyll 的 Github Pages 个人博客网站，技术的学习、总结、分享与提升
 </description>
-        <lastBuildDate>Tue, 20 Jul 2021 14:53:47 +0800</lastBuildDate>
+        <lastBuildDate>Tue, 20 Jul 2021 15:03:38 +0800</lastBuildDate>
         
         <item>
             <title>CSS flex 盒子在 Chrome 和 Safari 中的行为差异</title>
@@ -5203,7 +5203,7 @@ log(2^53) = 15.95
  */&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MyClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;cm&quot;&gt;/** @member {string} */&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&#39;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;knightyun&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&#39;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;andrewyghub&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     
     &lt;span class=&quot;cm&quot;&gt;/**
      * 或者一个虚拟的成员
@@ -6248,7 +6248,7 @@ Address sizes:       36 bits physical, 48 bits virtual
             <description>
                 &lt;h1 id=&quot;概述&quot;&gt;概述&lt;/h1&gt;
 
-&lt;p&gt;之前有写文章探索如何给&lt;a href=&quot;https://knightyun.github.io/2019/03/04/articles-search&quot;&gt;个人博客网站添加文章搜索功能&lt;/a&gt;，可以方便的通过关键词检索相关文章，现在再来探索一下另一个功能，即给文章添加目录导航；对于篇幅较短的文章，目录的有无影响不大，但是当文章篇幅过长时，一个能提供预览和跳转的目录结构预览，就显得意义重大了，接下来就来一步步将它实现出来；&lt;/p&gt;
+&lt;p&gt;之前有写文章探索如何给&lt;a href=&quot;https://andrewyghub.github.io/2019/03/04/articles-search&quot;&gt;个人博客网站添加文章搜索功能&lt;/a&gt;，可以方便的通过关键词检索相关文章，现在再来探索一下另一个功能，即给文章添加目录导航；对于篇幅较短的文章，目录的有无影响不大，但是当文章篇幅过长时，一个能提供预览和跳转的目录结构预览，就显得意义重大了，接下来就来一步步将它实现出来；&lt;/p&gt;
 
 &lt;h1 id=&quot;原理&quot;&gt;原理&lt;/h1&gt;
 
@@ -6483,7 +6483,7 @@ Address sizes:       36 bits physical, 48 bits virtual
 
 &lt;h1 id=&quot;效果&quot;&gt;效果&lt;/h1&gt;
 
-&lt;p&gt;最后附上几张本人博客网站实现的最终效果图，也欢迎点击 &lt;a href=&quot;https://knightyun.github.io&quot;&gt;https://knightyun.github.io&lt;/a&gt; 前往访问 ^_^&lt;/p&gt;
+&lt;p&gt;最后附上几张本人博客网站实现的最终效果图，也欢迎点击 &lt;a href=&quot;https://andrewyghub.github.io&quot;&gt;https://andrewyghub.github.io&lt;/a&gt; 前往访问 ^_^&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/01/14/qfkJO3XaMvAh48o.png&quot; alt=&quot;批注 2020-01-14 154351.png&quot; /&gt;&lt;/p&gt;
 
@@ -6652,7 +6652,7 @@ Address sizes:       36 bits physical, 48 bits virtual
                 &lt;!--
 # 前言
  
-之前写有[文章](https://knightyun.github.io/2018/04/15/kali-linux-install)介绍过关于 Kali Linux 系统安装的详细教程，不过是在电脑端真机或虚拟机中的安装步骤，那么作为平时使用最多并且能方便携带的智能手机端，是否有方法或技术来实现安装呢？还确实有，这也是该文章的主旨。我们都知道安卓系统本身就是 Linux 系统的一个发行版本，所以在技术理论上是有可行性的，并且目前还确实有人实现了，至于苹果手机（iOS系统）端，笔者没做研究，就不做阐述了，有兴趣可以自行了解。那么现在就来介绍一下如何在手机端（安卓系统）进行 Linux 系统（包括但不限于 Kali）的安装。
+之前写有[文章](https://andrewyghub.github.io/2018/04/15/kali-linux-install)介绍过关于 Kali Linux 系统安装的详细教程，不过是在电脑端真机或虚拟机中的安装步骤，那么作为平时使用最多并且能方便携带的智能手机端，是否有方法或技术来实现安装呢？还确实有，这也是该文章的主旨。我们都知道安卓系统本身就是 Linux 系统的一个发行版本，所以在技术理论上是有可行性的，并且目前还确实有人实现了，至于苹果手机（iOS系统）端，笔者没做研究，就不做阐述了，有兴趣可以自行了解。那么现在就来介绍一下如何在手机端（安卓系统）进行 Linux 系统（包括但不限于 Kali）的安装。
  
 # 原理概述
  
@@ -6748,7 +6748,7 @@ Address sizes:       36 bits physical, 48 bits virtual
 
 ![Screen-20191211-143151.png](https://i.loli.net/2019/12/15/NyfMQlYdnj8DkWK.jpg)
 
-当然官方源的是网站是国外的，速度可能有点慢，可以选择使用国内的源，比如阿里云和中科大等，详细介绍可以参考这篇 [文章](https://knightyun.github.io/2018/04/21/linux-sources-list)，比如使用阿里云的就把地址改为以下内容：
+当然官方源的是网站是国外的，速度可能有点慢，可以选择使用国内的源，比如阿里云和中科大等，详细介绍可以参考这篇 [文章](https://andrewyghub.github.io/2018/04/21/linux-sources-list)，比如使用阿里云的就把地址改为以下内容：
 ```
 http://mirrors.aliyun.com/kali/
 ```
@@ -7121,7 +7121,7 @@ Linux 系统启动完毕，接下来就是进入图形桌面环境，当然，�
 
 &lt;h1 id=&quot;前言&quot;&gt;前言&lt;/h1&gt;
 
-&lt;p&gt;之前写有&lt;a href=&quot;https://knightyun.github.io/2018/04/15/kali-linux-install&quot;&gt;文章&lt;/a&gt;介绍过关于 Kali Linux 系统安装的详细教程，不过是在电脑端真机或虚拟机中的安装步骤，那么作为平时使用最多并且能方便携带的智能手机端，是否有方法或技术来实现安装呢？还确实有，这也是该文章的主旨。我们都知道安卓系统本身就是 Linux 系统的一个发行版本，所以在技术理论上是有可行性的，并且目前还确实有人实现了，至于苹果手机（iOS系统）端，笔者没做研究，就不做阐述了，有兴趣可以自行了解。那么现在就来介绍一下如何在手机端（安卓系统）进行 Linux 系统（包括但不限于 Kali）的安装。&lt;/p&gt;
+&lt;p&gt;之前写有&lt;a href=&quot;https://andrewyghub.github.io/2018/04/15/kali-linux-install&quot;&gt;文章&lt;/a&gt;介绍过关于 Kali Linux 系统安装的详细教程，不过是在电脑端真机或虚拟机中的安装步骤，那么作为平时使用最多并且能方便携带的智能手机端，是否有方法或技术来实现安装呢？还确实有，这也是该文章的主旨。我们都知道安卓系统本身就是 Linux 系统的一个发行版本，所以在技术理论上是有可行性的，并且目前还确实有人实现了，至于苹果手机（iOS系统）端，笔者没做研究，就不做阐述了，有兴趣可以自行了解。那么现在就来介绍一下如何在手机端（安卓系统）进行 Linux 系统（包括但不限于 Kali）的安装。&lt;/p&gt;
 
 &lt;h1 id=&quot;原理概述&quot;&gt;原理概述&lt;/h1&gt;
 
@@ -7214,7 +7214,7 @@ Linux 系统启动完毕，接下来就是进入图形桌面环境，当然，�
 
 &lt;p&gt;&lt;img src=&quot;https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMTIvMTUvTnlmTVFsWWRuajhEa1dLLmpwZw?x-oss-process=image/format,png&quot; alt=&quot;Screen-20191211-143151.png&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;当然官方源的是网站是国外的，速度可能有点慢，可以选择使用国内的源，比如阿里云和中科大等，详细介绍可以参考这篇 &lt;a href=&quot;https://knightyun.github.io/2018/04/21/linux-sources-list&quot;&gt;文章&lt;/a&gt;，比如使用阿里云的就把地址改为以下内容：&lt;/p&gt;
+&lt;p&gt;当然官方源的是网站是国外的，速度可能有点慢，可以选择使用国内的源，比如阿里云和中科大等，详细介绍可以参考这篇 &lt;a href=&quot;https://andrewyghub.github.io/2018/04/21/linux-sources-list&quot;&gt;文章&lt;/a&gt;，比如使用阿里云的就把地址改为以下内容：&lt;/p&gt;
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://mirrors.aliyun.com/kali/
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -7594,7 +7594,7 @@ Linux 系统启动完毕，接下来就是进入图形桌面环境，当然，�
                 &lt;h1 id=&quot;背景&quot;&gt;背景&lt;/h1&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;可以访问这个网站提前预览：&lt;a href=&quot;https://knightyun.github.io/magic-expression/&quot;&gt;https://knightyun.github.io/magic-expression/&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;可以访问这个网站提前预览：&lt;a href=&quot;https://andrewyghub.github.io/magic-expression/&quot;&gt;https://andrewyghub.github.io/magic-expression/&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;先来看一串代码：&lt;/p&gt;
@@ -7995,7 +7995,7 @@ Linux 系统启动完毕，接下来就是进入图形桌面环境，当然，�
 
 &lt;h3 id=&quot;在线转换&quot;&gt;在线转换&lt;/h3&gt;
 
-&lt;p&gt;这里放一个在线转换的网站： &lt;a href=&quot;https://knightyun.github.io/magic-expression/&quot;&gt;&lt;em&gt;点我在线转换&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这里放一个在线转换的网站： &lt;a href=&quot;https://andrewyghub.github.io/magic-expression/&quot;&gt;&lt;em&gt;点我在线转换&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
 
             </description>
             <pubDate>Mon, 07 Oct 2019 00:00:00 +0800</pubDate>
@@ -10337,7 +10337,7 @@ fn1: here
                 http://localhost:8899/2019/03/04/articles-search
             </link>
             <description>
-                &lt;p&gt;现在很多网站页面里都有搜索模块，包括在线搜索、站内搜索等等，尤其是博客类网站，文章搜索功能就显得比较重要，现在以个人博客网站为例，详细介绍如何给页面添加搜索功能模块，至于如何搭建个人博客网站，可以参考这篇文章：&lt;a href=&quot;https://knightyun.github.io/2018/04/01/github-pages-blog&quot;&gt;https://knightyun.github.io/2018/04/01/github-pages-blog&lt;/a&gt;；&lt;/p&gt;
+                &lt;p&gt;现在很多网站页面里都有搜索模块，包括在线搜索、站内搜索等等，尤其是博客类网站，文章搜索功能就显得比较重要，现在以个人博客网站为例，详细介绍如何给页面添加搜索功能模块，至于如何搭建个人博客网站，可以参考这篇文章：&lt;a href=&quot;https://andrewyghub.github.io/2018/04/01/github-pages-blog&quot;&gt;https://andrewyghub.github.io/2018/04/01/github-pages-blog&lt;/a&gt;；&lt;/p&gt;
 
 &lt;h1 id=&quot;功能分析&quot;&gt;功能分析&lt;/h1&gt;
 &lt;p&gt;为网页添加搜索模块的第三方网站有不少，实现效果也都不错，既然人家都能通过代码实现此功能，与其过度依赖第三方，何不自己研究一下原理自己实现呢&lt;em&gt;_&lt;/em&gt;；&lt;/p&gt;
@@ -10355,7 +10355,7 @@ fn1: here
 
 &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2019/03/04/5c7cea40495b1.png&quot; alt=&quot;search-box&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;或者在这里：&lt;a href=&quot;https://knightyun.github.io/&quot;&gt;https://knightyun.github.io/&lt;/a&gt; 预览我的博客的搜索模块的最终实现；&lt;/p&gt;
+&lt;p&gt;或者在这里：&lt;a href=&quot;https://andrewyghub.github.io/&quot;&gt;https://andrewyghub.github.io/&lt;/a&gt; 预览我的博客的搜索模块的最终实现；&lt;/p&gt;
 
 &lt;h5 id=&quot;html部分&quot;&gt;HTML部分&lt;/h5&gt;
 &lt;p&gt;即页面样式，组成很简单，即一个文本输入框&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;input&amp;gt;&lt;/code&gt;和一个搜索图标，这里图标可以自行搜索下载一个，或者像下面一样使用在线图标，全部代码如下：&lt;/p&gt;
@@ -10605,7 +10605,7 @@ fn1: here
 &lt;p&gt;看一下最终效果：
 &lt;img src=&quot;https://i.loli.net/2019/03/04/5c7d2d2c18d93.png&quot; alt=&quot;final&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;或者来我的主页查看：&lt;strong&gt;&lt;a href=&quot;https://knightyun.github.io/&quot;&gt;https://knightyun.github.io/&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;或者来我的主页查看：&lt;strong&gt;&lt;a href=&quot;https://andrewyghub.github.io/&quot;&gt;https://andrewyghub.github.io/&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 
             </description>
             <pubDate>Mon, 04 Mar 2019 00:00:00 +0800</pubDate>
@@ -12564,7 +12564,7 @@ table th, table td {
             </link>
             <description>
                 &lt;h1 id=&quot;关于建站&quot;&gt;关于建站&lt;/h1&gt;
-&lt;p&gt;前面的文章介绍过如何使用Github Pages提供的仓库服务搭建Jekyll个人博客，链接在这 &lt;a href=&quot;https://knightyun.github.io/2018/04/01/github-pages-blog&quot;&gt;https://knightyun.github.io/2018/04/01/github-pages-blog&lt;/a&gt;，现在来了解一下如何一步步搭建自己的论坛网站。&lt;/p&gt;
+&lt;p&gt;前面的文章介绍过如何使用Github Pages提供的仓库服务搭建Jekyll个人博客，链接在这 &lt;a href=&quot;https://andrewyghub.github.io/2018/04/01/github-pages-blog&quot;&gt;https://andrewyghub.github.io/2018/04/01/github-pages-blog&lt;/a&gt;，现在来了解一下如何一步步搭建自己的论坛网站。&lt;/p&gt;
 
 &lt;p&gt;搭建个人论坛网站，也相当于建站的一种，通常的套路便是&lt;strong&gt;域名+主机空间+网页源码程序&lt;/strong&gt;，网页文件上传到虚拟空间，一般这些空间都安装有网站所需环境，如PHP和数据库等，然后把域名和主机空间绑定，这样就能在浏览器中输入域名（网址）访问所建网页，不然理论上只能通过虚拟主机的IP访问，但是通常有&lt;strong&gt;IP访问限制&lt;/strong&gt;不允许你这么做。&lt;/p&gt;
 
@@ -13849,7 +13849,7 @@ World !
             </link>
             <description>
                 &lt;hr /&gt;
-&lt;p&gt;文章出自个人博客&lt;a href=&quot;https://knightyun.github.io/2018/05/02/css-selector&quot;&gt;https://knightyun.github.io/2018/05/02/css-selector&lt;/a&gt;，转载请申明&lt;/p&gt;
+&lt;p&gt;文章出自个人博客&lt;a href=&quot;https://andrewyghub.github.io/2018/05/02/css-selector&quot;&gt;https://andrewyghub.github.io/2018/05/02/css-selector&lt;/a&gt;，转载请申明&lt;/p&gt;
 
 &lt;hr /&gt;
 &lt;h1 id=&quot;目录-&quot;&gt;目录 &lt;span id=&quot;home&quot;&gt;&lt;/span&gt;&lt;/h1&gt;
@@ -14287,7 +14287,7 @@ font-size: 20px;
             </link>
             <description>
                 &lt;p&gt;经典的贪吃蛇游戏算法，无疑是一个较大的挑战，综合性较高，像我这种刚入门C语言的也差不多花了整整一周时间才差不多理解透彻，内部包含了较多的函数，数组，二维数组，循环等思想。
-Github项目地址：&lt;a href=&quot;https://github.com/knightyun/gluttonousSnake/&quot;&gt;https://github.com/knightyun/gluttonousSnake/&lt;/a&gt;&lt;/p&gt;
+Github项目地址：&lt;a href=&quot;https://github.com/andrewyghub/gluttonousSnake/&quot;&gt;https://github.com/andrewyghub/gluttonousSnake/&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;接下来以C语言为例，针对此算法截取代码片段进行详细分析，源码位于文章&lt;a href=&quot;#end&quot;&gt;底部&lt;/a&gt;。&lt;/p&gt;
 
@@ -15550,7 +15550,7 @@ deb-src http://http.kali.org/kali kali-rolling main non-free contrib
 
 &lt;h2 id=&quot;填充仓库-&quot;&gt;填充仓库 &lt;span id=&quot;3.1&quot;&gt;&lt;/span&gt;&lt;/h2&gt;
 
-&lt;p&gt;仓库建好了，接下来就是往里面装东西了，就是支撑博客首页的一些网页文件和配置文件，对于新手来说要自己编写这些文件就有点开玩笑了，所以可以选择使用已有的主题，你可以选择复制我的&lt;a href=&quot;https://github.com/knightyun/knightyun.github.io&quot;&gt;https://github.com/knightyun/knightyun.github.io&lt;/a&gt;，然后选择自己仓库，网页基础好的同学以后修改网页内容就行了。&lt;/p&gt;
+&lt;p&gt;仓库建好了，接下来就是往里面装东西了，就是支撑博客首页的一些网页文件和配置文件，对于新手来说要自己编写这些文件就有点开玩笑了，所以可以选择使用已有的主题，你可以选择复制我的&lt;a href=&quot;https://github.com/andrewyghub/andrewyghub.github.io&quot;&gt;https://github.com/andrewyghub/andrewyghub.github.io&lt;/a&gt;，然后选择自己仓库，网页基础好的同学以后修改网页内容就行了。&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;嫌修改麻烦可以跳过这一步，到后面的步骤选择喜欢的主题&lt;/strong&gt;&lt;/p&gt;

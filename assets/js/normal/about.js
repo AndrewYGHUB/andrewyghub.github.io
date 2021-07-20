@@ -1,6 +1,6 @@
 /**
  * 个性化展示个人介绍功能实现
- * Copyright (C) 2020 knightyun. <https://github.com/knightyun/knightyun.github.io/assets/js/about.js>
+ * Copyright (C) 2020 andrewyghub. <https://github.com/andrewyghub/andrewyghub.github.io/assets/js/about.js>
  */
 
 var elTypingText = document.querySelector('.typing-text');

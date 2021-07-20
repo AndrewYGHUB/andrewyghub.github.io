@@ -1,6 +1,6 @@
 /**
  * 文章页面生成侧栏目录
- * Copyright (C) 2020 knightyun. <https://github.com/knightyun/knightyun.github.io/assets/js/gen-category.js>
+ * Copyright (C) 2020 andrewyghub. <https://github.com/andrewyghub/andrewyghub.github.io/assets/js/gen-category.js>
  */
 var categories = postContent.querySelectorAll('h1, h2, h3, h4, h5, h6');
 

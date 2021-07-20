@@ -544,7 +544,7 @@ function myFn() {}
  */
 function MyClass() {
     /** @member {string} */
-    this.name = 'knightyun';
+    this.name = 'andrewyghub';
     
     /**
      * 或者一个虚拟的成员

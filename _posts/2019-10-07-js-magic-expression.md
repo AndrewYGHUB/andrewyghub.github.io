@@ -8,7 +8,7 @@ excerpt: 介绍 js 中类型转换机制的一个有趣应用
 
 # 背景
 
-> 可以访问这个网站提前预览：<https://knightyun.github.io/magic-expression/>
+> 可以访问这个网站提前预览：<https://andrewyghub.github.io/magic-expression/>
 
 先来看一串代码：
 ```js
@@ -438,4 +438,4 @@ console.log(s2);
 
 ### 在线转换
 
-这里放一个在线转换的网站： [*点我在线转换*](https://knightyun.github.io/magic-expression/)
+这里放一个在线转换的网站： [*点我在线转换*](https://andrewyghub.github.io/magic-expression/)
