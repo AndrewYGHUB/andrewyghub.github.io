@@ -23,10 +23,10 @@ paginate: 5 # 主页展示的博客文章数量
 nick_name: "安琪" # 昵称
 english_name: "Knight"
 # valine 评论插件配置
+
 #valine:
 #  leancloud_appid: "4XY3DoTJmibNe3rHeAKOxqzl-gzGzoHsz"
 #  leancloud_appkey: "vjothQHALvgTQF9GrSgj577a"
-
 # jekyll 相关配置
 markdown: kramdown
 plugins:
