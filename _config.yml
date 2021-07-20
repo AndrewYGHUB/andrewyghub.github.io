@@ -1,10 +1,10 @@
 # Site settings
-title: My Blog
-SEOTitle: 我的博客 | My Blog
+title: Andrew Yang 's  Blog
+SEOTitle: Andrew Yang | Andrew Yang 's  Blog
 header-img: img/post-bg-desk.jpg
-email: 暂无
-description: "写一句你想写的话"
-keyword: "我的博客"
+email: andrewygmarket@gmail.com
+description: "这是个人的网站,中文名：石洋洋，欢迎大家访问"
+keyword: "Andrew Yang  石洋洋的博客"
 url: "http://andrewyghub.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/andrewyghub/andrewyghub.github.io.git" # you code repository
@@ -55,16 +55,18 @@ highlighter: rouge
 kramdown:
   input: GFM                            # use Github Flavored Markdown !important
 
-
+# 评论系统
+# Disqus（https://disqus.com/）
+# disqus_username: qiubaiying
 
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
   clientID:                             #生成的clientID
   clientSecret:     #生成的clientSecret
-  repo: name.github.io    #仓库名称
-  owner:     #github用户名
-  admin: 
+  repo: andrewyghub.github.io    #仓库名称
+  owner: andrewyghub    #github用户名
+  admin: andrewyghub
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
@@ -96,8 +98,8 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WP",
-        href: "https://wangpei.ink"
+        title: "andrewyghub",
+        href: "https://andrewyghub.ink"
     },{
         title: "简书·BY",
         href: "http://www.jianshu.com/u/e71990ada2fd"
