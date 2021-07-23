@@ -3,15 +3,15 @@
 
     <channel>
         <title>AndrewYG的博客</title>
-        <link>http://localhost:8899</link>
+        <link>http://andrewyghub.github.io</link>
         <description>基于 jekyll 的 Github Pages 个人博客网站，技术的学习、总结、分享与提升
 </description>
-        <lastBuildDate>Fri, 23 Jul 2021 12:49:40 +0800</lastBuildDate>
+        <lastBuildDate>Fri, 23 Jul 2021 12:58:50 +0800</lastBuildDate>
         
         <item>
             <title>CSS flex 盒子在 Chrome 和 Safari 中的行为差异</title>
             <link>
-                http://localhost:8899/2021/07/05/css-flex-chrome-safari-bug
+                http://andrewyghub.github.io/2021/07/05/css-flex-chrome-safari-bug
             </link>
             <description>
                 &lt;h2 id=&quot;问题&quot;&gt;问题&lt;/h2&gt;
@@ -107,14 +107,14 @@
             </description>
             <pubDate>Mon, 05 Jul 2021 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2021/07/05/css-flex-chrome-safari-bug
+                http://andrewyghub.github.io/2021/07/05/css-flex-chrome-safari-bug
             </guid>
         </item>
         
         <item>
             <title>React 组件性能优化之 PureComponent 的使用</title>
             <link>
-                http://localhost:8899/2021/05/09/js-react-purecomponent
+                http://andrewyghub.github.io/2021/05/09/js-react-purecomponent
             </link>
             <description>
                 &lt;p&gt;在 React 类组件中，如果状态（&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt;）发生变化，便会触发组件的重新渲染（执行 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;render&lt;/code&gt; 方法），并且是包括所有子组件在内的全部重渲染，无论某些子组件是否有用到 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt; 中的值；但有些时候部分子组件计算或渲染工作量较大，并且只做一些情况单一的展示工作，那么在更新状态时对其的渲染，便是额外的性能负担，所以需要寻求一些优化手段；&lt;/p&gt;
@@ -346,14 +346,14 @@
             </description>
             <pubDate>Sun, 09 May 2021 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2021/05/09/js-react-purecomponent
+                http://andrewyghub.github.io/2021/05/09/js-react-purecomponent
             </guid>
         </item>
         
         <item>
             <title>TypeScript 之泛型</title>
             <link>
-                http://localhost:8899/2021/04/18/js-ts-generic-type
+                http://andrewyghub.github.io/2021/04/18/js-ts-generic-type
             </link>
             <description>
                 &lt;h2 id=&quot;背景&quot;&gt;背景&lt;/h2&gt;
@@ -528,14 +528,14 @@
             </description>
             <pubDate>Sun, 18 Apr 2021 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2021/04/18/js-ts-generic-type
+                http://andrewyghub.github.io/2021/04/18/js-ts-generic-type
             </guid>
         </item>
         
         <item>
             <title>TypeScript 中类型 any，void，unknown，never之间的区别</title>
             <link>
-                http://localhost:8899/2021/04/03/js-ts-type-compare
+                http://andrewyghub.github.io/2021/04/03/js-ts-type-compare
             </link>
             <description>
                 &lt;p&gt;TypeScript 拓展了 JavaScript 的基本类型与语言特性，为了覆盖类型检查的情景，衍生出了一些额外的类型，其中 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;any&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;unknown&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;void&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;never&lt;/code&gt; 这几个类型所适用的情形容易使人混淆，下面通过举例进行一下区分；&lt;/p&gt;
@@ -647,14 +647,14 @@
             </description>
             <pubDate>Sat, 03 Apr 2021 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2021/04/03/js-ts-type-compare
+                http://andrewyghub.github.io/2021/04/03/js-ts-type-compare
             </guid>
         </item>
         
         <item>
             <title>Git submodule 知识总结</title>
             <link>
-                http://localhost:8899/2021/03/21/git-submodule
+                http://andrewyghub.github.io/2021/03/21/git-submodule
             </link>
             <description>
                 &lt;h2 id=&quot;概念&quot;&gt;概念&lt;/h2&gt;
@@ -1020,14 +1020,14 @@ Submodule xxx 70c316e..a6e2962:
             </description>
             <pubDate>Sun, 21 Mar 2021 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2021/03/21/git-submodule
+                http://andrewyghub.github.io/2021/03/21/git-submodule
             </guid>
         </item>
         
         <item>
             <title>Git 仓库中文件名大小写问题</title>
             <link>
-                http://localhost:8899/2021/01/18/git-ignorecase
+                http://andrewyghub.github.io/2021/01/18/git-ignorecase
             </link>
             <description>
                 &lt;p&gt;首先，Windows 下 git 默认配置是对文件/文件夹名称的大小写不敏感：&lt;/p&gt;
@@ -1094,14 +1094,14 @@ git push
             </description>
             <pubDate>Mon, 18 Jan 2021 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2021/01/18/git-ignorecase
+                http://andrewyghub.github.io/2021/01/18/git-ignorecase
             </guid>
         </item>
         
         <item>
             <title>JavaScript 经典设计模式</title>
             <link>
-                http://localhost:8899/2021/01/17/js-design-pattern
+                http://andrewyghub.github.io/2021/01/17/js-design-pattern
             </link>
             <description>
                 &lt;p&gt;设计模式（&lt;strong&gt;Design Pattern&lt;/strong&gt;）是一套被反复使用的代码设计经验总结，一个模式可以是一套可复用的方案，或者一个解决某一类问题的模板；使用固定的模式（解决方式）解决软件开发中的某些问题，利于代码的可理解性与可靠性，比如，比起设计一套标新立异的房屋结构，沿用大部分的现有设计结构更容易取得大部分人的信任与接受；下面是一些应用于 JavaScript 中的常用设计模式，以及以 JavaScript 实现的经典设计模式，包含示例与说明；&lt;/p&gt;
@@ -2262,14 +2262,14 @@ View &amp;lt;-----------&amp;gt; ViewModel ----------&amp;gt; Model
             </description>
             <pubDate>Sun, 17 Jan 2021 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2021/01/17/js-design-pattern
+                http://andrewyghub.github.io/2021/01/17/js-design-pattern
             </guid>
         </item>
         
         <item>
             <title>Redux 主要知识学习总结</title>
             <link>
-                http://localhost:8899/2020/11/29/js-redux-summary
+                http://andrewyghub.github.io/2020/11/29/js-redux-summary
             </link>
             <description>
                 &lt;h2 id=&quot;概念&quot;&gt;概念&lt;/h2&gt;
@@ -2678,14 +2678,14 @@ View &amp;lt;-----------&amp;gt; ViewModel ----------&amp;gt; Model
             </description>
             <pubDate>Sun, 29 Nov 2020 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2020/11/29/js-redux-summary
+                http://andrewyghub.github.io/2020/11/29/js-redux-summary
             </guid>
         </item>
         
         <item>
             <title>记一次 React 组件无法更新状态值的问题分析与解决</title>
             <link>
-                http://localhost:8899/2020/09/10/js-react-state-update
+                http://andrewyghub.github.io/2020/09/10/js-react-state-update
             </link>
             <description>
                 &lt;h2 id=&quot;问题&quot;&gt;问题&lt;/h2&gt;
@@ -2827,14 +2827,14 @@ View &amp;lt;-----------&amp;gt; ViewModel ----------&amp;gt; Model
             </description>
             <pubDate>Thu, 10 Sep 2020 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2020/09/10/js-react-state-update
+                http://andrewyghub.github.io/2020/09/10/js-react-state-update
             </guid>
         </item>
         
         <item>
             <title>React 组件间传值的几种情形</title>
             <link>
-                http://localhost:8899/2020/09/03/js-react-props
+                http://andrewyghub.github.io/2020/09/03/js-react-props
             </link>
             <description>
                 &lt;h2 id=&quot;父级传向子级&quot;&gt;父级传向子级&lt;/h2&gt;
@@ -3143,14 +3143,14 @@ View &amp;lt;-----------&amp;gt; ViewModel ----------&amp;gt; Model
             </description>
             <pubDate>Thu, 03 Sep 2020 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2020/09/03/js-react-props
+                http://andrewyghub.github.io/2020/09/03/js-react-props
             </guid>
         </item>
         
         <item>
             <title>提升 Linux 终端命令敲写效率的快捷键参考</title>
             <link>
-                http://localhost:8899/2020/05/24/linux-shell-shortcut
+                http://andrewyghub.github.io/2020/05/24/linux-shell-shortcut
             </link>
             <description>
                 &lt;h2 id=&quot;移动&quot;&gt;移动&lt;/h2&gt;
@@ -3398,14 +3398,14 @@ View &amp;lt;-----------&amp;gt; ViewModel ----------&amp;gt; Model
             </description>
             <pubDate>Sun, 24 May 2020 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2020/05/24/linux-shell-shortcut
+                http://andrewyghub.github.io/2020/05/24/linux-shell-shortcut
             </guid>
         </item>
         
         <item>
             <title>提升开发效率的 Chrome 开发者工具快捷键参考</title>
             <link>
-                http://localhost:8899/2020/05/23/tools-devtool-shortcut
+                http://andrewyghub.github.io/2020/05/23/tools-devtool-shortcut
             </link>
             <description>
                 &lt;p&gt;本文只介绍 Chrome 一些主要和常用的快捷键，在其它浏览器的开发者工具中可类比，大部分快捷键作用都相同，只有个别差异。&lt;/p&gt;
@@ -3808,14 +3808,14 @@ View &amp;lt;-----------&amp;gt; ViewModel ----------&amp;gt; Model
             </description>
             <pubDate>Sat, 23 May 2020 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2020/05/23/tools-devtool-shortcut
+                http://andrewyghub.github.io/2020/05/23/tools-devtool-shortcut
             </guid>
         </item>
         
         <item>
             <title>记一次Windows电脑开机登录后黑屏的问题分析与排查</title>
             <link>
-                http://localhost:8899/2020/05/20/system-login-blackscreen
+                http://andrewyghub.github.io/2020/05/20/system-login-blackscreen
             </link>
             <description>
                 &lt;!--
@@ -4340,14 +4340,14 @@ HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Class\{4d36e968-e325-11ce-bfc1-0
             </description>
             <pubDate>Wed, 20 May 2020 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2020/05/20/system-login-blackscreen
+                http://andrewyghub.github.io/2020/05/20/system-login-blackscreen
             </guid>
         </item>
         
         <item>
             <title>Kali Linux系统设置中文语言环境</title>
             <link>
-                http://localhost:8899/2020/04/15/linux-chinese
+                http://andrewyghub.github.io/2020/04/15/linux-chinese
             </link>
             <description>
                 &lt;p&gt;主流 Linux 系统安装之后，默认使用的语言环境基本都是英语，所以不管时图形桌面的菜单标题，还是终端的一些输出提示，都是展示的英文，对于觉得阅读英语不太友好的同胞们，第一件事可能就是设置一个友好的汉化环境，下面以 &lt;strong&gt;Kali Linux&lt;/strong&gt; 这个发行版的系统为例，介绍一些设置中文语言环境的方法；&lt;/p&gt;
@@ -4487,14 +4487,14 @@ HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Class\{4d36e968-e325-11ce-bfc1-0
             </description>
             <pubDate>Wed, 15 Apr 2020 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2020/04/15/linux-chinese
+                http://andrewyghub.github.io/2020/04/15/linux-chinese
             </guid>
         </item>
         
         <item>
             <title>关于浮点数的剪不断理还乱</title>
             <link>
-                http://localhost:8899/2020/03/21/programme-float-point
+                http://andrewyghub.github.io/2020/03/21/programme-float-point
             </link>
             <description>
                 &lt;h1 id=&quot;二进制小数&quot;&gt;二进制小数&lt;/h1&gt;
@@ -4683,14 +4683,14 @@ log(2^53) = 15.95
             </description>
             <pubDate>Sat, 21 Mar 2020 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2020/03/21/programme-float-point
+                http://andrewyghub.github.io/2020/03/21/programme-float-point
             </guid>
         </item>
         
         <item>
             <title>JavaScript之注释规范化（JSDoc）</title>
             <link>
-                http://localhost:8899/2020/03/13/js-comment-format
+                http://andrewyghub.github.io/2020/03/13/js-comment-format
             </link>
             <description>
                 &lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
@@ -5236,14 +5236,14 @@ log(2^53) = 15.95
             </description>
             <pubDate>Fri, 13 Mar 2020 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2020/03/13/js-comment-format
+                http://andrewyghub.github.io/2020/03/13/js-comment-format
             </guid>
         </item>
         
         <item>
             <title>JavaScript与二进制数据的恩怨情仇</title>
             <link>
-                http://localhost:8899/2020/03/09/js-binary-data
+                http://andrewyghub.github.io/2020/03/09/js-binary-data
             </link>
             <description>
                 &lt;p&gt;编程江湖，终日血雨腥风，论及二进制数据，又有多少豪杰谈笑风生，风生水起，水起船高，高深莫测……&lt;/p&gt;
@@ -6236,14 +6236,14 @@ Address sizes:       36 bits physical, 48 bits virtual
             </description>
             <pubDate>Mon, 09 Mar 2020 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2020/03/09/js-binary-data
+                http://andrewyghub.github.io/2020/03/09/js-binary-data
             </guid>
         </item>
         
         <item>
             <title>个人博客网站文章添加目录导航</title>
             <link>
-                http://localhost:8899/2020/01/14/website-add-category
+                http://andrewyghub.github.io/2020/01/14/website-add-category
             </link>
             <description>
                 &lt;h1 id=&quot;概述&quot;&gt;概述&lt;/h1&gt;
@@ -6494,14 +6494,14 @@ Address sizes:       36 bits physical, 48 bits virtual
             </description>
             <pubDate>Tue, 14 Jan 2020 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2020/01/14/website-add-category
+                http://andrewyghub.github.io/2020/01/14/website-add-category
             </guid>
         </item>
         
         <item>
             <title>JavaScript 数组排序详解</title>
             <link>
-                http://localhost:8899/2020/01/12/js-array-sort
+                http://andrewyghub.github.io/2020/01/12/js-array-sort
             </link>
             <description>
                 &lt;p&gt;提到 JavaScript 中对数组进行排序操作，可能首先想到的就是 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Array.prototype.sort()&lt;/code&gt; 这个函数，比如以下场景就比较常见：&lt;/p&gt;
@@ -6639,14 +6639,14 @@ Address sizes:       36 bits physical, 48 bits virtual
             </description>
             <pubDate>Sun, 12 Jan 2020 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2020/01/12/js-array-sort
+                http://andrewyghub.github.io/2020/01/12/js-array-sort
             </guid>
         </item>
         
         <item>
             <title>手机端（安卓）安装 Kali Linux 系统详细教程</title>
             <link>
-                http://localhost:8899/2020/01/10/linux-kali-android
+                http://andrewyghub.github.io/2020/01/10/linux-kali-android
             </link>
             <description>
                 &lt;!--
@@ -7581,14 +7581,14 @@ Linux 系统启动完毕，接下来就是进入图形桌面环境，当然，�
             </description>
             <pubDate>Fri, 10 Jan 2020 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2020/01/10/linux-kali-android
+                http://andrewyghub.github.io/2020/01/10/linux-kali-android
             </guid>
         </item>
         
         <item>
             <title>JavaScript 类型转换的有趣应用</title>
             <link>
-                http://localhost:8899/2019/10/07/js-magic-expression
+                http://andrewyghub.github.io/2019/10/07/js-magic-expression
             </link>
             <description>
                 &lt;h1 id=&quot;背景&quot;&gt;背景&lt;/h1&gt;
@@ -8000,14 +8000,14 @@ Linux 系统启动完毕，接下来就是进入图形桌面环境，当然，�
             </description>
             <pubDate>Mon, 07 Oct 2019 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2019/10/07/js-magic-expression
+                http://andrewyghub.github.io/2019/10/07/js-magic-expression
             </guid>
         </item>
         
         <item>
             <title>JavaScript 求最小公倍数</title>
             <link>
-                http://localhost:8899/2019/09/03/js-lcm
+                http://andrewyghub.github.io/2019/09/03/js-lcm
             </link>
             <description>
                 &lt;h1 id=&quot;最小公倍数least-common-multiple&quot;&gt;最小公倍数(Least Common Multiple)&lt;/h1&gt;
@@ -8059,14 +8059,14 @@ Linux 系统启动完毕，接下来就是进入图形桌面环境，当然，�
             </description>
             <pubDate>Tue, 03 Sep 2019 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2019/09/03/js-lcm
+                http://andrewyghub.github.io/2019/09/03/js-lcm
             </guid>
         </item>
         
         <item>
             <title>JavaScript 中 try, catch, throw 的用法</title>
             <link>
-                http://localhost:8899/2019/09/02/js-try
+                http://andrewyghub.github.io/2019/09/02/js-try
             </link>
             <description>
                 &lt;p&gt;程序在运行中难免遇到 bug，所以就需要好的调试手段找出问题所在，&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;try, catch, throw&lt;/code&gt; 便是 JavaScript 中用来调试并对错误执行相关操作的工具，下面具体介绍其用法；&lt;/p&gt;
@@ -8135,14 +8135,14 @@ Linux 系统启动完毕，接下来就是进入图形桌面环境，当然，�
             </description>
             <pubDate>Mon, 02 Sep 2019 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2019/09/02/js-try
+                http://andrewyghub.github.io/2019/09/02/js-try
             </guid>
         </item>
         
         <item>
             <title>JavaScript 变异与非变异数组方法</title>
             <link>
-                http://localhost:8899/2019/09/02/js-mutation-array
+                http://andrewyghub.github.io/2019/09/02/js-mutation-array
             </link>
             <description>
                 &lt;p&gt;在 JavaScript 中，存在大量对数组进行操作的方法，它们都有一个特点，就是关于此操作是否会修改原数组，并以此将数组方法分为&lt;strong&gt;变异数组方法&lt;/strong&gt;与&lt;strong&gt;非变异数组方法&lt;/strong&gt;，例如 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.pop()&lt;/code&gt; 方法便是删除数组的最后一个元素，而 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.slice()&lt;/code&gt; 方法则是返回一个指定特征的新数组，并不会对原数组进行修改；能有效的区分这两类方法，有助于开发过程中方法选用，避免出现不必要的错误；&lt;/p&gt;
@@ -8245,14 +8245,14 @@ Linux 系统启动完毕，接下来就是进入图形桌面环境，当然，�
             </description>
             <pubDate>Mon, 02 Sep 2019 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2019/09/02/js-mutation-array
+                http://andrewyghub.github.io/2019/09/02/js-mutation-array
             </guid>
         </item>
         
         <item>
             <title>JavaScript 变量提升（Hoisting）详解</title>
             <link>
-                http://localhost:8899/2019/09/02/js-hoisting
+                http://andrewyghub.github.io/2019/09/02/js-hoisting
             </link>
             <description>
                 &lt;h1 id=&quot;概念&quot;&gt;概念&lt;/h1&gt;
@@ -8513,14 +8513,14 @@ Linux 系统启动完毕，接下来就是进入图形桌面环境，当然，�
             </description>
             <pubDate>Mon, 02 Sep 2019 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2019/09/02/js-hoisting
+                http://andrewyghub.github.io/2019/09/02/js-hoisting
             </guid>
         </item>
         
         <item>
             <title>JavaScript 实现斐波那契数列（Febonacci Array）</title>
             <link>
-                http://localhost:8899/2019/09/02/js-febonacci
+                http://andrewyghub.github.io/2019/09/02/js-febonacci
             </link>
             <description>
                 &lt;p&gt;斐波那契（Febonacci）数列是一个神奇的数列，在很多地方都有应用，可以自行搜索相关图片体会其魅力，这里不赘述，直接来分析一下如何通过 JavaScript 来实现；&lt;/p&gt;
@@ -8633,14 +8633,14 @@ Linux 系统启动完毕，接下来就是进入图形桌面环境，当然，�
             </description>
             <pubDate>Mon, 02 Sep 2019 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2019/09/02/js-febonacci
+                http://andrewyghub.github.io/2019/09/02/js-febonacci
             </guid>
         </item>
         
         <item>
             <title>JavaScript 稀疏数组</title>
             <link>
-                http://localhost:8899/2019/08/02/js-sparse-array
+                http://andrewyghub.github.io/2019/08/02/js-sparse-array
             </link>
             <description>
                 &lt;h1 id=&quot;稀疏数组&quot;&gt;稀疏数组&lt;/h1&gt;
@@ -8792,14 +8792,14 @@ Linux 系统启动完毕，接下来就是进入图形桌面环境，当然，�
             </description>
             <pubDate>Fri, 02 Aug 2019 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2019/08/02/js-sparse-array
+                http://andrewyghub.github.io/2019/08/02/js-sparse-array
             </guid>
         </item>
         
         <item>
             <title>async 与 await 的用法详解</title>
             <link>
-                http://localhost:8899/2019/08/02/js-async-await
+                http://andrewyghub.github.io/2019/08/02/js-async-await
             </link>
             <description>
                 &lt;h1 id=&quot;async&quot;&gt;async&lt;/h1&gt;
@@ -9182,14 +9182,14 @@ Linux 系统启动完毕，接下来就是进入图形桌面环境，当然，�
             </description>
             <pubDate>Fri, 02 Aug 2019 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2019/08/02/js-async-await
+                http://andrewyghub.github.io/2019/08/02/js-async-await
             </guid>
         </item>
         
         <item>
             <title>Linux 中 sudo 免密码</title>
             <link>
-                http://localhost:8899/2019/06/20/sudo-nopasswd
+                http://andrewyghub.github.io/2019/06/20/sudo-nopasswd
             </link>
             <description>
                 &lt;p&gt;平时在 Linux 中执行一些命令时，可能会遇到 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Permission denied&lt;/code&gt; 这样的提示，即该用户没有权限；&lt;/p&gt;
@@ -9227,14 +9227,14 @@ Linux 系统启动完毕，接下来就是进入图形桌面环境，当然，�
             </description>
             <pubDate>Thu, 20 Jun 2019 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2019/06/20/sudo-nopasswd
+                http://andrewyghub.github.io/2019/06/20/sudo-nopasswd
             </guid>
         </item>
         
         <item>
             <title>JavaScript 事件循环</title>
             <link>
-                http://localhost:8899/2019/06/20/js-event-loop
+                http://andrewyghub.github.io/2019/06/20/js-event-loop
             </link>
             <description>
                 &lt;h1 id=&quot;运行时runtime&quot;&gt;运行时（runtime）&lt;/h1&gt;
@@ -9470,14 +9470,14 @@ Linux 系统启动完毕，接下来就是进入图形桌面环境，当然，�
             </description>
             <pubDate>Thu, 20 Jun 2019 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2019/06/20/js-event-loop
+                http://andrewyghub.github.io/2019/06/20/js-event-loop
             </guid>
         </item>
         
         <item>
             <title>JavaScript 实现元素全排列</title>
             <link>
-                http://localhost:8899/2019/05/11/js-permutation
+                http://andrewyghub.github.io/2019/05/11/js-permutation
             </link>
             <description>
                 &lt;h1 id=&quot;排列-permutation--arrangement&quot;&gt;排列 (Permutation / Arrangement)&lt;/h1&gt;
@@ -9652,14 +9652,14 @@ Linux 系统启动完毕，接下来就是进入图形桌面环境，当然，�
             </description>
             <pubDate>Sat, 11 May 2019 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2019/05/11/js-permutation
+                http://andrewyghub.github.io/2019/05/11/js-permutation
             </guid>
         </item>
         
         <item>
             <title>JavaScript 之常见算法排序</title>
             <link>
-                http://localhost:8899/2019/05/01/js-sort
+                http://andrewyghub.github.io/2019/05/01/js-sort
             </link>
             <description>
                 &lt;h1 id=&quot;冒泡排序&quot;&gt;冒泡排序&lt;/h1&gt;
@@ -9834,14 +9834,14 @@ Linux 系统启动完毕，接下来就是进入图形桌面环境，当然，�
             </description>
             <pubDate>Wed, 01 May 2019 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2019/05/01/js-sort
+                http://andrewyghub.github.io/2019/05/01/js-sort
             </guid>
         </item>
         
         <item>
             <title>JavaScript 面向对象编程</title>
             <link>
-                http://localhost:8899/2019/05/01/js-oop
+                http://andrewyghub.github.io/2019/05/01/js-oop
             </link>
             <description>
                 &lt;h1 id=&quot;概述&quot;&gt;概述&lt;/h1&gt;
@@ -10108,14 +10108,14 @@ Linux 系统启动完毕，接下来就是进入图形桌面环境，当然，�
             </description>
             <pubDate>Wed, 01 May 2019 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2019/05/01/js-oop
+                http://andrewyghub.github.io/2019/05/01/js-oop
             </guid>
         </item>
         
         <item>
             <title>ECMAScript 发展简史</title>
             <link>
-                http://localhost:8899/2019/05/01/js-ecmascript-history
+                http://andrewyghub.github.io/2019/05/01/js-ecmascript-history
             </link>
             <description>
                 &lt;blockquote&gt;
@@ -10163,14 +10163,14 @@ Linux 系统启动完毕，接下来就是进入图形桌面环境，当然，�
             </description>
             <pubDate>Wed, 01 May 2019 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2019/05/01/js-ecmascript-history
+                http://andrewyghub.github.io/2019/05/01/js-ecmascript-history
             </guid>
         </item>
         
         <item>
             <title>JavaScript 之 call，bind，apply 方法及 this 的用法辨析</title>
             <link>
-                http://localhost:8899/2019/05/01/js-call
+                http://andrewyghub.github.io/2019/05/01/js-call
             </link>
             <description>
                 &lt;h1 id=&quot;概述&quot;&gt;概述&lt;/h1&gt;
@@ -10327,14 +10327,14 @@ fn1: here
             </description>
             <pubDate>Wed, 01 May 2019 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2019/05/01/js-call
+                http://andrewyghub.github.io/2019/05/01/js-call
             </guid>
         </item>
         
         <item>
             <title>个人博客网站添加文章搜索功能</title>
             <link>
-                http://localhost:8899/2019/03/04/articles-search
+                http://andrewyghub.github.io/2019/03/04/articles-search
             </link>
             <description>
                 &lt;p&gt;现在很多网站页面里都有搜索模块，包括在线搜索、站内搜索等等，尤其是博客类网站，文章搜索功能就显得比较重要，现在以个人博客网站为例，详细介绍如何给页面添加搜索功能模块，至于如何搭建个人博客网站，可以参考这篇文章：&lt;a href=&quot;https://andrewyghub.github.io/2018/04/01/github-pages-blog&quot;&gt;https://andrewyghub.github.io/2018/04/01/github-pages-blog&lt;/a&gt;；&lt;/p&gt;
@@ -10610,14 +10610,14 @@ fn1: here
             </description>
             <pubDate>Mon, 04 Mar 2019 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2019/03/04/articles-search
+                http://andrewyghub.github.io/2019/03/04/articles-search
             </guid>
         </item>
         
         <item>
             <title>编程范式之命令式与函数式</title>
             <link>
-                http://localhost:8899/2019/01/27/programming-paradigm
+                http://andrewyghub.github.io/2019/01/27/programming-paradigm
             </link>
             <description>
                 &lt;p&gt;很多语言是&lt;strong&gt;聚范式/多重范式&lt;/strong&gt;编程，即支持多在编程范式，如面向对象(Java)，面向过程(C语言)，泛函(函数式)，元程序设计等；以下例子都用 &lt;strong&gt;JavaScript&lt;/strong&gt; 举例；&lt;/p&gt;
@@ -10785,14 +10785,14 @@ f(x) = h(g(x));
             </description>
             <pubDate>Sun, 27 Jan 2019 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2019/01/27/programming-paradigm
+                http://andrewyghub.github.io/2019/01/27/programming-paradigm
             </guid>
         </item>
         
         <item>
             <title>Kali Linux 自定义分辨率</title>
             <link>
-                http://localhost:8899/2019/01/27/linux-xrandr
+                http://andrewyghub.github.io/2019/01/27/linux-xrandr
             </link>
             <description>
                 &lt;p&gt;Kali中无分辨率1920 x 1080，自定义的步骤：&lt;/p&gt;
@@ -10834,14 +10834,14 @@ xrandr &lt;span class=&quot;nt&quot;&gt;--addmode&lt;/span&gt; Virtual1 &lt;span
             </description>
             <pubDate>Sun, 27 Jan 2019 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2019/01/27/linux-xrandr
+                http://andrewyghub.github.io/2019/01/27/linux-xrandr
             </guid>
         </item>
         
         <item>
             <title>Linux 强行取消挂载</title>
             <link>
-                http://localhost:8899/2019/01/27/linux-umount
+                http://andrewyghub.github.io/2019/01/27/linux-umount
             </link>
             <description>
                 &lt;p&gt;Linux系统有时需要取消挂载一些设备或者目录，&lt;/p&gt;
@@ -10871,14 +10871,14 @@ fuser &lt;span class=&quot;nt&quot;&gt;-mk&lt;/span&gt; /dev/sdb  &lt;span class
             </description>
             <pubDate>Sun, 27 Jan 2019 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2019/01/27/linux-umount
+                http://andrewyghub.github.io/2019/01/27/linux-umount
             </guid>
         </item>
         
         <item>
             <title>Linux 中 apt install 的 lock 问题</title>
             <link>
-                http://localhost:8899/2019/01/27/linux-apt-lock
+                http://andrewyghub.github.io/2019/01/27/linux-apt-lock
             </link>
             <description>
                 &lt;p&gt;Linux系统中有时执行 apt install 时，可能会显示以下问题：&lt;/p&gt;
@@ -10898,14 +10898,14 @@ E: 无法锁定管理目录&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;/var/li
             </description>
             <pubDate>Sun, 27 Jan 2019 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2019/01/27/linux-apt-lock
+                http://andrewyghub.github.io/2019/01/27/linux-apt-lock
             </guid>
         </item>
         
         <item>
             <title>JavaScript 深度迭代遍历未知对象</title>
             <link>
-                http://localhost:8899/2019/01/27/js-iteration
+                http://andrewyghub.github.io/2019/01/27/js-iteration
             </link>
             <description>
                 &lt;p&gt;面向对象编程的语言，都存在对对象的一些操作，其中就包括遍历未知对象的属性值。&lt;/p&gt;
@@ -10990,14 +10990,14 @@ E: 无法锁定管理目录&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;/var/li
             </description>
             <pubDate>Sun, 27 Jan 2019 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2019/01/27/js-iteration
+                http://andrewyghub.github.io/2019/01/27/js-iteration
             </guid>
         </item>
         
         <item>
             <title>css 属性前浏览器厂商前缀</title>
             <link>
-                http://localhost:8899/2019/01/27/css-webkit
+                http://andrewyghub.github.io/2019/01/27/css-webkit
             </link>
             <description>
                 &lt;p&gt;CSS3中一些新功能也是目前导致各大浏览器不兼容的一个原因，这些新功能的出现，浏览器厂商们变便开始尝试融合、试验，所以就在这些功能前加上自己的特定前缀来执行自己的特定解决方法，为了让这些功能能在完全确认下来前使用；&lt;/p&gt;
@@ -11031,14 +11031,14 @@ E: 无法锁定管理目录&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;/var/li
             </description>
             <pubDate>Sun, 27 Jan 2019 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2019/01/27/css-webkit
+                http://andrewyghub.github.io/2019/01/27/css-webkit
             </guid>
         </item>
         
         <item>
             <title>CSS3 过渡与动画</title>
             <link>
-                http://localhost:8899/2019/01/27/css-transition-animation
+                http://andrewyghub.github.io/2019/01/27/css-transition-animation
             </link>
             <description>
                 &lt;p&gt;CSS3中出现很多新的特性，下面就讲一下其中比较好玩的&lt;strong&gt;3D操作&lt;/strong&gt;，&lt;strong&gt;过渡&lt;/strong&gt;和&lt;strong&gt;动画&lt;/strong&gt;效果；&lt;/p&gt;
@@ -11227,14 +11227,14 @@ E: 无法锁定管理目录&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;/var/li
             </description>
             <pubDate>Sun, 27 Jan 2019 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2019/01/27/css-transition-animation
+                http://andrewyghub.github.io/2019/01/27/css-transition-animation
             </guid>
         </item>
         
         <item>
             <title>CSS3 之 2D 与 3D 变换</title>
             <link>
-                http://localhost:8899/2019/01/27/css-transform
+                http://andrewyghub.github.io/2019/01/27/css-transform
             </link>
             <description>
                 &lt;h1 id=&quot;目录&quot;&gt;目录&lt;/h1&gt;
@@ -11582,14 +11582,14 @@ E: 无法锁定管理目录&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;/var/li
             </description>
             <pubDate>Sun, 27 Jan 2019 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2019/01/27/css-transform
+                http://andrewyghub.github.io/2019/01/27/css-transform
             </guid>
         </item>
         
         <item>
             <title>CSS 单位与尺寸参数</title>
             <link>
-                http://localhost:8899/2019/01/27/css-px
+                http://andrewyghub.github.io/2019/01/27/css-px
             </link>
             <description>
                 &lt;h1 id=&quot;css单位&quot;&gt;css单位&lt;/h1&gt;
@@ -11655,14 +11655,14 @@ E: 无法锁定管理目录&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;/var/li
             </description>
             <pubDate>Sun, 27 Jan 2019 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2019/01/27/css-px
+                http://andrewyghub.github.io/2019/01/27/css-px
             </guid>
         </item>
         
         <item>
             <title>用 CSS 画一些多边形状</title>
             <link>
-                http://localhost:8899/2019/01/27/css-draw-polygon
+                http://andrewyghub.github.io/2019/01/27/css-draw-polygon
             </link>
             <description>
                 &lt;p&gt;CSS是个很强大的网页开发工具，使生硬的网页变得丰富绚丽，css能实现很多效果，比如css3中的过渡与动画效果都很好看，最基本的就是画一个具有长宽的矩形，通过设置 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;border-radius&lt;/code&gt; 又能实现画圆形和椭圆形，但是其他多边形似乎没有直接能用的属性，比如&lt;strong&gt;三角形&lt;/strong&gt;，&lt;strong&gt;五角星&lt;/strong&gt;，&lt;strong&gt;六边形&lt;/strong&gt;等等；&lt;/p&gt;
@@ -12104,14 +12104,14 @@ padding:10px&quot;&gt;
             </description>
             <pubDate>Sun, 27 Jan 2019 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2019/01/27/css-draw-polygon
+                http://andrewyghub.github.io/2019/01/27/css-draw-polygon
             </guid>
         </item>
         
         <item>
             <title>Base64 码简介</title>
             <link>
-                http://localhost:8899/2019/01/27/base64
+                http://andrewyghub.github.io/2019/01/27/base64
             </link>
             <description>
                 &lt;h1 id=&quot;简介&quot;&gt;简介&lt;/h1&gt;
@@ -12378,14 +12378,14 @@ table th, table td {
             </description>
             <pubDate>Sun, 27 Jan 2019 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2019/01/27/base64
+                http://andrewyghub.github.io/2019/01/27/base64
             </guid>
         </item>
         
         <item>
             <title>UTF-8, ASCII, Unicode 的介绍与区分</title>
             <link>
-                http://localhost:8899/2019/01/27/ascii-unicode
+                http://andrewyghub.github.io/2019/01/27/ascii-unicode
             </link>
             <description>
                 &lt;h1 id=&quot;背景&quot;&gt;背景&lt;/h1&gt;
@@ -12498,14 +12498,14 @@ table th, table td {
             </description>
             <pubDate>Sun, 27 Jan 2019 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2019/01/27/ascii-unicode
+                http://andrewyghub.github.io/2019/01/27/ascii-unicode
             </guid>
         </item>
         
         <item>
             <title>电脑固态硬盘接口辨析</title>
             <link>
-                http://localhost:8899/2018/12/08/ssd
+                http://andrewyghub.github.io/2018/12/08/ssd
             </link>
             <description>
                 &lt;p&gt;固态硬盘相比传统机械硬盘读写速度快许多，固态硬盘目前分为M.2接口与SATA接口。&lt;/p&gt;
@@ -12553,14 +12553,14 @@ table th, table td {
             </description>
             <pubDate>Sat, 08 Dec 2018 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2018/12/08/ssd
+                http://andrewyghub.github.io/2018/12/08/ssd
             </guid>
         </item>
         
         <item>
             <title>搭建个人论坛网站图文教程</title>
             <link>
-                http://localhost:8899/2018/11/25/discuz-website
+                http://andrewyghub.github.io/2018/11/25/discuz-website
             </link>
             <description>
                 &lt;h1 id=&quot;关于建站&quot;&gt;关于建站&lt;/h1&gt;
@@ -12629,14 +12629,14 @@ table th, table td {
             </description>
             <pubDate>Sun, 25 Nov 2018 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2018/11/25/discuz-website
+                http://andrewyghub.github.io/2018/11/25/discuz-website
             </guid>
         </item>
         
         <item>
             <title>JavaScript 逻辑运算符 “&amp;&amp;” 和 “||” 短路原则的应用</title>
             <link>
-                http://localhost:8899/2018/06/01/js-logic-compute
+                http://andrewyghub.github.io/2018/06/01/js-logic-compute
             </link>
             <description>
                 &lt;h1 id=&quot;逻辑运算符&quot;&gt;逻辑运算符&lt;/h1&gt;
@@ -12737,14 +12737,14 @@ table th, table td {
             </description>
             <pubDate>Fri, 01 Jun 2018 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2018/06/01/js-logic-compute
+                http://andrewyghub.github.io/2018/06/01/js-logic-compute
             </guid>
         </item>
         
         <item>
             <title>jQuery 初识之安装与语法简介</title>
             <link>
-                http://localhost:8899/2018/06/01/jq-syntax
+                http://andrewyghub.github.io/2018/06/01/jq-syntax
             </link>
             <description>
                 &lt;h1 id=&quot;概念&quot;&gt;概念&lt;/h1&gt;
@@ -12863,14 +12863,14 @@ table th, table td {
             </description>
             <pubDate>Fri, 01 Jun 2018 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2018/06/01/jq-syntax
+                http://andrewyghub.github.io/2018/06/01/jq-syntax
             </guid>
         </item>
         
         <item>
             <title>addEventListener 方法与 on 事件的区别</title>
             <link>
-                http://localhost:8899/2018/05/31/js-eventlistener
+                http://andrewyghub.github.io/2018/05/31/js-eventlistener
             </link>
             <description>
                 &lt;h1 id=&quot;on事件&quot;&gt;on事件&lt;/h1&gt;
@@ -13011,14 +13011,14 @@ Click me
             </description>
             <pubDate>Thu, 31 May 2018 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2018/05/31/js-eventlistener
+                http://andrewyghub.github.io/2018/05/31/js-eventlistener
             </guid>
         </item>
         
         <item>
             <title>JavaScript 闭包详解</title>
             <link>
-                http://localhost:8899/2018/05/31/js-closure
+                http://andrewyghub.github.io/2018/05/31/js-closure
             </link>
             <description>
                 &lt;h1 id=&quot;变量作用域&quot;&gt;变量作用域&lt;/h1&gt;
@@ -13099,14 +13099,14 @@ Click me
             </description>
             <pubDate>Thu, 31 May 2018 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2018/05/31/js-closure
+                http://andrewyghub.github.io/2018/05/31/js-closure
             </guid>
         </item>
         
         <item>
             <title>JavaScript 计时器函数用法</title>
             <link>
-                http://localhost:8899/2018/05/24/js-timer-function
+                http://andrewyghub.github.io/2018/05/24/js-timer-function
             </link>
             <description>
                 &lt;p&gt;Javascript中和大多数语言一样，存在计时函数，使某语句或函数不用立即执行，可以延时设定的时间值之后再执行。&lt;/p&gt;
@@ -13284,14 +13284,14 @@ Click me
             </description>
             <pubDate>Thu, 24 May 2018 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2018/05/24/js-timer-function
+                http://andrewyghub.github.io/2018/05/24/js-timer-function
             </guid>
         </item>
         
         <item>
             <title>JavaScript 中语句与函数的执行辨析</title>
             <link>
-                http://localhost:8899/2018/05/23/js-anonymous-function
+                http://andrewyghub.github.io/2018/05/23/js-anonymous-function
             </link>
             <description>
                 &lt;p&gt;Javascript代码中，语句和函数以及匿名函数的执行存在一些区别，所以在编写过程中也存在一些“坑“。&lt;/p&gt;
@@ -13407,14 +13407,14 @@ Click me
             </description>
             <pubDate>Wed, 23 May 2018 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2018/05/23/js-anonymous-function
+                http://andrewyghub.github.io/2018/05/23/js-anonymous-function
             </guid>
         </item>
         
         <item>
             <title>web 浏览器进化简史</title>
             <link>
-                http://localhost:8899/2018/05/22/web-browser-history
+                http://andrewyghub.github.io/2018/05/22/web-browser-history
             </link>
             <description>
                 &lt;h2 id=&quot;发展史与时间线&quot;&gt;发展史与时间线&lt;/h2&gt;
@@ -13473,14 +13473,14 @@ Click me
             </description>
             <pubDate>Tue, 22 May 2018 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2018/05/22/web-browser-history
+                http://andrewyghub.github.io/2018/05/22/web-browser-history
             </guid>
         </item>
         
         <item>
             <title>CSS 样式之内容居中方法</title>
             <link>
-                http://localhost:8899/2018/05/22/css-content-center
+                http://andrewyghub.github.io/2018/05/22/css-content-center
             </link>
             <description>
                 &lt;h1 id=&quot;水平居中&quot;&gt;水平居中&lt;/h1&gt;
@@ -13744,14 +13744,14 @@ html:&lt;/p&gt;
             </description>
             <pubDate>Tue, 22 May 2018 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2018/05/22/css-content-center
+                http://andrewyghub.github.io/2018/05/22/css-content-center
             </guid>
         </item>
         
         <item>
             <title>CSS 布局模型详细介绍</title>
             <link>
-                http://localhost:8899/2018/05/04/css-layout-model
+                http://andrewyghub.github.io/2018/05/04/css-layout-model
             </link>
             <description>
                 &lt;p&gt;HTML中元素有三种布局模型：流动模型、浮动模型、层模型。&lt;/p&gt;
@@ -13838,14 +13838,14 @@ World !
             </description>
             <pubDate>Fri, 04 May 2018 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2018/05/04/css-layout-model
+                http://andrewyghub.github.io/2018/05/04/css-layout-model
             </guid>
         </item>
         
         <item>
             <title>CSS 选择器详细介绍</title>
             <link>
-                http://localhost:8899/2018/05/02/css-selector
+                http://andrewyghub.github.io/2018/05/02/css-selector
             </link>
             <description>
                 &lt;hr /&gt;
@@ -14099,14 +14099,14 @@ font-size: 20px;
             </description>
             <pubDate>Wed, 02 May 2018 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2018/05/02/css-selector
+                http://andrewyghub.github.io/2018/05/02/css-selector
             </guid>
         </item>
         
         <item>
             <title>C 语言之变量存储类型与链接属性</title>
             <link>
-                http://localhost:8899/2018/04/28/c-storage-type
+                http://andrewyghub.github.io/2018/04/28/c-storage-type
             </link>
             <description>
                 &lt;p&gt;C语言中一个重要的东西就是弄清申明变量的类型、作用域、存储类型、链接属性等，例如是整型还是浮点型，存储于普通内存还是堆栈或者寄存器，作用于全局还是局部，能否被其他文件 引用等。&lt;/p&gt;
@@ -14201,14 +14201,14 @@ font-size: 20px;
             </description>
             <pubDate>Sat, 28 Apr 2018 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2018/04/28/c-storage-type
+                http://andrewyghub.github.io/2018/04/28/c-storage-type
             </guid>
         </item>
         
         <item>
             <title>C 语言之随机数函数（rand()）的使用方法</title>
             <link>
-                http://localhost:8899/2018/04/25/c-rand-number
+                http://andrewyghub.github.io/2018/04/25/c-rand-number
             </link>
             <description>
                 &lt;p&gt;在程序设计中，难免会使用到随机值函数，其原理与语法大多类似，接下来以C语言为例介绍其随机值函数 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rand()&lt;/code&gt; 用法。&lt;/p&gt;
@@ -14276,14 +14276,14 @@ font-size: 20px;
             </description>
             <pubDate>Wed, 25 Apr 2018 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2018/04/25/c-rand-number
+                http://andrewyghub.github.io/2018/04/25/c-rand-number
             </guid>
         </item>
         
         <item>
             <title>贪吃蛇 C 语言源码与算法分析</title>
             <link>
-                http://localhost:8899/2018/04/24/c-gluttonous-snake
+                http://andrewyghub.github.io/2018/04/24/c-gluttonous-snake
             </link>
             <description>
                 &lt;p&gt;经典的贪吃蛇游戏算法，无疑是一个较大的挑战，综合性较高，像我这种刚入门C语言的也差不多花了整整一周时间才差不多理解透彻，内部包含了较多的函数，数组，二维数组，循环等思想。
@@ -14674,14 +14674,14 @@ Github项目地址：&lt;a href=&quot;https://github.com/andrewyghub/gluttonousS
             </description>
             <pubDate>Tue, 24 Apr 2018 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2018/04/24/c-gluttonous-snake
+                http://andrewyghub.github.io/2018/04/24/c-gluttonous-snake
             </guid>
         </item>
         
         <item>
             <title>Kali Linux 之软件安装、卸载、更新和修改更新源</title>
             <link>
-                http://localhost:8899/2018/04/21/linux-sources-list
+                http://andrewyghub.github.io/2018/04/21/linux-sources-list
             </link>
             <description>
                 &lt;p&gt;使用Linux系统，与Windows系统一样，也需要及时进行软件与系统的更新。&lt;/p&gt;
@@ -14790,14 +14790,14 @@ deb-src http://http.kali.org/kali kali-rolling main non-free contrib
             </description>
             <pubDate>Sat, 21 Apr 2018 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2018/04/21/linux-sources-list
+                http://andrewyghub.github.io/2018/04/21/linux-sources-list
             </guid>
         </item>
         
         <item>
             <title>Linux 初识之 Kali Linux 系统安装详细教程（虚拟机）</title>
             <link>
-                http://localhost:8899/2018/04/15/kali-linux-install
+                http://andrewyghub.github.io/2018/04/15/kali-linux-install
             </link>
             <description>
                 &lt;h1 id=&quot;目录-&quot;&gt;目录 &lt;span id=&quot;home&quot;&gt;&lt;/span&gt;&lt;/h1&gt;
@@ -15043,14 +15043,14 @@ deb-src http://http.kali.org/kali kali-rolling main non-free contrib
             </description>
             <pubDate>Sun, 15 Apr 2018 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2018/04/15/kali-linux-install
+                http://andrewyghub.github.io/2018/04/15/kali-linux-install
             </guid>
         </item>
         
         <item>
             <title>C 语言自增自减运算辨析</title>
             <link>
-                http://localhost:8899/2018/04/10/c-self-plus
+                http://andrewyghub.github.io/2018/04/10/c-self-plus
             </link>
             <description>
                 &lt;p&gt;c语言中，自增(++)和自减(–)运算是很有c语言“感觉”的一种运算符，但是在实际编写中，尤其对初学者或者很久没接触它的，会对它的原理和运算结果产生混淆，接下来做详细辨析。&lt;/p&gt;
@@ -15096,14 +15096,14 @@ deb-src http://http.kali.org/kali kali-rolling main non-free contrib
             </description>
             <pubDate>Tue, 10 Apr 2018 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2018/04/10/c-self-plus
+                http://andrewyghub.github.io/2018/04/10/c-self-plus
             </guid>
         </item>
         
         <item>
             <title>递归函数之阶乘的实现</title>
             <link>
-                http://localhost:8899/2018/04/06/recursion-factorial
+                http://andrewyghub.github.io/2018/04/06/recursion-factorial
             </link>
             <description>
                 &lt;h1 id=&quot;定义&quot;&gt;定义&lt;/h1&gt;
@@ -15169,14 +15169,14 @@ deb-src http://http.kali.org/kali kali-rolling main non-free contrib
             </description>
             <pubDate>Fri, 06 Apr 2018 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2018/04/06/recursion-factorial
+                http://andrewyghub.github.io/2018/04/06/recursion-factorial
             </guid>
         </item>
         
         <item>
             <title>位运算符与位运算</title>
             <link>
-                http://localhost:8899/2018/04/06/bit-operation
+                http://andrewyghub.github.io/2018/04/06/bit-operation
             </link>
             <description>
                 &lt;h1 id=&quot;目录-&quot;&gt;目录 &lt;span id=&quot;home&quot;&gt;&lt;/span&gt;&lt;/h1&gt;
@@ -15369,14 +15369,14 @@ deb-src http://http.kali.org/kali kali-rolling main non-free contrib
             </description>
             <pubDate>Fri, 06 Apr 2018 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2018/04/06/bit-operation
+                http://andrewyghub.github.io/2018/04/06/bit-operation
             </guid>
         </item>
         
         <item>
             <title>十进制负数的二进制表示法</title>
             <link>
-                http://localhost:8899/2018/04/04/negative-binary
+                http://andrewyghub.github.io/2018/04/04/negative-binary
             </link>
             <description>
                 &lt;p&gt;十进制转正整数转二进制应该都会，用C语言代码简单表示算法：&lt;/p&gt;
@@ -15447,14 +15447,14 @@ deb-src http://http.kali.org/kali kali-rolling main non-free contrib
             </description>
             <pubDate>Wed, 04 Apr 2018 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2018/04/04/negative-binary
+                http://andrewyghub.github.io/2018/04/04/negative-binary
             </guid>
         </item>
         
         <item>
             <title>搭建 Github Pages 个人博客网站</title>
             <link>
-                http://localhost:8899/2018/04/01/github-pages-blog
+                http://andrewyghub.github.io/2018/04/01/github-pages-blog
             </link>
             <description>
                 &lt;h1 id=&quot;目录-&quot;&gt;目录 &lt;span id=&quot;home&quot;&gt;&lt;/span&gt;&lt;/h1&gt;
@@ -15865,14 +15865,14 @@ git merge master
             </description>
             <pubDate>Sun, 01 Apr 2018 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2018/04/01/github-pages-blog
+                http://andrewyghub.github.io/2018/04/01/github-pages-blog
             </guid>
         </item>
         
         <item>
             <title>C 语言统计素数</title>
             <link>
-                http://localhost:8899/2018/03/30/c-prime-number
+                http://andrewyghub.github.io/2018/03/30/c-prime-number
             </link>
             <description>
                 &lt;h2 id=&quot;源码如下&quot;&gt;源码如下：&lt;/h2&gt;
@@ -15958,14 +15958,14 @@ total: 168
             </description>
             <pubDate>Fri, 30 Mar 2018 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2018/03/30/c-prime-number
+                http://andrewyghub.github.io/2018/03/30/c-prime-number
             </guid>
         </item>
         
         <item>
             <title>C 语言打印九九乘法表</title>
             <link>
-                http://localhost:8899/2018/03/30/c-multiply-table
+                http://andrewyghub.github.io/2018/03/30/c-multiply-table
             </link>
             <description>
                 &lt;h2 id=&quot;源码如下&quot;&gt;源码如下：&lt;/h2&gt;
@@ -16025,14 +16025,14 @@ This is the end.
             </description>
             <pubDate>Fri, 30 Mar 2018 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2018/03/30/c-multiply-table
+                http://andrewyghub.github.io/2018/03/30/c-multiply-table
             </guid>
         </item>
         
         <item>
             <title>C 语言统计闰年</title>
             <link>
-                http://localhost:8899/2018/03/30/c-leap-year
+                http://andrewyghub.github.io/2018/03/30/c-leap-year
             </link>
             <description>
                 &lt;h2 id=&quot;源码如下&quot;&gt;源码如下：&lt;/h2&gt;
@@ -16097,14 +16097,14 @@ Total: 490
             </description>
             <pubDate>Fri, 30 Mar 2018 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2018/03/30/c-leap-year
+                http://andrewyghub.github.io/2018/03/30/c-leap-year
             </guid>
         </item>
         
         <item>
             <title>Markdown 完整语法说明</title>
             <link>
-                http://localhost:8899/2018/03/28/markdown-total
+                http://andrewyghub.github.io/2018/03/28/markdown-total
             </link>
             <description>
                 &lt;h1 id=&quot;markdown-完整语法说明-&quot;&gt;Markdown 完整语法说明 &lt;span id=&quot;home&quot;&gt;&lt;/span&gt;&lt;/h1&gt;
@@ -16694,14 +16694,14 @@ _   底线
             </description>
             <pubDate>Wed, 28 Mar 2018 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2018/03/28/markdown-total
+                http://andrewyghub.github.io/2018/03/28/markdown-total
             </guid>
         </item>
         
         <item>
             <title>Markdown 简明教程</title>
             <link>
-                http://localhost:8899/2018/03/27/Markdown-tutorial
+                http://andrewyghub.github.io/2018/03/27/Markdown-tutorial
             </link>
             <description>
                 &lt;h2 id=&quot;markdown-及扩展&quot;&gt;Markdown 及扩展&lt;/h2&gt;
@@ -16940,7 +16940,7 @@ Pipe     | $1
             </description>
             <pubDate>Tue, 27 Mar 2018 00:00:00 +0800</pubDate>
             <guid>
-                http://localhost:8899/2018/03/27/Markdown-tutorial
+                http://andrewyghub.github.io/2018/03/27/Markdown-tutorial
             </guid>
         </item>
         
