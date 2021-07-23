@@ -23,12 +23,12 @@ Person.prototype.getType = function() {
     return this.type;
 }
 
-var knight = new Person('AndrewYG');
+var knight = new Person('Knight');
 console.log(knight);
-// { type: "Human", name: "AndrewYG" }
+// { type: "Human", name: "Knight" }
 
 console.log(knight.getName());
-// "AndrewYG"
+// "Knight"
 
 var cloud = new Person();
 console.log(cloud.getType());
@@ -53,12 +53,12 @@ class Person {
     }
 }
 
-const knight = new Person('AndrewYG');
+const knight = new Person('Knight');
 console.log(knight);
-// { type: "Human", name: "AndrewYG" }
+// { type: "Human", name: "Knight" }
 
 console.log(knight.getName());
-// "AndrewYG"
+// "Knight"
 ```
 
 
@@ -185,7 +185,7 @@ console.log(Singleton._getR().r);
 直接的对象定义（对象字面量）是最简单的单例模式，因为利用变量声明的不可重复特性，保证了对象的唯一性与作用域可访问性；
 ```js
 var obj = {
-    name: 'AndrewYG',
+    name: 'Knight',
     age: 22,
     getName() {
         return this.name;
@@ -722,7 +722,7 @@ console.log(benzV2Attr); // {name: "Benz V2", color: "black"}
 下面是一个使用 Mixin 实现对象继承的示例，这是原始（ES5）的一种写法：
 ```js
 var mixin = {
-    firstName: 'AndrewYG',
+    firstName: 'Knight',
     lastName: 'Huang',
 }
 
@@ -736,14 +736,14 @@ Person.prototype = mixin;
 
 var knight = new Person();
 console.log(knight.firstName, knight.lastName, knight.hobby);
-// Andrew Yang Games
+// AndrewYG Games
 ```
 
 当然更通用和规范的写法（ES5）是：
 ```js
 // 被继承的超类
 function Mixin() {
-    this.firstName = 'AndrewYG';
+    this.firstName = 'Knight';
     this.lastName = 'Huang';
 }
 
@@ -759,14 +759,14 @@ Person.prototype = Object.create(Mixin.prototype);
 
 var knight = new Person();
 console.log(knight);
-// {firstName: "AndrewYG", lastName: "Huang", hobby: "Games"}
+// {firstName: "Knight", lastName: "Huang", hobby: "Games"}
 ```
 
 更直观和方便的新语法（ES6）写法是：
 ```js
 class Mixin {
     constructor() {
-        this.firstName = 'AndrewYG';
+        this.firstName = 'Knight';
         this.lastName = 'Huang';
     }
 }
@@ -781,7 +781,7 @@ class Person extends Mixin {
 
 const knight = new Person();
 console.log(knight);
-// {firstName: "AndrewYG", lastName: "Huang", hobby: "Games"}
+// {firstName: "Knight", lastName: "Huang", hobby: "Games"}
 ```
 
 
