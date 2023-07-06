@@ -1,5 +1,6 @@
 *~
 *.gem
+.idea
 .vscode
 .jekyll-metadata
 Gemfile.lock
