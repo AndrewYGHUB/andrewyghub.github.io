@@ -16,7 +16,7 @@
     <meta name="google-site-verification" content="IJrXvaK-Luj-lCGP7tymcCbkcfMKi82Y8V21qN9ZT0s" />
     <title>
         
-            AndrewYG的博客
+            Redux 主要知识学习总结
         
     </title>
     <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.ico">
@@ -30,29 +30,37 @@
         <link rel="stylesheet" href="/assets/css/page.css">
         
     
-
+        
+        <link rel="stylesheet" href="/assets/css/post.css">
+        
     
         
-        <link rel="stylesheet" href="/assets/css/index.css">
-         
+        <link rel="stylesheet" href="/assets/css/syntax.css">
+        
+    
+        
+        <link rel="stylesheet" href="/assets/css/article-category.css">
+        
+    
+
     
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">	
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v3.9.3" />
-<meta property="og:title" content="AndrewYG的博客" />
+<meta property="og:title" content="Redux 主要知识学习总结" />
 <meta property="og:locale" content="zh_CN" />
-<meta name="description" content="基于 jekyll 的 Github Pages 个人博客网站，技术的学习、总结、分享与提升" />
-<meta property="og:description" content="基于 jekyll 的 Github Pages 个人博客网站，技术的学习、总结、分享与提升" />
-<link rel="canonical" href="http://localhost:4000/page15/" />
-<meta property="og:url" content="http://localhost:4000/page15/" />
+<meta name="description" content="总结Redux 的一些主要知识内容与特性" />
+<meta property="og:description" content="总结Redux 的一些主要知识内容与特性" />
+<link rel="canonical" href="http://localhost:8899/2022/11/29/js-redux-summary" />
+<meta property="og:url" content="http://localhost:8899/2022/11/29/js-redux-summary" />
 <meta property="og:site_name" content="AndrewYG的博客" />
-<meta property="og:type" content="website" />
-<link rel="prev" href="http://localhost:4000/page14" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-11-29T00:00:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="AndrewYG的博客" />
+<meta property="twitter:title" content="Redux 主要知识学习总结" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"基于 jekyll 的 Github Pages 个人博客网站，技术的学习、总结、分享与提升","headline":"AndrewYG的博客","url":"http://localhost:4000/page15/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-11-29T00:00:00+08:00","datePublished":"2022-11-29T00:00:00+08:00","description":"总结Redux 的一些主要知识内容与特性","headline":"Redux 主要知识学习总结","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:8899/2022/11/29/js-redux-summary"},"url":"http://localhost:8899/2022/11/29/js-redux-summary"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -107,189 +115,110 @@
     </header>
     <main>
 
+
+
 <div class="container">
+    <canvas class="background"></canvas>
+    <script src="http://localhost:8899/assets/js/min/particles.min.js"></script>
+   
     <div id="page-info">
-        <h1 class="page-title white-text"></h1>
+        <h1 class="page-title white-text">Redux 主要知识学习总结</h1>
     </div>
     <div id="page-content" class="row">
-        <div class="row">
-    
-    <div class="col s12">
-        <div class="card hoverable" style="color:#fff">
-            <div class="card-content" style="background-color:#699">
-                <span id="post-title" class="card-title">C 语言统计素数</span>
-                <p id="post-date">
-                    <i class="material-icons">date_range</i>
-                    30/03/2018 00:00
-                </p>
-                <p id="post-content">源码及运行结果</p>
+        <div id="post-info">
+    <ul class="collapsible hoverable" data-collapsible="accordion">
+        <li>
+            <div class="collapsible-header grey lighten-4">
+                <span>
+                    <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
+                    29/11/2022 00:00<br />
+                    <div id="busuanzi_container_site_pv">点击量：<span style="display: inline;" id="busuanzi_value_page_pv"></span>次</div>
+                    <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30"
+                        data-tooltip="Show extra info">info</i>
+                </span>
             </div>
-            <div class="card-action" style="background-color:#688">
-                <a href="/2018/03/30/c-prime-number">
-                    开始阅读
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col s12">
-        <div class="card hoverable" style="color:#fff">
-            <div class="card-content" style="background-color:#699">
-                <span id="post-title" class="card-title">C 语言打印九九乘法表</span>
-                <p id="post-date">
-                    <i class="material-icons">date_range</i>
-                    30/03/2018 00:00
-                </p>
-                <p id="post-content">源码及运行结果</p>
-            </div>
-            <div class="card-action" style="background-color:#688">
-                <a href="/2018/03/30/c-multiply-table">
-                    开始阅读
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col s12">
-        <div class="card hoverable" style="color:#fff">
-            <div class="card-content" style="background-color:#699">
-                <span id="post-title" class="card-title">C 语言统计闰年</span>
-                <p id="post-date">
-                    <i class="material-icons">date_range</i>
-                    30/03/2018 00:00
-                </p>
-                <p id="post-content">源码及运行结果</p>
-            </div>
-            <div class="card-action" style="background-color:#688">
-                <a href="/2018/03/30/c-leap-year">
-                    开始阅读
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col s12">
-        <div class="card hoverable" style="color:#fff">
-            <div class="card-content" style="background-color:#699">
-                <span id="post-title" class="card-title">Markdown 完整语法说明</span>
-                <p id="post-date">
-                    <i class="material-icons">date_range</i>
-                    28/03/2018 00:00
-                </p>
-                <p id="post-content">完整版markdown语法</p>
-            </div>
-            <div class="card-action" style="background-color:#688">
-                <a href="/2018/03/28/markdown-total">
-                    开始阅读
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col s12">
-        <div class="card hoverable" style="color:#fff">
-            <div class="card-content" style="background-color:#699">
-                <span id="post-title" class="card-title">Markdown 简明教程</span>
-                <p id="post-date">
-                    <i class="material-icons">date_range</i>
-                    27/03/2018 00:00
-                </p>
-                <p id="post-content">简要 markdown 语法</p>
-            </div>
-            <div class="card-action" style="background-color:#688">
-                <a href="/2018/03/27/Markdown-tutorial">
-                    开始阅读
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col s12 center-align">
-        <ul class="pagination">
-            <li class="waves-effect">
-                
-                
-                    <a href="/page14">
-                        
-                        
-                            <i class="material-icons">chevron_left</i>
-                        </a>
+            <div class="collapsible-body">
+                <span>
+                    <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Categories">sort</i>
+                    
+                    
+                    
+                    <a href="/categories#javascript_cap"
+                        target="_blank">
+                        <div class="chip">JavaScript</div>
                     </a>
-                </a>
-            </li>
-            
-            <li class="waves-effect">
-                <a href="/">1</a>
-                
-            </li>
-            
-            
-            <li class="waves-effect"><a href="/page2">2</a></li>
-            
-            
-            
-            <li class="waves-effect"><a href="/page3">3</a></li>
-            
-            
-            
-            <li class="waves-effect"><a href="/page4">4</a></li>
-            
-            
-            
-            <li class="waves-effect"><a href="/page5">5</a></li>
-            
-            
-            
-            <li class="waves-effect"><a href="/page6">6</a></li>
-            
-            
-            
-            <li class="waves-effect"><a href="/page7">7</a></li>
-            
-            
-            
-            <li class="waves-effect"><a href="/page8">8</a></li>
-            
-            
-            
-            <li class="waves-effect"><a href="/page9">9</a></li>
-            
-            
-            
-            <li class="waves-effect"><a href="/page10">10</a></li>
-            
-            
-            
-            <li class="waves-effect"><a href="/page11">11</a></li>
-            
-            
-            
-            <li class="waves-effect"><a href="/page12">12</a></li>
-            
-            
-            
-            <li class="waves-effect"><a href="/page13">13</a></li>
-            
-            
-            
-            <li class="waves-effect"><a href="/page14">14</a></li>
-            
-            
-            
-            <li class="active teal"><a href="#!">15</a></li>
-            
-            
-            <li class="disabled">
-                
-                    <a href="#!">
-                        
-                        <i class="material-icons">chevron_right</i>
+                    
+                </span>
+                <span>
+                    <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Tags">label</i>
+                    
+                    
+                    
+                    <a href="/tags#redux" target="_blank">
+                        <div class="chip">redux</div>
                     </a>
-                </a>
-            </li>
-        </ul>
+                    
+                    
+                    
+                    <a href="/tags#state" target="_blank">
+                        <div class="chip">state</div>
+                    </a>
+                    
+                    
+                    
+                    <a href="/tags#store" target="_blank">
+                        <div class="chip">store</div>
+                    </a>
+                    
+                    
+                    
+                    <a href="/tags#状态_cap" target="_blank">
+                        <div class="chip">状态</div>
+                    </a>
+                    
+                </span>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="divider"></div>
+<div id="post-content" class="row">
+    <div class="col s12">
+        <h2 id="概念">概念</h2>
+
     </div>
 </div>
+<hr>
+
+<!-- valine 评论插件 -->
+<h3>评论：</h3>
+<div class="comments"></div>
+<hr>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '.comments',
+        appId: '',
+        appKey: '',
+        avatar: 'robohash',
+        placeholder: '留下你的评论吧（支持Markdown）~',
+        // visitor: true,
+    })
+</script>
+
+<!-- 微信公众号 -->
+<div class="program-knight">
+    <p>技术文章推送</p>
+    <p>手机、电脑实用软件分享</p>
+    <img src="/assets/img/knight.png" alt="微信搜索公众号: AndrewYG算法世界" title="微信搜索公众号: AndrewYG算法世界">
+    <div>
+        <img src="/assets/img/wechat.png" alt="wechat">
+        <b>微信公众号：AndrewYG算法世界</b>
+    </div>
+</div>
+<!--百度资源自动提交-->
+
+
     </div>
 </div>
 
@@ -366,6 +295,10 @@
     
 
     
+    <script src="/assets/js/min/post.min.js"></script>
+    
+
+    
     <script src="/assets/js/min/particles.min.js"></script>
     
 
@@ -375,6 +308,10 @@
 
     
     <script src="/assets/js/min/search.min.js"></script>
+    
+
+    
+    <script src="/assets/js/min/gen-category.min.js"></script>
     
 
 
