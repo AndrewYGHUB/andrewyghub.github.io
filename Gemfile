@@ -24,6 +24,13 @@ gem "github-pages", group: :jekyll_plugins
 #   gem "jekyll-feed", "~> 0.6"
 # end
 
+
+#
+group :jekyll_plugins do
+#   gem "jekyll-feed", "~> 0.6"
+    gem "jekyll-admin"
+end
+
 # Windows 不支持空文件，需要使用下面的包：
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
@@ -33,4 +40,12 @@ source 'https://rubygems.org'
 
 # Windows 平台中如果频繁改变文件内容，使用下面的包可以提升性能：
 gem 'wdm', '>=0.1.0' if Gem.win_platform?
-gem "webrick", "~> 1.7"
+# gem "webrick", "~> 1.7"
+
+
+
+
+
+
+# Fix ruby 3.0 webrick bug
+gem "webrick"

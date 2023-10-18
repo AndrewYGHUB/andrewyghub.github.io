@@ -13,3 +13,4 @@ insert_final_newline = false
 
 [*.sass]
 indent_size = 2
+
