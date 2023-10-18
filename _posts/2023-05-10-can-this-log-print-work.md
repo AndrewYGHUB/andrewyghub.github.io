@@ -4,8 +4,6 @@ title: AI 自动补全的这句日志能正常打印吗？
 categories: [java]
 
 
-excerpt: 《哲学家们都干了些什么》读书笔记
-tags: 读书笔记, 哲学家们都干了些什么
 
 excerpt: 一句 GitHub Copilot 自动生成的代码让我产生了疑惑，于是探索了一番。
 tags: java, GitHub Copilot

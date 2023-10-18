@@ -2,10 +2,10 @@
 layout: post
 title: 记两个有关线程池的小问题
 categories: [Java]
-description: 两个有关线程池的小问题记录。
+excerpt: 两个有关线程池的小问题记录。
 tags: Java, 线程池
 excerpt: 两个有关线程池的小问题记录
-keywords: Java, 线程池
+tags: Java, 线程池
 mermaid: false
 sequence: false
 flow: false
