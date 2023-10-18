@@ -72,14 +72,17 @@ result();
 
 ``` js
 function fun1() {
-	var a = 1;
-	function fun2() {
-		a++;
-	}
-	alert(a);
-	return fun2;
+    var a = 1;
+    function fun2() {
+        a++;
+        console.log(a);
+    }
+
+    console.log(a);
+    return fun2;
 }
-fun1();                   //函数正常执行，输出 1
-var change = fun1();
-change();                 //在外部执行这个函数后，函数内部变量 a 的值就被改变了，输出 2
+
+var change = fun1();   // 这里 fun1 函数被正常执行，输出 1
+change();              // 在外部执行这个函数后，函数内部变量 a 的值就被改变了，输出 2
+change();              // 输出 3，以此类推
 ```

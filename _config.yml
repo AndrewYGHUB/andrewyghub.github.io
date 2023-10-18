@@ -17,16 +17,16 @@ description: > # 网站的描述，可能会出现在搜索引擎展示结果中
 url: "https://andrewyghub.github.io" # 网站地址
 github_repo: "https://github.com/andrewyghub/andrewyghub.github.io"
 github_profile: "https://github.com/andrewyghub" # GitHub 个人主页
-user: "石洋洋" # 用于侧栏展示的名字
-user_email: "andrewygmarket@gmail.com" # 侧栏展示的联系方式
+user: "AndrewYG" # 用于侧栏展示的名字
+user_email: "1346536346@qq.com" # 侧栏展示的联系方式
 paginate: 5 # 主页展示的博客文章数量
-nick_name: "石洋洋" # 昵称
+nick_name: "洋哥" # 昵称
 english_name: "AndrewYG"
 # valine 评论插件配置
+valine:
+  leancloud_appid: "xVFd685W2r1En9dX9UrtUZNl-MdYXbMMI"
+  leancloud_appkey: "4RtYJ4OeQvZsoIgwE8hUzEhi"
 
-#valine:
-#  leancloud_appid: "4XY3DoTJmibNe3rHeAKOxqzl-gzGzoHsz"
-#  leancloud_appkey: "vjothQHALvgTQF9GrSgj577a"
 # jekyll 相关配置
 markdown: kramdown
 plugins:

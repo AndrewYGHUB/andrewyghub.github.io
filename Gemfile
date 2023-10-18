@@ -20,12 +20,6 @@ gem "github-pages", group: :jekyll_plugins
 
 # 如果需要使用插件的话，请改变下面的配置：
 #
-# group :jekyll_plugins do
-#   gem "jekyll-feed", "~> 0.6"
-# end
-
-
-#
 group :jekyll_plugins do
 #   gem "jekyll-feed", "~> 0.6"
     gem "jekyll-admin"
@@ -40,12 +34,6 @@ source 'https://rubygems.org'
 
 # Windows 平台中如果频繁改变文件内容，使用下面的包可以提升性能：
 gem 'wdm', '>=0.1.0' if Gem.win_platform?
-# gem "webrick", "~> 1.7"
-
-
-
-
-
 
 # Fix ruby 3.0 webrick bug
 gem "webrick"

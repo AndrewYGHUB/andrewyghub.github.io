@@ -8,4 +8,6 @@ js: [
 ]
 ---
 
-{% include projects.html %}
+{% if jekyll.environment == 'production' %}
+    {% include projects.html %}
+{% endif %}

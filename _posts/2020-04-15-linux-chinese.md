@@ -1,7 +1,7 @@
 ---
 title: Kali Linux系统设置中文语言环境
 layout: post
-categories: Linux
+categories: Exploit
 tags: linux 汉化 中文 乱码
 excerpt: 介绍Kali Linux系统如何设置中文以及修复乱码的问题
 ---

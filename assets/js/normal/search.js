@@ -22,6 +22,7 @@ var searchValue = "",
     itemLength = 0;
 var tmpDiv = document.createElement("div"),
     tmpAnchor = document.createElement("a");
+var isSearchFocused = false;
 
 // ajax 的兼容写法
 var xhr = new XMLHttpRequest() || new ActiveXObject("Microsoft.XMLHTTP");
@@ -30,6 +31,7 @@ var xhr = new XMLHttpRequest() || new ActiveXObject("Microsoft.XMLHTTP");
 xhr.onreadystatechange = function () {
     if (xhr.readyState == 4 && xhr.status == 200) {
         var xml = xhr.responseXML;
+        if (!xml) return;
 
         arrItems = xml.getElementsByTagName("item");
         itemLength = arrItems.length;
@@ -66,6 +68,12 @@ elSearchClear.onclick = searchClear;
 elSearchInput.oninput = function () {
     setTimeout(searchConfirm, 0);
 };
+elSearchInput.onfocus = function() {
+    isSearchFocused = true;
+}
+elSearchInput.onblur = function() {
+    isSearchFocused = false;
+}
 
 /** 搜索确认 */
 function searchConfirm() {
@@ -203,3 +211,13 @@ function searchMatching(arrTitles, arrContents, input) {
 }
 
 window.addEventListener("load", searchClear);
+
+// 搜索快捷键
+document.addEventListener('keydown', function(evt) {
+    if (isSearchFocused) return;
+    if (evt.key === '/') {
+        evt.preventDefault();
+        elSearchInput.focus();
+        window.isSearchFocused = true;
+    }
+})
