@@ -26,7 +26,7 @@ english_name: "AndrewYG"
 valine:
   leancloud_appid: "xVFd685W2r1En9dX9UrtUZNl-MdYXbMMI"
   leancloud_appkey: "4RtYJ4OeQvZsoIgwE8hUzEhi"
-  enable: true
+  
 
 # jekyll 相关配置
 markdown: kramdown
