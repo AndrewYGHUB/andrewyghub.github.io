@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 史上最全 Javascript 面试题及答案
-categories: [面试，大厂]
+categories: [面试]
 excerpt: 史上最全 Javascript 面试题及答案
 tags: java, 求职之路
 ---
@@ -228,6 +228,6 @@ var fn1 = function javastack(){};
 
 ---
 
-
+。
 
 

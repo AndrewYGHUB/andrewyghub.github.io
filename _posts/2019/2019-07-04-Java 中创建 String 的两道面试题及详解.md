@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Java 中创建 String 的两道面试题及详解
-categories: [面试，大厂]
+categories: [面试]
 excerpt: Java 中创建 String 的两道面试题及详解
 tags: java, 求职之路
 ---
