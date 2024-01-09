@@ -55,7 +55,7 @@ class Counter extends React.Component {
   render() {
     const { count } = this.state;
     return (
-      <div style={{ float: "right", textAlign: 'right' }}>
+      <div style="float: right; text-align: right;">
         <div>count: {count}</div>
         <CountText count={count > 2 ? count : 0} />
         <ConstText count={count > 2 ? count : 0} />
@@ -111,7 +111,7 @@ class Counter extends React.Component {
   render() {
     const { count } = this.state;
     return (
-      <div style={{ float: "right", textAlign: 'right' }}>
+      <div style="float: right; text-align: right;">
         <div>count: {count}</div>
         <ConstText count={count > 2 ? count : 0} />
         <button onClick={() => this.setState({ count: count + 1 })}>Add</button>
@@ -181,7 +181,7 @@ class Counter extends React.Component {
     console.log('Counter rendered', count, JSON.stringify(this.obj));
 
     return (
-      <div style={{ float: "right", textAlign: 'right' }}>
+      <div style="float: right; text-align: right;">
         <div>count: {count}</div>
         <ConstText count={this.obj} />
         <button onClick={() => this.handleAdd()}>Add</button>
