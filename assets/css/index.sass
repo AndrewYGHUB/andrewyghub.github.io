@@ -5,15 +5,31 @@ main
     .row
       margin-top: 0px
 
+  
   ul
-    &:not(.browser-default)
-      &.pagination
-        padding-left: 0
+  &:not(.browser-default)
+    &.pagination
+      padding-left: 0
 
-        li
-          a
-            &:hover
-              text-decoration: none
+      li
+        a
+          &:hover
+            text-decoration: none
+
+          &.active
+            color: teal
+
+          .disabled
+            color: #ccc
+            pointer-events: none
+
+          &.ellipsis
+            display: none
+
+          &.first,
+          .last
+            display: block
+
 
 #post-title
   margin-bottom: 2px
