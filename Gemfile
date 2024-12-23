@@ -22,7 +22,18 @@ gem "github-pages", group: :jekyll_plugins
 #
 group :jekyll_plugins do
 #   gem "jekyll-feed", "~> 0.6"
-    gem "jekyll-admin"
+    # gem 'jekyll-admin'
+    gem 'webrick'
+    gem 'rack'
+    gem 'nokogiri', '< 1.16.2'
+    # 指定兼容的 jekyll-admin 版本
+    gem 'jekyll-admin', '~> 0.11.1'
+
+    # 指定 sinatra-contrib 和 rack-protection 的兼容版本
+    gem 'sinatra-contrib', '~> 2.0.0'
+    gem 'rack-protection', '~> 2.0.0'
+
+
 end
 
 # Windows 不支持空文件，需要使用下面的包：
@@ -35,5 +46,4 @@ source 'https://rubygems.org'
 # Windows 平台中如果频繁改变文件内容，使用下面的包可以提升性能：
 gem 'wdm', '>=0.1.0' if Gem.win_platform?
 
-# Fix ruby 3.0 webrick bug
-gem "webrick"
+
