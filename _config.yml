@@ -13,7 +13,8 @@
 # 将会展示为设定的值，也可以自行添加其他自定义全局变量。
 title: AndrewYG的博客 # 网站的标题
 description: > # 网站的描述，可能会出现在搜索引擎展示结果中
-  基于 jekyll 的 Github Pages 个人博客网站，技术的学习、总结、分享与提升
+#  基于 jekyll 的 Github Pages 个人博客网站，技术的学习、总结、分享与提升
+   个人博客网站，技术的学习、总结、分享与提升
 url: "https://andrewyghub.github.io" # 网站地址
 github_repo: "https://github.com/andrewyghub/andrewyghub.github.io"
 github_profile: "https://github.com/andrewyghub" # GitHub 个人主页
