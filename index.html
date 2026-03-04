@@ -7,12 +7,12 @@ css: ["index.css"]
     <div class="col s12">
         <div class="card hoverable" style="color:#fff">
             <div class="card-content" style="background-color:#699">
-                <span id="post-title" class="card-title">{{post.title}}</span>
-                <p id="post-date">
+                <span class="card-title post-title">{{post.title}}</span>
+                <p class="post-date">
                     <i class="material-icons">date_range</i>
                     {{post.date | date: "%d/%m/%Y %H:%M"}}
                 </p>
-                <p id="post-content">{{post.excerpt | remove: '<p>' | remove: '</p>'}}</p>
+                <p class="post-content">{{post.excerpt | remove: '<p>' | remove: '</p>'}}</p>
             </div>
             <div class="card-action" style="background-color:#688">
                 <a href="{{post.url | prepend: site.baseurl}}">
