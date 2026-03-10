@@ -64,6 +64,32 @@
     </ul>
 </footer>
 
+<!-- 水印生成脚本 -->
+<script>
+(function() {
+    function createWatermark(text1, text2) {
+        var canvas = document.createElement('canvas');
+        canvas.width = 220;
+        canvas.height = 160;
+        var ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.rotate(-25 * Math.PI / 180);
+        ctx.font = '14px Arial, sans-serif';
+        ctx.fillStyle = 'rgba(100, 100, 100, 0.12)';
+        ctx.textAlign = 'center';
+        ctx.fillText(text1, 80, 80);
+        ctx.fillText(text2, 80, 100);
+        return canvas.toDataURL('image/png');
+    }
+    var wm = document.getElementById('watermark');
+    if (wm) {
+        // var url = createWatermark('AndrewYG的博客', 'andrewyghub.github.io');
+        var url = createWatermark('AndrewYG的博客', '大道至简');
+        wm.style.backgroundImage = 'url(' + url + ')';
+    }
+})();
+</script>
+
 {% for js in layout.js %}
     {% if js contains "//" %}
         {% if jekyll.environment == 'production' %}
