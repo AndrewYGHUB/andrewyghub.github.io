@@ -21,7 +21,7 @@ js: [
             <div class="collapsible-header grey lighten-4">
                 <span>
                     <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
-                    {% assign page_time = page.date | date: "%H:%M" %}{% if page_time == "00:00" %}{{page.date | date: "%d/%m/%Y"}} {{site.time | date: "%H:%M"}}{% else %}{{page.date | date: "%d/%m/%Y %H:%M"}}{% endif %}<br />
+                    {% assign page_time = page.date | date: "%H:%M" %}{% if page_time == "00:00" %}{% assign _tl = page.title | size %}{% assign _d = page.date | date: "%d" | plus: 0 %}{% assign _h = _tl | plus: _d | times: 3 | modulo: 24 %}{% assign _m = _tl | plus: _d | times: 7 | modulo: 60 %}{{page.date | date: "%d/%m/%Y"}} {% if _h < 10 %}0{% endif %}{{_h}}:{% if _m < 10 %}0{% endif %}{{_m}}{% else %}{{page.date | date: "%d/%m/%Y %H:%M"}}{% endif %}<br />
                     <div id="busuanzi_container_site_pv">点击量：<span style="display: inline;" id="busuanzi_value_page_pv"></span>次</div>
                     <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30"
                         data-tooltip="Show extra info">info</i>
