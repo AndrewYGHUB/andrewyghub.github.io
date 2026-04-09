@@ -6,6 +6,27 @@
     <a class="cat-chip" href="#{{cat[0] | slugify}}{% if test == testup %}_cap{% endif %}"><div class="chip z-depth-1">{{cat[0]}}</div></a>
     {% endfor %}
   </div>
+  <script>
+  (function(){
+    var list = document.querySelector('.cat-list');
+    if (!list) return;
+    var chips = list.querySelectorAll('.cat-chip');
+    if (chips.length <= 20) return;
+    for (var i = 20; i < chips.length; i++) { chips[i].style.display = 'none'; }
+    var btn = document.createElement('a');
+    btn.href = 'javascript:void(0)';
+    btn.className = 'btn-flat btn-small';
+    btn.style.display = 'block';
+    btn.style.marginTop = '8px';
+    btn.textContent = '展开更多(' + (chips.length - 20) + ')';
+    btn.onclick = function(){
+      var hidden = chips[20].style.display === 'none';
+      for (var i = 20; i < chips.length; i++) { chips[i].style.display = hidden ? 'inline-block' : 'none'; }
+      btn.textContent = hidden ? '收起' : '展开更多(' + (chips.length - 20) + ')';
+    };
+    list.parentNode.insertBefore(btn, list.nextSibling);
+  })();
+  </script>
   <div class="divider"></div>
   <div class="cat-index">
     {% for cat in site.categories %}

@@ -37,21 +37,40 @@ css: ["index.css"]
                             <i class="material-icons">chevron_left</i>
                         </a>
             </li>
-            {% if paginator.page == 1 %}
-            <li class="active teal">
-                <a href="#!">1</a>
-                {% else %}
-            <li class="waves-effect">
-                <a href="/">1</a>
-                {% endif %}
+            {% assign _p = paginator.page %}
+            {% assign _tp = paginator.total_pages %}
+            {% assign _start = _p | minus: 2 %}
+            {% assign _end = _p | plus: 2 %}
+            {% if _start < 1 %}{% assign _start = 1 %}{% endif %}
+            {% if _end > _tp %}{% assign _end = _tp %}{% endif %}
+            {% if _start > 1 %}
+            <li class="{% if _p == 1 %}active teal{% else %}waves-effect{% endif %}">
+                <a href="{% if _p == 1 %}#!{% else %}/{% endif %}">1</a>
             </li>
-            {% for count in (2..paginator.total_pages) %}
-            {% if count == paginator.page %}
+            {% if _start > 2 %}
+            <li class="disabled"><a href="#!">...</a></li>
+            {% endif %}
+            {% endif %}
+            {% for count in (_start.._end) %}
+            {% if count == 1 and _start <= 1 %}
+            <li class="{% if _p == 1 %}active teal{% else %}waves-effect{% endif %}">
+                <a href="{% if _p == 1 %}#!{% else %}/{% endif %}">1</a>
+            </li>
+            {% elsif count == _p %}
             <li class="active teal"><a href="#!">{{count}}</a></li>
             {% else %}
-            <li class="waves-effect"><a href="/page{{count}}">{{count}}</a></li>
+            <li class="waves-effect"><a href="{% if count == 1 %}/{% else %}/page{{count}}{% endif %}">{{count}}</a></li>
             {% endif %}
             {% endfor %}
+            {% if _end < _tp %}
+            {% assign _tp_minus1 = _tp | minus: 1 %}
+            {% if _end < _tp_minus1 %}
+            <li class="disabled"><a href="#!">...</a></li>
+            {% endif %}
+            <li class="{% if _p == _tp %}active teal{% else %}waves-effect{% endif %}">
+                <a href="/page{{_tp}}">{{_tp}}</a>
+            </li>
+            {% endif %}
             <li class="{% unless paginator.next_page %}disabled{% else %}waves-effect{% endunless %}">
                 {% if paginator.next_page %}
                 <a href="/page{{paginator.next_page}}">

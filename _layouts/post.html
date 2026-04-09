@@ -41,6 +41,7 @@ js: [
                 </span>
                 <span>
                     <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Tags">label</i>
+                    <span class="tag-list">
                     {% for tag in page.tags %}
                     {% capture test %}{{tag | slice: 0}}{% endcapture %}
                     {% capture testup %}{{tag | slice: 0 | upcase}}{% endcapture %}
@@ -48,6 +49,26 @@ js: [
                         <div class="chip">{{tag}}</div>
                     </a>
                     {% endfor %}
+                    </span>
+                    <script>
+                    (function(){
+                        var list = document.querySelector('.tag-list');
+                        if (!list) return;
+                        var tags = list.querySelectorAll('a');
+                        if (tags.length <= 50) return;
+                        for (var i = 50; i < tags.length; i++) { tags[i].style.display = 'none'; }
+                        var btn = document.createElement('a');
+                        btn.href = 'javascript:void(0)';
+                        btn.className = 'btn-flat btn-small';
+                        btn.textContent = '展开更多(' + (tags.length - 50) + ')';
+                        btn.onclick = function(){
+                            var hidden = tags[50].style.display === 'none';
+                            for (var i = 50; i < tags.length; i++) { tags[i].style.display = hidden ? 'inline-block' : 'none'; }
+                            btn.textContent = hidden ? '收起' : '展开更多(' + (tags.length - 50) + ')';
+                        };
+                        list.parentNode.appendChild(btn);
+                    })();
+                    </script>
                 </span>
             </div>
         </li>

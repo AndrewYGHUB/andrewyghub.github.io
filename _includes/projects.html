@@ -39,4 +39,25 @@
     </div>
 </div>
 {% endfor %}
+<script>
+(function(){
+    var cards = document.querySelectorAll('.col.s12.m6.l4');
+    if (cards.length <= 20) return;
+    for (var i = 20; i < cards.length; i++) { cards[i].style.display = 'none'; cards[i].classList.add('project-collapsed'); }
+    var btn = document.createElement('a');
+    btn.href = 'javascript:void(0)';
+    btn.className = 'btn-flat btn-small';
+    btn.style.display = 'block';
+    btn.style.textAlign = 'center';
+    btn.style.margin = '16px auto';
+    btn.textContent = '展开更多(' + (cards.length - 20) + ')';
+    btn.onclick = function(){
+        var items = document.querySelectorAll('.project-collapsed');
+        var hidden = items[0].style.display === 'none';
+        items.forEach(function(el){ el.style.display = hidden ? '' : 'none'; });
+        btn.textContent = hidden ? '收起' : '展开更多(' + (cards.length - 20) + ')';
+    };
+    cards[cards.length - 1].parentNode.appendChild(btn);
+})();
+</script>
 {% endif %}
