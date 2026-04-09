@@ -24,6 +24,10 @@ var tmpDiv = document.createElement("div"),
     tmpAnchor = document.createElement("a");
 var isSearchFocused = false;
 
+// 防抖定时器
+var debounceTimer = null;
+var DEBOUNCE_DELAY = 250;
+
 // ajax 的兼容写法
 var xhr = new XMLHttpRequest() || new ActiveXObject("Microsoft.XMLHTTP");
 
@@ -51,7 +55,7 @@ xhr.onreadystatechange = function () {
         }
 
         // 内容加载完毕后显示搜索框
-        elSearchBox.style.display = "block";
+        elSearchBox.style.display = "flex";
     }
 };
 xhr.open("get", "/feed.xml", true);
@@ -61,12 +65,10 @@ xhr.send();
 elSearchBtn.onclick = searchConfirm;
 elSearchClear.onclick = searchClear;
 
-// 输入框内容变化后就开始匹配，可以不用点按钮
-// 经测试，onkeydown, onchange 等方法效果不太理想，
-// 存在输入延迟等问题，最后发现触发 input 事件最理想，
-// 并且可以处理中文输入法拼写的变化
+// 输入框内容变化后防抖执行搜索
 elSearchInput.oninput = function () {
-    setTimeout(searchConfirm, 0);
+    if (debounceTimer) clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(searchConfirm, DEBOUNCE_DELAY);
 };
 elSearchInput.onfocus = function() {
     isSearchFocused = true;
@@ -84,6 +86,8 @@ function searchConfirm() {
         searchInit();
         var itemDiv = tmpDiv.cloneNode(true);
         itemDiv.innerText = "请输入有效内容...";
+        itemDiv.style.padding = "10px 16px";
+        itemDiv.style.color = "#999";
         elSearchResults.appendChild(itemDiv);
     } else {
         // 合法输入值的情况
@@ -98,8 +102,12 @@ function searchConfirm() {
 function searchClear() {
     elSearchInput.value = "";
     elSearchClear.style.display = "none";
-    elSearchResults.style.display = "none";
-    elSearchResults.classList.remove("result-item");
+    elSearchResults.classList.remove("show");
+    // 等动画结束后再隐藏
+    setTimeout(function() {
+        elSearchResults.style.display = "none";
+        elSearchResults.classList.remove("result-item");
+    }, 200);
 }
 
 /** 每次搜索完成后的初始化 */
@@ -110,6 +118,10 @@ function searchInit() {
     elSearchClear.style.display = "block";
     elSearchResults.style.display = "block";
     elSearchResults.classList.add("result-item");
+    // 触发淡入动画（需要下一帧才能触发 transition）
+    requestAnimationFrame(function() {
+        elSearchResults.classList.add("show");
+    });
 }
 
 /**
@@ -130,6 +142,7 @@ function searchMatching(arrTitles, arrContents, input) {
         errorInputDiv.innerHTML =
             '正则表达式语法错误，特殊符号前考虑加上转义符："&Backslash;"';
         errorInputDiv.className = "pink-text result-item";
+        errorInputDiv.style.padding = "10px 16px";
         elSearchResults.appendChild(errorInputDiv);
         return;
     }
@@ -170,20 +183,25 @@ function searchMatching(arrTitles, arrContents, input) {
         }
     }
 
+    // 使用 DocumentFragment 批量插入 DOM，减少重排
+    var fragment = document.createDocumentFragment();
+
     // 输出总共匹配到的数目
     var totalDiv = tmpDiv.cloneNode(true);
 
     totalDiv.className = "result-title";
     totalDiv.innerHTML = "总匹配：<b>" + indexItem.length + "</b> 项";
-    elSearchResults.appendChild(totalDiv);
+    fragment.appendChild(totalDiv);
 
     // 未匹配到内容的情况
     if (indexItem.length == 0) {
         var noneItemDiv = tmpDiv.cloneNode(true);
 
         noneItemDiv.innerText = "未匹配到内容...";
-        noneItemDiv.className = "teal-text text-darken-3 result-item";
-        elSearchResults.appendChild(noneItemDiv);
+        noneItemDiv.className = "result-item";
+        noneItemDiv.style.padding = "10px 16px";
+        noneItemDiv.style.color = "#999";
+        fragment.appendChild(noneItemDiv);
     }
 
     // 将所有匹配内容进行组合
@@ -193,10 +211,9 @@ function searchMatching(arrTitles, arrContents, input) {
         var itemDetailDiv = tmpDiv.cloneNode(true);
         var itemDetailDivAnchor = tmpAnchor.cloneNode(true);
 
-        itemDiv.className = "card hoverable result-item";
-        itemTitleDiv.className = "card-content result-item-title";
-        itemDetailDiv.className = "card-action result-item-detail";
-        itemDetailDivAnchor.className = "blue-text";
+        itemDiv.className = "result-item";
+        itemTitleDiv.className = "result-item-title";
+        itemDetailDiv.className = "result-item-detail";
 
         itemTitleDiv.innerText = arrTitles[indexItem[i]];
         itemDetailDivAnchor.innerHTML = arrResults[i];
@@ -206,8 +223,11 @@ function searchMatching(arrTitles, arrContents, input) {
         itemDetailDiv.appendChild(itemDetailDivAnchor);
         itemDiv.appendChild(itemDetailDiv);
 
-        elSearchResults.appendChild(itemDiv);
+        fragment.appendChild(itemDiv);
     }
+
+    // 一次性插入所有结果
+    elSearchResults.appendChild(fragment);
 }
 
 window.addEventListener("load", searchClear);
