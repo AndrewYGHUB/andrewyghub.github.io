@@ -10,7 +10,7 @@ css: ["index.css"]
                 <span class="card-title post-title">{{post.title}}</span>
                 <p class="post-date">
                     <i class="material-icons">date_range</i>
-                    {{post.date | date: "%d/%m/%Y %H:%M"}}
+                    {% assign post_time = post.date | date: "%H:%M" %}{% if post_time == "00:00" %}{{site.time | date: "%d/%m/%Y %H:%M"}}{% else %}{{post.date | date: "%d/%m/%Y %H:%M"}}{% endif %}
                 </p>
                 <p class="post-content">{{post.excerpt | remove: '<p>' | remove: '</p>'}}</p>
             </div>
