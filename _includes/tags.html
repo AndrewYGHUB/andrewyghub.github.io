@@ -45,4 +45,26 @@
     </ul>
     {% endfor %}
   </div>
+  <script>
+  (function(){
+    var sections = document.querySelectorAll('.tag-index .tag-post');
+    sections.forEach(function(ul){
+      var items = ul.querySelectorAll('a.post-title');
+      if (items.length <= 5) return;
+      for (var i = 5; i < items.length; i++) { items[i].style.display = 'none'; items[i].classList.add('tag-post-collapsed'); }
+      var btn = document.createElement('a');
+      btn.href = 'javascript:void(0)';
+      btn.className = 'btn-flat btn-small';
+      btn.style.display = 'block';
+      btn.style.marginTop = '4px';
+      btn.textContent = '展开更多(' + (items.length - 5) + ')';
+      btn.onclick = function(){
+        var hidden = items[5].style.display === 'none';
+        for (var i = 5; i < items.length; i++) { items[i].style.display = hidden ? '' : 'none'; }
+        btn.textContent = hidden ? '收起' : '展开更多(' + (items.length - 5) + ')';
+      };
+      ul.parentNode.insertBefore(btn, ul.nextSibling);
+    });
+  })();
+  </script>
 </div>
