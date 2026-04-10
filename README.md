@@ -92,6 +92,10 @@ bundle add webrick
 
 bundle exec jekyll serve --host 127.0.0.1 --port 8899
 
+bundle exec jekyll serve --host 192.168.8.2 --port 8899
+
+
+
 ```
 
 然后会提示浏览器打开 `http://127.0.0.1:4000` 预览网站，正常情况预览效果与 GitHub Pages 展示的一样，这样就可以在本地开发调试好了再推送到 GitHub。
