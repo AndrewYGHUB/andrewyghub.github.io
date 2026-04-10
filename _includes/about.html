@@ -1,22 +1,1103 @@
-<div class="col s12 tag-div">
-    <div class="user-pic center-align">
-        <a href="{{site.github_profile}}" target="_blank">
-            <img class="circle hoverable z-depth-1" src="/assets/img/user.png">
-        </a>
+<style>
+/* ===== ABOUT PAGE - HIGH-TECH THEME ===== */
+:root {
+    --neon-cyan: #00f0ff;
+    --neon-blue: #4d7cff;
+    --neon-purple: #a855f7;
+    --neon-green: #00ff88;
+    --neon-orange: #ff6b35;
+    --dark-bg: #0a0e1a;
+    --dark-card: #111827;
+    --dark-card-border: #1e293b;
+    --glass-bg: rgba(17, 24, 39, 0.75);
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+}
+
+.about-page {
+    position: relative;
+    color: var(--text-primary);
+    font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    overflow: hidden;
+    padding-bottom: 60px;
+}
+
+/* ---- Canvas Background ---- */
+#about-canvas-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    will-change: transform;
+}
+
+.about-page .about-section {
+    position: relative;
+    z-index: 1;
+}
+
+/* ---- Glow keyframes ---- */
+@keyframes glowPulse {
+    0%, 100% { box-shadow: 0 0 20px rgba(0,240,255,0.3), 0 0 60px rgba(0,240,255,0.1); }
+    50% { box-shadow: 0 0 30px rgba(0,240,255,0.5), 0 0 80px rgba(0,240,255,0.2); }
+}
+@keyframes borderGlow {
+    0%, 100% { border-color: rgba(0,240,255,0.3); }
+    50% { border-color: rgba(0,240,255,0.7); }
+}
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+@keyframes scanline {
+    0% { top: -10%; }
+    100% { top: 110%; }
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes rotateGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@keyframes typingCursor {
+    0%, 100% { border-right-color: var(--neon-cyan); }
+    50% { border-right-color: transparent; }
+}
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ---- HERO SECTION ---- */
+.about-hero {
+    text-align: center;
+    padding: 40px 20px 50px;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-avatar-wrap {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.hero-avatar-ring {
+    position: absolute;
+    top: -12px; left: -12px;
+    right: -12px; bottom: -12px;
+    border-radius: 50%;
+    border: 2px solid var(--neon-cyan);
+    animation: glowPulse 3s ease-in-out infinite, rotateGlow 8s linear infinite;
+}
+
+.hero-avatar-ring::before {
+    content: '';
+    position: absolute;
+    top: -3px; left: 50%;
+    width: 6px; height: 6px;
+    background: var(--neon-cyan);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--neon-cyan);
+    transform: translateX(-50%);
+}
+
+.hero-avatar {
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    animation: float 4s ease-in-out infinite;
+    border: 3px solid var(--dark-card-border);
+}
+
+.hero-badge {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 6px 24px;
+    background: linear-gradient(135deg, rgba(0,240,255,0.15), rgba(168,85,247,0.15));
+    border: 1px solid rgba(0,240,255,0.4);
+    border-radius: 30px;
+    font-size: 13px;
+    color: var(--neon-cyan);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    animation: borderGlow 3s ease-in-out infinite;
+}
+
+.hero-name {
+    font-size: 2.6em;
+    font-weight: 800;
+    margin: 15px 0 5px;
+    background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple), var(--neon-blue));
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 4s ease infinite;
+}
+
+.hero-title {
+    font-size: 1.3em;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+.hero-title .p8-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--neon-orange), #ff4757);
+    color: #fff;
+    padding: 2px 12px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    font-weight: 700;
+    margin-left: 8px;
+    letter-spacing: 1px;
+}
+
+.hero-typing-wrap {
+    min-height: 36px;
+    margin: 20px auto 0;
+    max-width: 600px;
+}
+
+.hero-terminal {
+    display: inline-block;
+    background: rgba(0,0,0,0.5);
+    border: 1px solid var(--dark-card-border);
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 15px;
+    color: var(--neon-green);
+}
+
+.hero-terminal .prompt {
+    color: var(--neon-cyan);
+    margin-right: 8px;
+}
+
+.hero-terminal .typing-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.1em;
+    background: var(--neon-green);
+    vertical-align: text-bottom;
+    animation: typingCursor 1s step-end infinite;
+    margin-left: 2px;
+}
+
+/* ---- STATS SECTION ---- */
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin: 20px auto 50px;
+    max-width: 900px;
+    padding: 0 20px;
+    animation: fadeInUp 1s ease 0.2s both;
+}
+
+.stat-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--dark-card-border);
+    border-radius: 16px;
+    padding: 25px 15px;
+    text-align: center;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0,240,255,0.4);
+}
+
+.stat-card:hover::before {
+    opacity: 1;
+}
+
+.stat-number {
+    font-size: 2.4em;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--neon-cyan), var(--neon-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-number .stat-suffix {
+    font-size: 0.5em;
+    -webkit-text-fill-color: var(--neon-cyan);
+}
+
+.stat-label {
+    font-size: 0.85em;
+    color: var(--text-secondary);
+    margin-top: 5px;
+}
+
+/* ---- SECTION HEADERS ---- */
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    display: inline-block;
+    position: relative;
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
+    border-radius: 3px;
+}
+
+.section-header .section-sub {
+    color: var(--text-secondary);
+    font-size: 0.95em;
+    margin-top: 15px;
+}
+
+/* ---- TECH STACK SECTION ---- */
+.about-tech {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.tech-category {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--dark-card-border);
+    border-radius: 16px;
+    padding: 25px;
+    transition: all 0.4s ease;
+}
+
+.tech-category:hover {
+    border-color: rgba(0,240,255,0.3);
+    transform: translateY(-3px);
+}
+
+.tech-category-title {
+    font-size: 1.05em;
+    font-weight: 700;
+    color: var(--neon-cyan);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tech-category-title .cat-icon {
+    font-size: 1.2em;
+}
+
+.skill-item {
+    margin-bottom: 14px;
+}
+
+.skill-item:last-child {
+    margin-bottom: 0;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 0.9em;
+}
+
+.skill-name {
+    color: var(--text-primary);
+}
+
+.skill-level {
+    color: var(--text-secondary);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85em;
+}
+
+.skill-bar {
+    height: 6px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+.skill-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    width: 0;
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.skill-bar-fill::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    background: rgba(255,255,255,0.6);
+    border-radius: 50%;
+    filter: blur(2px);
+}
+
+.skill-bar-fill.cyan { background: linear-gradient(90deg, rgba(0,240,255,0.2), var(--neon-cyan)); }
+.skill-bar-fill.purple { background: linear-gradient(90deg, rgba(168,85,247,0.2), var(--neon-purple)); }
+.skill-bar-fill.green { background: linear-gradient(90deg, rgba(0,255,136,0.2), var(--neon-green)); }
+.skill-bar-fill.blue { background: linear-gradient(90deg, rgba(77,124,255,0.2), var(--neon-blue)); }
+.skill-bar-fill.orange { background: linear-gradient(90deg, rgba(255,107,53,0.2), var(--neon-orange)); }
+
+/* ---- TIMELINE / CAREER SECTION ---- */
+.about-career {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 40px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--neon-cyan), var(--neon-purple), transparent);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 35px;
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.6s ease;
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -33px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    background: var(--dark-bg);
+    border: 2px solid var(--neon-cyan);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.timeline-dot::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 4px; height: 4px;
+    background: var(--neon-cyan);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 6px var(--neon-cyan);
+}
+
+.timeline-content {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--dark-card-border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    border-color: rgba(0,240,255,0.3);
+}
+
+.timeline-year {
+    display: inline-block;
+    font-size: 0.8em;
+    color: var(--neon-cyan);
+    background: rgba(0,240,255,0.1);
+    padding: 2px 12px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.timeline-role {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.timeline-desc {
+    font-size: 0.9em;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* ---- PHILOSOPHY / CODE BLOCK SECTION ---- */
+.about-philosophy {
+    max-width: 750px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.code-block {
+    background: #0d1117;
+    border: 1px solid var(--dark-card-border);
+    border-radius: 12px;
+    overflow: hidden;
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.code-block-header {
+    background: #161b22;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--dark-card-border);
+}
+
+.code-dot {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+}
+.code-dot.red { background: #ff5f56; }
+.code-dot.yellow { background: #ffbd2e; }
+.code-dot.green { background: #27c93f; }
+
+.code-block-filename {
+    color: var(--text-secondary);
+    font-size: 12px;
+    margin-left: 12px;
+}
+
+.code-block-body {
+    padding: 20px;
+    overflow-x: auto;
+}
+
+.code-block-body .line {
+    display: block;
+}
+
+.code-keyword { color: #ff7b72; }
+.code-type { color: #79c0ff; }
+.code-string { color: #a5d6ff; }
+.code-comment { color: #8b949e; font-style: italic; }
+.code-func { color: #d2a8ff; }
+.code-prop { color: #7ee787; }
+.code-number { color: #ffa657; }
+.code-bracket { color: #c9d1d9; }
+
+/* ---- CONNECT / FOOTER SECTION ---- */
+.about-connect {
+    max-width: 600px;
+    margin: 0 auto 20px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.connect-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.connect-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    background: var(--glass-bg);
+    border: 1px solid var(--dark-card-border);
+    border-radius: 30px;
+    color: var(--text-primary) !important;
+    text-decoration: none !important;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.connect-link:hover {
+    border-color: var(--neon-cyan);
+    color: var(--neon-cyan) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0,240,255,0.15);
+}
+
+.connect-link svg {
+    width: 18px; height: 18px;
+    fill: currentColor;
+}
+
+/* ---- Quote ---- */
+.about-quote {
+    text-align: center;
+    max-width: 650px;
+    margin: 40px auto 0;
+    padding: 30px 20px;
+    position: relative;
+}
+
+.about-quote blockquote {
+    font-size: 1.1em;
+    color: var(--text-secondary);
+    font-style: italic;
+    line-height: 1.8;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.about-quote .quote-mark {
+    font-size: 3em;
+    color: rgba(0,240,255,0.2);
+    line-height: 1;
+}
+
+/* ---- Scanline overlay ---- */
+.about-scanline {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 8px;
+    background: linear-gradient(180deg, transparent, rgba(0,240,255,0.06), transparent);
+    z-index: 0;
+    pointer-events: none;
+    animation: scanline 6s linear infinite;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero-name {
+        font-size: 1.8em;
+    }
+    .stat-number {
+        font-size: 1.8em;
+    }
+    .hero-avatar {
+        width: 110px; height: 110px;
+    }
+    .code-block-body {
+        font-size: 12px;
+        padding: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .stat-card {
+        padding: 18px 10px;
+    }
+}
+
+/* Override page background for dark theme */
+.about-page-bg-override {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: var(--dark-bg);
+    z-index: -2;
+}
+</style>
+
+<div class="about-page">
+    <div class="about-page-bg-override"></div>
+    <canvas id="about-canvas-bg"></canvas>
+    <div class="about-scanline"></div>
+
+    <!-- ====== HERO ====== -->
+    <div class="about-section about-hero">
+        <div class="hero-avatar-wrap">
+            <div class="hero-avatar-ring"></div>
+            <img class="hero-avatar" src="/assets/img/user.png" alt="AndrewYG">
+        </div>
+        <div class="hero-badge">SENIOR ENGINEER</div>
+        <h1 class="hero-name">{{site.nick_name}} / {{site.english_name}}</h1>
+        <div class="hero-title">
+            高级技术专家 <span class="p8-tag">P8</span>
+        </div>
+        <div class="hero-typing-wrap">
+            <div class="hero-terminal">
+                <span class="prompt">$</span>
+                <span id="hero-typed-text"></span>
+                <span class="typing-cursor"></span>
+            </div>
+        </div>
     </div>
-    <div class="user-intro center-align">
-        <i>{{site.nick_name}}（{{site.english_name}}）</i>
+
+    <!-- ====== STATS ====== -->
+    <div class="about-section about-stats">
+        <div class="stat-card">
+            <div class="stat-number"><span class="counter" data-target="10">0</span><span class="stat-suffix">+</span></div>
+            <div class="stat-label">Years of Experience</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number"><span class="counter" data-target="50">0</span><span class="stat-suffix">+</span></div>
+            <div class="stat-label">Projects Delivered</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number"><span class="counter" data-target="30">0</span><span class="stat-suffix">K+</span></div>
+            <div class="stat-label">Code Commits</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number"><span class="counter" data-target="20">0</span><span class="stat-suffix">+</span></div>
+            <div class="stat-label">Tech Stacks</div>
+        </div>
     </div>
-    <div class="user-intro center-align">
-        <h4>一个<span class="typing-text hidden">勤奋, 上进, 求索, 创新</span>的爱码士</h4>
+
+    <!-- ====== TECH STACK ====== -->
+    <div class="about-section about-tech">
+        <div class="section-header">
+            <h2>Tech Stack</h2>
+            <div class="section-sub">技术栈 &middot; 十年磨一剑</div>
+        </div>
+        <div class="tech-grid">
+            <div class="tech-category">
+                <div class="tech-category-title"><span class="cat-icon">&lt;/&gt;</span> Backend & Architecture</div>
+                <div class="skill-item">
+                    <div class="skill-info"><span class="skill-name">Java / Spring Cloud</span><span class="skill-level">95%</span></div>
+                    <div class="skill-bar"><div class="skill-bar-fill cyan" data-width="95"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span class="skill-name">Golang / Microservices</span><span class="skill-level">90%</span></div>
+                    <div class="skill-bar"><div class="skill-bar-fill cyan" data-width="90"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span class="skill-name">System Design / DDD</span><span class="skill-level">92%</span></div>
+                    <div class="skill-bar"><div class="skill-bar-fill cyan" data-width="92"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span class="skill-name">Python / AI & ML</span><span class="skill-level">80%</span></div>
+                    <div class="skill-bar"><div class="skill-bar-fill cyan" data-width="80"></div></div>
+                </div>
+            </div>
+            <div class="tech-category">
+                <div class="tech-category-title"><span class="cat-icon">&#9729;</span> Cloud & Infrastructure</div>
+                <div class="skill-item">
+                    <div class="skill-info"><span class="skill-name">Kubernetes / Docker</span><span class="skill-level">90%</span></div>
+                    <div class="skill-bar"><div class="skill-bar-fill purple" data-width="90"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span class="skill-name">AWS / Alibaba Cloud</span><span class="skill-level">85%</span></div>
+                    <div class="skill-bar"><div class="skill-bar-fill purple" data-width="85"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span class="skill-name">CI/CD / DevOps</span><span class="skill-level">88%</span></div>
+                    <div class="skill-bar"><div class="skill-bar-fill purple" data-width="88"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span class="skill-name">Monitoring / SRE</span><span class="skill-level">82%</span></div>
+                    <div class="skill-bar"><div class="skill-bar-fill purple" data-width="82"></div></div>
+                </div>
+            </div>
+            <div class="tech-category">
+                <div class="tech-category-title"><span class="cat-icon">&#128202;</span> Data & Middleware</div>
+                <div class="skill-item">
+                    <div class="skill-info"><span class="skill-name">MySQL / PostgreSQL</span><span class="skill-level">92%</span></div>
+                    <div class="skill-bar"><div class="skill-bar-fill green" data-width="92"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span class="skill-name">Redis / ElasticSearch</span><span class="skill-level">88%</span></div>
+                    <div class="skill-bar"><div class="skill-bar-fill green" data-width="88"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span class="skill-name">Kafka / RocketMQ</span><span class="skill-level">85%</span></div>
+                    <div class="skill-bar"><div class="skill-bar-fill green" data-width="85"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span class="skill-name">Flink / Spark</span><span class="skill-level">75%</span></div>
+                    <div class="skill-bar"><div class="skill-bar-fill green" data-width="75"></div></div>
+                </div>
+            </div>
+            <div class="tech-category">
+                <div class="tech-category-title"><span class="cat-icon">&#9881;</span> Engineering & Leadership</div>
+                <div class="skill-item">
+                    <div class="skill-info"><span class="skill-name">Tech Architecture Review</span><span class="skill-level">95%</span></div>
+                    <div class="skill-bar"><div class="skill-bar-fill orange" data-width="95"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span class="skill-name">Team Management</span><span class="skill-level">88%</span></div>
+                    <div class="skill-bar"><div class="skill-bar-fill orange" data-width="88"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span class="skill-name">Performance Tuning</span><span class="skill-level">90%</span></div>
+                    <div class="skill-bar"><div class="skill-bar-fill orange" data-width="90"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span class="skill-name">Open Source Contribution</span><span class="skill-level">78%</span></div>
+                    <div class="skill-bar"><div class="skill-bar-fill orange" data-width="78"></div></div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="user-content center-align">
-        <p>
-            心中本没有路，用双手敲写康庄大道。
-        </p>
-        <p>
+
+    <!-- ====== CAREER TIMELINE ====== -->
+    <div class="about-section about-career">
+        <div class="section-header">
+            <h2>Career Path</h2>
+            <div class="section-sub">成长之路 &middot; 步步为营</div>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-year">2024 - Present</span>
+                    <div class="timeline-role">P8 高级技术专家</div>
+                    <div class="timeline-desc">能够独立完成复杂系统的整体架构设计，从技术选型到落地交付全流程把控。关注系统全局，在性能、稳定性与可维护性之间做出合理权衡。</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-year">2021 - 2024</span>
+                    <div class="timeline-role">P7 技术专家</div>
+                    <div class="timeline-desc">负责核心模块的技术方案设计与评审，推动服务拆分与容器化部署。开始承担跨团队技术协调工作，逐步建立起系统性的架构思维。</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-year">2018 - 2021</span>
+                    <div class="timeline-role">P6 高级工程师</div>
+                    <div class="timeline-desc">独立负责业务线核心功能开发，积累了数据库调优、缓存设计、接口性能优化等实战经验。开始关注代码质量与工程规范。</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-year">2015 - 2018</span>
+                    <div class="timeline-role">P5 软件工程师</div>
+                    <div class="timeline-desc">入行打基础，从增删改查做起，逐步熟悉主流技术栈与开发流程。保持好奇心，边做边学，完成了从学生到工程师的转变。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== PHILOSOPHY CODE BLOCK ====== -->
+    <div class="about-section about-philosophy">
+        <div class="section-header">
+            <h2>Engineering Philosophy</h2>
+            <div class="section-sub">工程哲学 &middot; 大道至简</div>
+        </div>
+        <div class="code-block">
+            <div class="code-block-header">
+                <span class="code-dot red"></span>
+                <span class="code-dot yellow"></span>
+                <span class="code-dot green"></span>
+                <span class="code-block-filename">philosophy.ts</span>
+            </div>
+            <div class="code-block-body">
+<span class="line"><span class="code-keyword">interface</span> <span class="code-type">Engineer</span> <span class="code-bracket">{</span></span>
+<span class="line">  <span class="code-prop">mindset</span>: <span class="code-string">"大道至简，知行合一"</span>;</span>
+<span class="line">  <span class="code-prop">principle</span>: <span class="code-string">"以架构思维驱动业务创新"</span>;</span>
+<span class="line">  <span class="code-prop">passion</span>: <span class="code-string">"技术的学习、总结、分享与提升"</span>;</span>
+<span class="line"><span class="code-bracket">}</span></span>
+<span class="line"></span>
+<span class="line"><span class="code-keyword">const</span> <span class="code-func">engineer</span>: <span class="code-type">Engineer</span> = <span class="code-bracket">{</span></span>
+<span class="line">  <span class="code-prop">mindset</span>:   <span class="code-string">"大道至简，知行合一"</span>,</span>
+<span class="line">  <span class="code-prop">principle</span>: <span class="code-string">"以架构思维驱动业务创新"</span>,</span>
+<span class="line">  <span class="code-prop">passion</span>:   <span class="code-string">"技术的学习、总结、分享与提升"</span>,</span>
+<span class="line"><span class="code-bracket">}</span>;</span>
+<span class="line"></span>
+<span class="line"><span class="code-comment">// 心中本没有路，用双手敲写康庄大道</span></span>
+<span class="line"><span class="code-comment">// 知之甚少，学之甚多，生命不休，求索不止</span></span>
+<span class="line"><span class="code-keyword">export default</span> <span class="code-func">engineer</span>;</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== CONNECT ====== -->
+    <div class="about-section about-connect">
+        <div class="section-header">
+            <h2>Connect</h2>
+            <div class="section-sub">与我联系</div>
+        </div>
+        <div class="connect-links">
+            <a class="connect-link" href="{{site.github_profile}}" target="_blank">
+                <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                GitHub
+            </a>
+            <a class="connect-link" href="/contact">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                Email
+            </a>
+            <a class="connect-link" href="/feed.xml" target="_blank">
+                <svg viewBox="0 0 24 24"><path d="M6.18 15.64a2.18 2.18 0 012.18 2.18C8.36 19 7.38 20 6.18 20 5 20 4 19 4 17.82a2.18 2.18 0 012.18-2.18M4 4.44A15.56 15.56 0 0119.56 20h-2.83A12.73 12.73 0 004 7.27V4.44m0 5.66a9.9 9.9 0 019.9 9.9h-2.83A7.07 7.07 0 004 12.93V10.1z"/></svg>
+                RSS
+            </a>
+        </div>
+    </div>
+
+    <!-- ====== QUOTE ====== -->
+    <div class="about-quote">
+        <div class="quote-mark">"</div>
+        <blockquote>
+            心中本没有路，用双手敲写康庄大道。<br>
             知之甚少，学之甚多，生命不休，求索不止。
-        </p>
+        </blockquote>
     </div>
-    <br>
 </div>
+
+<!-- ====== ABOUT PAGE SCRIPTS ====== -->
+<script>
+(function() {
+    // ======= Neural Network Canvas Background =======
+    var canvas = document.getElementById('about-canvas-bg');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var particles = [];
+    var N = 40; // reduced from 80
+    var MAX_DIST_SQ = 120 * 120; // squared, skip sqrt
+    var MOUSE_DIST_SQ = 180 * 180;
+    var mouse = { x: -999, y: -999 };
+    var paused = false;
+    var rafId = 0;
+    var w, h;
+
+    function resize() {
+        // lower resolution on hidpi screens for perf
+        var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+        w = window.innerWidth;
+        h = window.innerHeight;
+        canvas.width = w * dpr;
+        canvas.height = h * dpr;
+        canvas.style.width = w + 'px';
+        canvas.style.height = h + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    resize();
+
+    var resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(resize, 200);
+    });
+
+    // throttle mousemove to ~30fps
+    var moveThrottle = false;
+    document.addEventListener('mousemove', function(e) {
+        if (moveThrottle) return;
+        moveThrottle = true;
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+        setTimeout(function() { moveThrottle = false; }, 33);
+    });
+
+    for (var i = 0; i < N; i++) {
+        particles.push({
+            x: Math.random() * w,
+            y: Math.random() * h,
+            vx: (Math.random() - 0.5) * 0.5,
+            vy: (Math.random() - 0.5) * 0.5,
+            r: Math.random() * 1.5 + 0.5,
+            o: Math.random() * 0.5 + 0.2
+        });
+    }
+
+    function animate() {
+        if (paused) return;
+        ctx.clearRect(0, 0, w, h);
+
+        var i, j, p, p2, dx, dy, d2, alpha;
+
+        // batch draw particles
+        for (i = 0; i < N; i++) {
+            p = particles[i];
+            p.x += p.vx;
+            p.y += p.vy;
+            if (p.x < 0 || p.x > w) p.vx = -p.vx;
+            if (p.y < 0 || p.y > h) p.vy = -p.vy;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, 6.2832);
+            ctx.fillStyle = 'rgba(0,240,255,' + p.o + ')';
+            ctx.fill();
+        }
+
+        // batch draw connections — single path per alpha bucket for fewer draw calls
+        ctx.lineWidth = 0.5;
+        ctx.beginPath();
+        for (i = 0; i < N; i++) {
+            p = particles[i];
+            for (j = i + 1; j < N; j++) {
+                p2 = particles[j];
+                dx = p.x - p2.x;
+                dy = p.y - p2.y;
+                d2 = dx * dx + dy * dy;
+                if (d2 < MAX_DIST_SQ) {
+                    ctx.moveTo(p.x, p.y);
+                    ctx.lineTo(p2.x, p2.y);
+                }
+            }
+        }
+        ctx.strokeStyle = 'rgba(0,240,255,0.08)';
+        ctx.stroke();
+
+        // mouse connections — batch
+        if (mouse.x > 0) {
+            ctx.lineWidth = 0.8;
+            ctx.beginPath();
+            for (i = 0; i < N; i++) {
+                p = particles[i];
+                dx = p.x - mouse.x;
+                dy = p.y - mouse.y;
+                if (dx * dx + dy * dy < MOUSE_DIST_SQ) {
+                    ctx.moveTo(p.x, p.y);
+                    ctx.lineTo(mouse.x, mouse.y);
+                }
+            }
+            ctx.strokeStyle = 'rgba(168,85,247,0.15)';
+            ctx.stroke();
+        }
+
+        rafId = requestAnimationFrame(animate);
+    }
+
+    // pause when tab hidden
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            paused = true;
+            cancelAnimationFrame(rafId);
+        } else {
+            paused = false;
+            rafId = requestAnimationFrame(animate);
+        }
+    });
+
+    rafId = requestAnimationFrame(animate);
+
+    // ======= Typing Effect =======
+    var typedEl = document.getElementById('hero-typed-text');
+    if (typedEl) {
+        var phrases = [
+            '架构驱动业务，技术创造价值',
+            'Design for scale, build for reliability',
+            '大道至简，知行合一',
+            'High concurrency, high availability',
+            '十年磨一剑，砥砺前行',
+            'Clean code, clean architecture'
+        ];
+        var phraseIdx = 0, charIdx = 0, isDeleting = false;
+
+        function typeLoop() {
+            var current = phrases[phraseIdx];
+            var delay;
+            if (isDeleting) {
+                charIdx--;
+                delay = 40;
+            } else {
+                charIdx++;
+                delay = 80;
+            }
+            typedEl.textContent = current.substring(0, charIdx);
+
+            if (!isDeleting && charIdx === current.length) {
+                delay = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIdx === 0) {
+                isDeleting = false;
+                phraseIdx = (phraseIdx + 1) % phrases.length;
+                delay = 500;
+            }
+            setTimeout(typeLoop, delay);
+        }
+        typeLoop();
+    }
+
+    // ======= Single IntersectionObserver for all scroll animations =======
+    var observer = new IntersectionObserver(function(entries) {
+        for (var i = 0; i < entries.length; i++) {
+            var entry = entries[i];
+            if (!entry.isIntersecting) continue;
+            var el = entry.target;
+            observer.unobserve(el);
+
+            // counter
+            if (el.classList.contains('counter')) {
+                var target = parseInt(el.getAttribute('data-target'));
+                var startTime = null;
+                (function(el, target) {
+                    function step(ts) {
+                        if (!startTime) startTime = ts;
+                        var p = Math.min((ts - startTime) / 1600, 1);
+                        el.textContent = Math.floor((1 - Math.pow(1 - p, 3)) * target);
+                        if (p < 1) requestAnimationFrame(step);
+                    }
+                    requestAnimationFrame(step);
+                })(el, target);
+            }
+            // skill bar
+            else if (el.classList.contains('skill-bar-fill')) {
+                el.style.width = el.getAttribute('data-width') + '%';
+            }
+            // timeline
+            else if (el.classList.contains('timeline-item')) {
+                el.classList.add('visible');
+            }
+        }
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.counter, .skill-bar-fill, .timeline-item').forEach(function(el) {
+        observer.observe(el);
+    });
+
+})();
+</script>
