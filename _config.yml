@@ -28,18 +28,19 @@ paginate_path: "/page:num/"  # 分页页面的路径
 
 nick_name: "洋哥" # 昵称
 english_name: "AndrewYG"
-# valine 评论插件配置
-valine:
-  leancloud_appid: "xVFd685W2r1En9dX9UrtUZNl-MdYXbMMI"
-  leancloud_appkey: "4RtYJ4OeQvZsoIgwE8hUzEhi"
-
 
 jekyll_env:
     env: "production"   #production  development
+
+# Giscus 评论插件配置（基于 GitHub Discussions）
+# repo_id 和 category_id 需到 https://giscus.app 生成后填入
 comments:
-    provider: "github"
-    github:
-        repo: "AndrewYGHUB/repocomments"
+    provider: "giscus"
+    giscus:
+        repo: "AndrewYGHUB/andrewyghub.github.io"
+        repo_id: "MDEwOlJlcG9zaXRvcnkzODc2NTIxMzA="
+        category: "Announcements"
+        category_id: "DIC_kwDOFxsaIs4C9yhD"
 
 # jekyll 相关配置
 markdown: kramdown

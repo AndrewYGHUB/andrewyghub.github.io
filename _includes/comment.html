@@ -1,29 +1,20 @@
-<!-- 评论插件 -->
-<div class="comments"></div>
+<!-- Giscus 评论插件（基于 GitHub Discussions） -->
+<div class="comments">
+    <script src="https://giscus.app/client.js"
+            data-repo="{{ site.comments.giscus.repo }}"
+            data-repo-id="{{ site.comments.giscus.repo_id }}"
+            data-category="{{ site.comments.giscus.category }}"
+            data-category-id="{{ site.comments.giscus.category_id }}"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="{{ site.url }}{{ site.baseurl }}/assets/giscus/theme.css"
+            data-lang="zh-CN"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async>
+    </script>
+</div>
 <hr />
-
-<!--<script src="https://utteranc.es/client.js"-->
-<!--        repo="{{ site.comments.github.repo }}"-->
-<!--        issue-term="pathname"-->
-<!--        theme="github-dark"-->
-<!--        crossorigin="anonymous"-->
-<!--        async>-->
-<!--</script>-->
-
-
-
-
-
-
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script>
-    new Valine({
-        el: '.comments',
-        appId: '{{site.valine.leancloud_appid}}',
-        appKey: '{{site.valine.leancloud_appkey}}',
-        avatar: 'robohash',
-        placeholder: '欢迎留言（支持Markdown）~',
-        // visitor: true,
-    });
-    document.querySelector('input.vmail.vinput').placeholder = '邮箱（用于评论回复提醒）';
-</script>

@@ -1,0 +1,31 @@
+/* Giscus 自定义主题
+ * 配色对齐站点搜索框 / 主色 #3AA17E（teal 绿），白底卡片 + 浅灰边框。
+ * 以官方 light 主题为基底，仅覆盖强调色、按钮、边框等关键变量。
+ */
+@import url("https://giscus.app/themes/light.css");
+
+main {
+  /* 链接 / 强调色 → 站点主色 */
+  --color-accent-fg: #3AA17E;
+  --color-accent-emphasis: #3AA17E;
+  --color-accent-muted: rgba(58, 161, 126, 0.4);
+  --color-accent-subtle: rgba(58, 161, 126, 0.1);
+
+  /* 主按钮（提交评论） */
+  --color-btn-primary-bg: #3AA17E;
+  --color-btn-primary-hover-bg: #34906f;
+  --color-btn-primary-focus-bg: #3AA17E;
+  --color-btn-primary-selected-bg: #2f8061;
+  --color-btn-primary-disabled-bg: rgba(58, 161, 126, 0.5);
+  --color-btn-primary-text: #ffffff;
+
+  /* 表情 / 反应高亮 */
+  --color-social-reaction-bg-hover: rgba(58, 161, 126, 0.1);
+  --color-social-reaction-bg-reacted-hover: rgba(58, 161, 126, 0.2);
+
+  /* 卡片 / 分割线，向搜索结果框靠拢：白底 + 浅灰边 + 淡蓝 hover */
+  --color-canvas-default: #ffffff;
+  --color-canvas-subtle: #f7f9fc;
+  --color-border-default: #eeeeee;
+  --color-border-muted: #f0f0f0;
+}
