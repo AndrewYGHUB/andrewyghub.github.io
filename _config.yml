@@ -30,7 +30,7 @@ nick_name: "洋哥" # 昵称
 english_name: "AndrewYG"
 
 jekyll_env:
-    env: "production"   #production  development
+    env: "development"   #production  development
 
 # Giscus 评论插件配置（基于 GitHub Discussions）
 # repo_id 和 category_id 需到 https://giscus.app 生成后填入
