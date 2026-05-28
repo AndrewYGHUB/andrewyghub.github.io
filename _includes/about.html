@@ -1,17 +1,17 @@
 <style>
 /* ===== ABOUT PAGE - HIGH-TECH THEME ===== */
 :root {
-    --neon-cyan: #00f0ff;
-    --neon-blue: #4d7cff;
-    --neon-purple: #a855f7;
-    --neon-green: #00ff88;
-    --neon-orange: #ff6b35;
-    --dark-bg: #0a0e1a;
-    --dark-card: #111827;
-    --dark-card-border: #1e293b;
-    --glass-bg: rgba(17, 24, 39, 0.75);
-    --text-primary: #e2e8f0;
-    --text-secondary: #94a3b8;
+    --neon-cyan: #00bcd4;
+    --neon-blue: #00537E;
+    --neon-purple: #3f51b5;
+    --neon-green: #3AA17E;
+    --neon-orange: #FF6F00;
+    --dark-bg: #f2f2f2;
+    --dark-card: #ffffff;
+    --dark-card-border: #e0e0e0;
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --text-primary: #222222;
+    --text-secondary: #666666;
 }
 
 .about-page {
@@ -39,12 +39,12 @@
 
 /* ---- Glow keyframes ---- */
 @keyframes glowPulse {
-    0%, 100% { box-shadow: 0 0 20px rgba(0,240,255,0.3), 0 0 60px rgba(0,240,255,0.1); }
-    50% { box-shadow: 0 0 30px rgba(0,240,255,0.5), 0 0 80px rgba(0,240,255,0.2); }
+    0%, 100% { box-shadow: 0 0 20px rgba(0, 188, 212,0.3), 0 0 60px rgba(0, 188, 212,0.1); }
+    50% { box-shadow: 0 0 30px rgba(0, 188, 212,0.5), 0 0 80px rgba(0, 188, 212,0.2); }
 }
 @keyframes borderGlow {
-    0%, 100% { border-color: rgba(0,240,255,0.3); }
-    50% { border-color: rgba(0,240,255,0.7); }
+    0%, 100% { border-color: rgba(0, 188, 212,0.3); }
+    50% { border-color: rgba(0, 188, 212,0.7); }
 }
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
@@ -117,8 +117,8 @@
     display: inline-block;
     margin-top: 15px;
     padding: 6px 24px;
-    background: linear-gradient(135deg, rgba(0,240,255,0.15), rgba(168,85,247,0.15));
-    border: 1px solid rgba(0,240,255,0.4);
+    background: linear-gradient(135deg, rgba(0, 188, 212,0.15), rgba(63, 81, 181,0.15));
+    border: 1px solid rgba(0, 188, 212,0.4);
     border-radius: 30px;
     font-size: 13px;
     color: var(--neon-cyan);
@@ -147,7 +147,7 @@
 
 .hero-title .p8-tag {
     display: inline-block;
-    background: linear-gradient(135deg, var(--neon-orange), #ff4757);
+    background: linear-gradient(135deg, var(--neon-orange), #E65100);
     color: #fff;
     padding: 2px 12px;
     border-radius: 4px;
@@ -165,17 +165,17 @@
 
 .hero-terminal {
     display: inline-block;
-    background: rgba(0,0,0,0.5);
-    border: 1px solid var(--dark-card-border);
+    background: #1e293b;                         /* 真深底，模拟 VSCode 终端，与浅底页面对比清晰 */
+    border: 1px solid #334155;
     border-radius: 8px;
     padding: 12px 24px;
     font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
     font-size: 15px;
-    color: var(--neon-green);
+    color: #5cd6a6;                              /* 深底上的亮绿，对比度提升 */
 }
 
 .hero-terminal .prompt {
-    color: var(--neon-cyan);
+    color: #4dd0e1;                              /* 深底上的亮青 */
     margin-right: 8px;
 }
 
@@ -183,7 +183,7 @@
     display: inline-block;
     width: 2px;
     height: 1.1em;
-    background: var(--neon-green);
+    background: #5cd6a6;
     vertical-align: text-bottom;
     animation: typingCursor 1s step-end infinite;
     margin-left: 2px;
@@ -224,7 +224,7 @@
 
 .stat-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(0,240,255,0.4);
+    border-color: rgba(0, 188, 212,0.4);
 }
 
 .stat-card:hover::before {
@@ -307,7 +307,7 @@
 }
 
 .tech-category:hover {
-    border-color: rgba(0,240,255,0.3);
+    border-color: rgba(0, 188, 212,0.3);
     transform: translateY(-3px);
 }
 
@@ -378,11 +378,11 @@
     filter: blur(2px);
 }
 
-.skill-bar-fill.cyan { background: linear-gradient(90deg, rgba(0,240,255,0.2), var(--neon-cyan)); }
-.skill-bar-fill.purple { background: linear-gradient(90deg, rgba(168,85,247,0.2), var(--neon-purple)); }
-.skill-bar-fill.green { background: linear-gradient(90deg, rgba(0,255,136,0.2), var(--neon-green)); }
-.skill-bar-fill.blue { background: linear-gradient(90deg, rgba(77,124,255,0.2), var(--neon-blue)); }
-.skill-bar-fill.orange { background: linear-gradient(90deg, rgba(255,107,53,0.2), var(--neon-orange)); }
+.skill-bar-fill.cyan { background: linear-gradient(90deg, rgba(0, 188, 212,0.2), var(--neon-cyan)); }
+.skill-bar-fill.purple { background: linear-gradient(90deg, rgba(63, 81, 181,0.2), var(--neon-purple)); }
+.skill-bar-fill.green { background: linear-gradient(90deg, rgba(58, 161, 126,0.2), var(--neon-green)); }
+.skill-bar-fill.blue { background: linear-gradient(90deg, rgba(0, 83, 126,0.2), var(--neon-blue)); }
+.skill-bar-fill.orange { background: linear-gradient(90deg, rgba(255, 111, 0,0.2), var(--neon-orange)); }
 
 /* ---- TIMELINE / CAREER SECTION ---- */
 .about-career {
@@ -452,14 +452,14 @@
 }
 
 .timeline-content:hover {
-    border-color: rgba(0,240,255,0.3);
+    border-color: rgba(0, 188, 212,0.3);
 }
 
 .timeline-year {
     display: inline-block;
     font-size: 0.8em;
     color: var(--neon-cyan);
-    background: rgba(0,240,255,0.1);
+    background: rgba(0, 188, 212,0.1);
     padding: 2px 12px;
     border-radius: 20px;
     margin-bottom: 8px;
@@ -571,7 +571,7 @@
     border-color: var(--neon-cyan);
     color: var(--neon-cyan) !important;
     transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(0,240,255,0.15);
+    box-shadow: 0 4px 20px rgba(0, 188, 212,0.15);
 }
 
 .connect-link svg {
@@ -600,7 +600,7 @@
 
 .about-quote .quote-mark {
     font-size: 3em;
-    color: rgba(0,240,255,0.2);
+    color: rgba(0, 188, 212,0.2);
     line-height: 1;
 }
 
@@ -609,7 +609,7 @@
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 8px;
-    background: linear-gradient(180deg, transparent, rgba(0,240,255,0.06), transparent);
+    background: linear-gradient(180deg, transparent, rgba(0, 188, 212,0.06), transparent);
     z-index: 0;
     pointer-events: none;
     animation: scanline 6s linear infinite;
@@ -657,12 +657,33 @@
     background: var(--dark-bg);
     z-index: -2;
 }
+
+/* layout 自带 #page-info 的 white-text 标题在浅底上不可见，
+   而 about 已有自己的 hero 区显示名字 —— 这里覆盖为深色保证可读 */
+#page-info .page-title {
+    color: var(--text-primary);
+    text-shadow: none;
+}
+
+/* 分界线：浅底上用 cyan 渐变，两端淡出，居中视觉 */
+.page-divider {
+    height: 2px;
+    border: 0;
+    margin: 10px auto 30px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, #00bcd4 30%, #3f51b5 70%, transparent);
+    border-radius: 2px;
+    opacity: 0.7;
+}
 </style>
 
 <div class="about-page">
     <div class="about-page-bg-override"></div>
     <canvas id="about-canvas-bg"></canvas>
     <div class="about-scanline"></div>
+
+    <!-- 分界线：把 layout 顶部的 "About Me" 与本页 hero 分开 -->
+    <hr class="page-divider">
 
     <!-- ====== HERO ====== -->
     <div class="about-section about-hero">
@@ -968,7 +989,7 @@
             if (p.y < 0 || p.y > h) p.vy = -p.vy;
             ctx.beginPath();
             ctx.arc(p.x, p.y, p.r, 0, 6.2832);
-            ctx.fillStyle = 'rgba(0,240,255,' + p.o + ')';
+            ctx.fillStyle = 'rgba(0, 96, 100,' + p.o + ')';
             ctx.fill();
         }
 
@@ -988,7 +1009,7 @@
                 }
             }
         }
-        ctx.strokeStyle = 'rgba(0,240,255,0.08)';
+        ctx.strokeStyle = 'rgba(0, 131, 143, 0.25)';
         ctx.stroke();
 
         // mouse connections — batch
@@ -1004,7 +1025,7 @@
                     ctx.lineTo(mouse.x, mouse.y);
                 }
             }
-            ctx.strokeStyle = 'rgba(168,85,247,0.15)';
+            ctx.strokeStyle = 'rgba(63, 81, 181, 0.4)';
             ctx.stroke();
         }
 

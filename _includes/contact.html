@@ -1,18 +1,18 @@
 <style>
 /* ===== CONTACT PAGE - HIGH-TECH THEME ===== */
 :root {
-    --neon-cyan: #00f0ff;
-    --neon-blue: #4d7cff;
-    --neon-purple: #a855f7;
-    --neon-green: #00ff88;
-    --neon-orange: #ff6b35;
-    --neon-pink: #ff4f8a;
-    --dark-bg: #0a0e1a;
-    --dark-card: #111827;
-    --dark-card-border: #1e293b;
-    --glass-bg: rgba(17, 24, 39, 0.75);
-    --text-primary: #e2e8f0;
-    --text-secondary: #94a3b8;
+    --neon-cyan: #00bcd4;
+    --neon-blue: #00537E;
+    --neon-purple: #3f51b5;
+    --neon-green: #3AA17E;
+    --neon-orange: #FF6F00;
+    --neon-pink: #D81B60;
+    --dark-bg: #f2f2f2;
+    --dark-card: #ffffff;
+    --dark-card-border: #e0e0e0;
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --text-primary: #222222;
+    --text-secondary: #666666;
 }
 
 .contact-page {
@@ -49,7 +49,7 @@
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 8px;
-    background: linear-gradient(180deg, transparent, rgba(0,240,255,0.06), transparent);
+    background: linear-gradient(180deg, transparent, rgba(0, 188, 212,0.06), transparent);
     z-index: 0;
     pointer-events: none;
     animation: c-scanline 6s linear infinite;
@@ -65,8 +65,8 @@
     to { opacity: 1; transform: translateY(0); }
 }
 @keyframes c-borderGlow {
-    0%, 100% { border-color: rgba(0,240,255,0.3); }
-    50% { border-color: rgba(0,240,255,0.7); }
+    0%, 100% { border-color: rgba(0, 188, 212,0.3); }
+    50% { border-color: rgba(0, 188, 212,0.7); }
 }
 @keyframes c-gradientShift {
     0% { background-position: 0% 50%; }
@@ -74,8 +74,8 @@
     100% { background-position: 0% 50%; }
 }
 @keyframes c-pulse {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(0,240,255,0.4); }
-    50% { box-shadow: 0 0 0 10px rgba(0,240,255,0); }
+    0%, 100% { box-shadow: 0 0 0 0 rgba(0, 188, 212,0.4); }
+    50% { box-shadow: 0 0 0 10px rgba(0, 188, 212,0); }
 }
 
 /* ---- HERO ---- */
@@ -88,8 +88,8 @@
 .contact-hero-badge {
     display: inline-block;
     padding: 6px 24px;
-    background: linear-gradient(135deg, rgba(0,240,255,0.15), rgba(168,85,247,0.15));
-    border: 1px solid rgba(0,240,255,0.4);
+    background: linear-gradient(135deg, rgba(0, 188, 212,0.15), rgba(63, 81, 181,0.15));
+    border: 1px solid rgba(0, 188, 212,0.4);
     border-radius: 30px;
     font-size: 13px;
     color: var(--neon-cyan);
@@ -187,7 +187,7 @@
 
 .contact-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(0,240,255,0.4);
+    border-color: rgba(0, 188, 212,0.4);
 }
 
 .contact-card:hover::before {
@@ -217,7 +217,7 @@
 .c-card-icon.wechat { background: linear-gradient(135deg, #07c160, #00a854); }
 .c-card-icon.qq     { background: linear-gradient(135deg, #12b7f5, #1677ff); }
 .c-card-icon.mail   { background: linear-gradient(135deg, var(--neon-purple), #6d28d9); }
-.c-card-icon.msg    { background: linear-gradient(135deg, var(--neon-orange), #ff4757); }
+.c-card-icon.msg    { background: linear-gradient(135deg, var(--neon-orange), #E65100); }
 
 .c-card-icon svg {
     width: 24px;
@@ -265,7 +265,7 @@
 
 .c-qr-img:hover {
     border-color: var(--neon-cyan);
-    box-shadow: 0 0 20px rgba(0,240,255,0.25);
+    box-shadow: 0 0 20px rgba(0, 188, 212,0.25);
 }
 
 .c-qr-hint {
@@ -279,8 +279,8 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    background: rgba(0,0,0,0.35);
-    border: 1px solid var(--dark-card-border);
+    background: #f5f7fa;                         /* 浅灰底，模拟输入框 */
+    border: 1px solid #d0d7de;
     border-radius: 10px;
     padding: 10px 14px;
     margin-top: 4px;
@@ -288,21 +288,21 @@
 }
 
 .c-copy-row:hover {
-    border-color: rgba(0,240,255,0.35);
+    border-color: #00838F;                       /* 深青边框，悬停反馈 */
 }
 
 .c-copy-value {
     flex: 1;
     font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
     font-size: 0.98em;
-    color: var(--neon-cyan);
+    color: #006064;                              /* cyan 900：浅底上保持高对比 */
     word-break: break-all;
 }
 
 .c-copy-btn {
-    background: rgba(0,240,255,0.08);
-    border: 1px solid rgba(0,240,255,0.3);
-    color: var(--neon-cyan);
+    background: #e0f7fa;                         /* cyan 50：清晰可见的浅青底 */
+    border: 1px solid #00bcd4;
+    color: #00838F;                              /* cyan 800 文字 */
     border-radius: 6px;
     padding: 5px 12px;
     font-size: 0.78em;
@@ -315,12 +315,13 @@
 }
 
 .c-copy-btn:hover {
-    background: rgba(0,240,255,0.2);
+    background: #b2ebf2;
+    border-color: #00838F;
     transform: translateY(-1px);
 }
 
 .c-copy-btn.copied {
-    background: rgba(0,255,136,0.18);
+    background: rgba(58, 161, 126,0.18);
     border-color: var(--neon-green);
     color: var(--neon-green);
 }
@@ -337,9 +338,9 @@
     align-items: center;
     gap: 6px;
     padding: 8px 18px;
-    background: rgba(0,240,255,0.06);
-    border: 1px solid rgba(0,240,255,0.25);
-    color: var(--neon-cyan) !important;
+    background: #e0f7fa;                         /* cyan 50 浅底 */
+    border: 1px solid #00bcd4;
+    color: #00838F !important;                   /* cyan 800 文字 */
     border-radius: 20px;
     font-size: 0.85em;
     text-decoration: none !important;
@@ -347,21 +348,22 @@
 }
 
 .c-action-btn:hover {
-    background: rgba(0,240,255,0.18);
-    border-color: var(--neon-cyan);
+    background: #b2ebf2;
+    border-color: #00838F;
     transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(0,240,255,0.2);
+    box-shadow: 0 4px 16px rgba(0, 188, 212, 0.3);
 }
 
 .c-action-btn.primary {
-    background: linear-gradient(135deg, rgba(168,85,247,0.18), rgba(0,240,255,0.18));
-    border-color: rgba(168,85,247,0.5);
+    background: linear-gradient(135deg, #00bcd4, #00838F);   /* 实色品牌青渐变 */
+    border-color: #00838F;
     color: #fff !important;
 }
 
 .c-action-btn.primary:hover {
-    border-color: var(--neon-purple);
-    box-shadow: 0 4px 16px rgba(168,85,247,0.3);
+    background: linear-gradient(135deg, #00838F, #006064);
+    border-color: #006064;
+    box-shadow: 0 4px 16px rgba(0, 188, 212, 0.45);
 }
 
 .c-action-btn svg {
@@ -394,7 +396,7 @@
     position: absolute;
     top: -50%; left: -50%;
     width: 200%; height: 200%;
-    background: radial-gradient(circle, rgba(255,79,138,0.06) 0%, transparent 50%);
+    background: radial-gradient(circle, rgba(216, 27, 96,0.06) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -411,7 +413,7 @@
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s;
-    box-shadow: 0 4px 20px rgba(255,79,138,0.3);
+    box-shadow: 0 4px 20px rgba(216, 27, 96,0.3);
     animation: c-pulse 2.5s ease-in-out infinite;
     position: relative;
     z-index: 1;
@@ -419,7 +421,7 @@
 
 .donate-trigger:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 28px rgba(255,79,138,0.5);
+    box-shadow: 0 6px 28px rgba(216, 27, 96,0.5);
 }
 
 .donate-trigger svg {
@@ -483,7 +485,7 @@
     border-radius: 12px;
     background: #fff;
     padding: 12px;
-    box-shadow: 0 0 60px rgba(0,240,255,0.2);
+    box-shadow: 0 0 60px rgba(0, 188, 212,0.2);
 }
 
 .c-lightbox-close {
@@ -508,7 +510,7 @@
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%) translateY(20px);
-    background: rgba(0,255,136,0.95);
+    background: rgba(58, 161, 126,0.95);
     color: #042814;
     padding: 10px 22px;
     border-radius: 24px;
@@ -518,7 +520,7 @@
     pointer-events: none;
     transition: opacity 0.25s, transform 0.25s;
     z-index: 10000;
-    box-shadow: 0 8px 30px rgba(0,255,136,0.3);
+    box-shadow: 0 8px 30px rgba(58, 161, 126,0.3);
 }
 
 .c-toast.show {
@@ -543,12 +545,33 @@
         height: 140px;
     }
 }
+
+/* layout 自带 #page-info 的 white-text 标题在浅底上不可见，
+   contact 已有自己的 hero 区显示「联系我 / Contact Me」—— 覆盖为深色 */
+#page-info .page-title {
+    color: var(--text-primary);
+    text-shadow: none;
+}
+
+/* 分界线：与 about 页一致，cyan→indigo 渐变两端淡出 */
+.page-divider {
+    height: 2px;
+    border: 0;
+    margin: 10px auto 30px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, #00bcd4 30%, #3f51b5 70%, transparent);
+    border-radius: 2px;
+    opacity: 0.7;
+}
 </style>
 
 <div class="contact-page">
     <div class="contact-page-bg-override"></div>
     <canvas id="contact-canvas-bg"></canvas>
     <div class="contact-scanline"></div>
+
+    <!-- 分界线：把 layout 顶部的 "联系我" 与本页 hero 分开 -->
+    <hr class="page-divider">
 
     <!-- ====== HERO ====== -->
     <div class="contact-section contact-hero">
@@ -761,7 +784,7 @@
                 if (p.y < 0 || p.y > h) p.vy = -p.vy;
                 ctx.beginPath();
                 ctx.arc(p.x, p.y, p.r, 0, 6.2832);
-                ctx.fillStyle = 'rgba(0,240,255,' + p.o + ')';
+                ctx.fillStyle = 'rgba(0, 96, 100,' + p.o + ')';
                 ctx.fill();
             }
 
@@ -780,7 +803,7 @@
                     }
                 }
             }
-            ctx.strokeStyle = 'rgba(0,240,255,0.08)';
+            ctx.strokeStyle = 'rgba(0, 131, 143, 0.25)';
             ctx.stroke();
 
             if (mouse.x > 0) {
@@ -795,7 +818,7 @@
                         ctx.lineTo(mouse.x, mouse.y);
                     }
                 }
-                ctx.strokeStyle = 'rgba(168,85,247,0.15)';
+                ctx.strokeStyle = 'rgba(63, 81, 181, 0.4)';
                 ctx.stroke();
             }
 
