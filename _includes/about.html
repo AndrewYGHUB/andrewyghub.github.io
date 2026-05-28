@@ -649,41 +649,29 @@
     }
 }
 
-/* Override page background for dark theme */
-.about-page-bg-override {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: var(--dark-bg);
-    z-index: -2;
-}
-
-/* layout 自带 #page-info 的 white-text 标题在浅底上不可见，
-   而 about 已有自己的 hero 区显示名字 —— 这里覆盖为深色保证可读 */
-#page-info .page-title {
-    color: var(--text-primary);
-    text-shadow: none;
-}
+/* 注：.about-page-bg-override 已移除（HTML + CSS）
+   原作用是用深色覆盖全屏，现在保留 layout 自带的绿色 header 渐变作为顶部视觉 */
+/* 注：#page-info .page-title 颜色覆盖也已移除，让 layout 自带的 white-text 在绿色 header 上正常显示 */
 
 /* 分界线：浅底上用 cyan 渐变，两端淡出，居中视觉 */
-.page-divider {
-    height: 2px;
-    border: 0;
-    margin: 10px auto 30px;
-    width: 100%;
-    background: linear-gradient(90deg, transparent, #00bcd4 30%, #3f51b5 70%, transparent);
-    border-radius: 2px;
-    opacity: 0.7;
-}
+/*.page-divider {*/
+/*    height: 2px;*/
+/*    border: 0;*/
+/*    margin: 10px auto 30px;*/
+/*    width: 100%;*/
+/*    background: linear-gradient(90deg, transparent, #00bcd4 30%, #3f51b5 70%, transparent);*/
+/*    border-radius: 2px;*/
+/*    opacity: 0.7;*/
+/*}*/
 </style>
 
 <div class="about-page">
-    <div class="about-page-bg-override"></div>
+    <!-- bg-override 已移除：保留 layout 顶部的绿→蓝渐变 header -->
     <canvas id="about-canvas-bg"></canvas>
     <div class="about-scanline"></div>
 
     <!-- 分界线：把 layout 顶部的 "About Me" 与本页 hero 分开 -->
-    <hr class="page-divider">
+<!--    <hr class="page-divider">-->
 
     <!-- ====== HERO ====== -->
     <div class="about-section about-hero">

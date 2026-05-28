@@ -1,5 +1,5 @@
 ---
 layout: page
-title: "联系我"
+title: "Contact Me"
 ---
 {% include contact.html %}
