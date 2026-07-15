@@ -321,10 +321,13 @@
 <!--<script>!function(){var _0x1a=['\x63\x6f\x6e\x74\x65\x78\x74\x6d\x65\x6e\x75','\x73\x65\x6c\x65\x63\x74\x73\x74\x61\x72\x74','\x63\x6f\x70\x79','\x63\x75\x74','\x6b\x65\x79\x64\x6f\x77\x6e'],_0xd=document,_0xp=function(e){e.preventDefault();return!1};_0x1a.forEach(function(t){_0xd.addEventListener(t,_0xp,!1)});_0xd.addEventListener(_0x1a[4],function(e){if(e.ctrlKey&&(e.keyCode===67||e.keyCode===86||e.keyCode===85||e.keyCode===65||e.keyCode===83)||e.keyCode===123){e.preventDefault();return!1}},!1);var _s=_0xd.createElement('style');_s.textContent='*{-webkit-user-select:none!important;-moz-user-select:none!important;-ms-user-select:none!important;user-select:none!important;-webkit-touch-callout:none!important}';_0xd.head.appendChild(_s)}();</script>-->
 <!-- Dify 客服入口 -->
 <!-- 说明:Dify 部署在裸 IP + HTTP(http://154.29.79.223)上,无法作为 iframe 内嵌进本 HTTPS 站点
-     (浏览器会以"混合内容"拦截)。因此改用浮动按钮:点击在弹窗/新标签打开 Dify 客服页,
-     超链接跳转不受混合内容限制。若日后 Dify 换成 https 域名,可改回官方 embed.min.js 内嵌气泡。 -->
+     (浏览器会以"混合内容"拦截)。因此改用浮动按钮:点击在弹窗/新标签打开自建聊天页 dify-chat.html。
+     该聊天页用 Dify API + 本地随机头像池渲染对话,须与 Dify 同源部署在 HTTP 服务器上
+     (若放到本 HTTPS 站点,fetch HTTP 接口会被混合内容拦截)。
+     若日后 Dify 换成 https 域名,可把该页挪到本站,或改回官方 embed.min.js 内嵌气泡。 -->
+<!--href="http://154.29.79.223/chatbot/9dksyztSH5JU7KFR"-->
 <a id="dify-launch-btn"
-   href="http://154.29.79.223/chatbot/9dksyztSH5JU7KFR"
+   href="http://154.29.79.223/dify-chat.html"
    target="_blank" rel="noopener"
    title="在线客服(可拖动)"
    aria-label="在线客服"
