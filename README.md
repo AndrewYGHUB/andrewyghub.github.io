@@ -41,6 +41,15 @@ jekyll 使用教程：<https://www.jekyll.com.cn/>
 
 配置文件是位于主目录的 `_config.yml`，关于配置的完整参数介绍和默认值等内容，请查阅官网文档：<https://www.jekyll.com.cn/docs/configuration/>
 
+
+
+<dependency>
+    <groupId>com.anthropic</groupId>
+    <artifactId>anthropic-java</artifactId>
+    <version>2.49.0</version>
+</dependency>
+
+
 以下是我的网站配置示例，以供参考：
 ```yml
 # 以下为自定义的全局变量，可以在 HTML 文件中引用，
