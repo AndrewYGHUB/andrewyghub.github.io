@@ -319,19 +319,66 @@
 {% endif %}
 <!--//禁止剪切/复制-->
 <!--<script>!function(){var _0x1a=['\x63\x6f\x6e\x74\x65\x78\x74\x6d\x65\x6e\x75','\x73\x65\x6c\x65\x63\x74\x73\x74\x61\x72\x74','\x63\x6f\x70\x79','\x63\x75\x74','\x6b\x65\x79\x64\x6f\x77\x6e'],_0xd=document,_0xp=function(e){e.preventDefault();return!1};_0x1a.forEach(function(t){_0xd.addEventListener(t,_0xp,!1)});_0xd.addEventListener(_0x1a[4],function(e){if(e.ctrlKey&&(e.keyCode===67||e.keyCode===86||e.keyCode===85||e.keyCode===65||e.keyCode===83)||e.keyCode===123){e.preventDefault();return!1}},!1);var _s=_0xd.createElement('style');_s.textContent='*{-webkit-user-select:none!important;-moz-user-select:none!important;-ms-user-select:none!important;user-select:none!important;-webkit-touch-callout:none!important}';_0xd.head.appendChild(_s)}();</script>-->
-<!-- Dify 客服入口 -->
-<!-- 说明:Dify 部署在裸 IP + HTTP(http://154.29.79.223)上,无法作为 iframe 内嵌进本 HTTPS 站点
-     (浏览器会以"混合内容"拦截)。因此改用浮动按钮:点击在弹窗/新标签打开自建聊天页 dify-chat.html。
-     该聊天页用 Dify API + 本地随机头像池渲染对话,须与 Dify 同源部署在 HTTP 服务器上
-     (若放到本 HTTPS 站点,fetch HTTP 接口会被混合内容拦截)。
-     若日后 Dify 换成 https 域名,可把该页挪到本站,或改回官方 embed.min.js 内嵌气泡。 -->
-<!--href="http://154.29.79.223/chatbot/9dksyztSH5JU7KFR"-->
+<!-- Dify 客服入口:浮动按钮 + 页面内嵌会话面板 -->
+<!-- 说明:Dify 已迁到 https 域名(https://www.yunxilu.com),不再有混合内容问题,
+     因此把原先的"新窗口弹出"改为页面内嵌 iframe 会话。
+     实测:/login.html 返回 200 且不带 X-Frame-Options,能正常嵌入渲染;
+     但 /andrewyg-chat.html 会 302 跳到 /login.html,所以访客当前在面板里看到的是登录页。
+     若希望访客免登录直接对话,需在 nginx 放行该页匿名访问。
+     另:那个 302 响应带 X-Frame-Options: SAMEORIGIN(重定向不渲染,不影响);
+     若登录后的聊天页 200 响应也带这个头,浏览器会拒绝渲染,届时为该 location 改成:
+       add_header Content-Security-Policy "frame-ancestors https://andrewyghub.github.io https://www.yunxilu.com" always;
+     任何情况下,面板右上角的 ↗ 都可回退到独立窗口打开。 -->
+<style>
+#dify-chat-panel{
+  position:fixed; z-index:99998; display:flex; flex-direction:column;
+  width:400px; height:640px;
+  max-width:calc(100vw - 24px); max-height:calc(100vh - 24px);
+  background:#fff; border-radius:12px; overflow:hidden;
+  box-shadow:0 12px 40px rgba(0,0,0,.28);
+  opacity:0; transform:translateY(8px) scale(.98);
+  transition:opacity .18s ease, transform .18s ease;
+}
+#dify-chat-panel[hidden]{ display:none !important; }
+#dify-chat-panel.is-open{ opacity:1; transform:none; }
+#dify-chat-bar{
+  flex:0 0 auto; display:flex; align-items:center;
+  height:44px; padding:0 6px 0 14px;
+  background:#1C64F2; color:#fff; font-size:14px;
+}
+#dify-chat-title{ flex:1 1 auto; font-weight:600; letter-spacing:.5px; }
+#dify-chat-bar a, #dify-chat-bar button{
+  flex:0 0 auto; width:30px; height:30px; margin-left:2px;
+  display:flex; align-items:center; justify-content:center;
+  color:#fff; background:transparent; border:0; border-radius:6px;
+  font-size:17px; line-height:1; padding:0; cursor:pointer;
+  text-decoration:none; box-shadow:none;
+}
+#dify-chat-bar a:hover, #dify-chat-bar button:hover{ background:rgba(255,255,255,.18); }
+#dify-chat-frame{ flex:1 1 auto; width:100%; border:0; background:#fff; }
+@media (max-width:480px){
+  #dify-chat-panel{ width:calc(100vw - 16px); height:72vh; }
+}
+</style>
+
+<div id="dify-chat-panel" role="dialog" aria-label="在线客服" hidden>
+  <div id="dify-chat-bar">
+    <span id="dify-chat-title">在线客服</span>
+    <a id="dify-chat-pop" href="https://www.yunxilu.com/andrewyg-chat.html"
+       target="_blank" rel="noopener" title="在新窗口打开">&#8599;</a>
+    <button id="dify-chat-close" type="button" aria-label="关闭客服会话">&times;</button>
+  </div>
+  <iframe id="dify-chat-frame" title="在线客服会话"
+          allow="microphone; clipboard-write"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
 <a id="dify-launch-btn"
-   href="http://154.29.79.223/andrewyg-chat.html"
+   href="https://www.yunxilu.com/andrewyg-chat.html"
    target="_blank" rel="noopener"
    title="在线客服(可拖动)"
    aria-label="在线客服"
-   onclick="if(this.dataset.dragged==='1'){this.dataset.dragged='';return false;}var w=window.open(this.href,'dify_chat','width=400,height=640');if(w){w.focus();}else{window.open(this.href,'_blank');}return false;"
+   aria-expanded="false"
    style="position:fixed;right:1rem;bottom:1rem;z-index:99999;width:52px;height:52px;border-radius:50%;
           background:#1C64F2;box-shadow:0 4px 14px rgba(0,0,0,.2);cursor:grab;touch-action:none;
           display:flex;align-items:center;justify-content:center;">
@@ -342,32 +389,80 @@
 </a>
 <script>
 (function(){
-  var btn = document.getElementById('dify-launch-btn');
-  if(!btn) return;
+  var btn      = document.getElementById('dify-launch-btn');
+  var panel    = document.getElementById('dify-chat-panel');
+  var frame    = document.getElementById('dify-chat-frame');
+  var closeBtn = document.getElementById('dify-chat-close');
+  if(!btn || !panel || !frame) return;
+
   var SIZE = 52, GAP = 8, THRESHOLD = 5, KEY = 'dify-btn-pos';
+  var CHAT_URL = btn.getAttribute('href');   // 改地址只需改上面 dify-launch-btn 的 href
+  var opened = false, framed = false;
+  var pos = null;   // 用户拖动后的目标位置;null 表示仍用默认锚点(右对齐、垂直居中)
 
   function clamp(v, min, max){ return Math.max(min, Math.min(max, v)); }
 
-  // 用 left/top 定位(便于拖动),替换默认的 right/bottom
-  function place(left, top){
-    left = clamp(left, GAP, window.innerWidth  - SIZE - GAP);
-    top  = clamp(top,  GAP, window.innerHeight - SIZE - GAP);
-    btn.style.left   = left + 'px';
-    btn.style.top    = top  + 'px';
+  // 用 left/top 定位(便于拖动),替换默认的 right/bottom。
+  // 注意:始终从"目标位置 pos"重新夹紧,而不是读当前 DOM 位置 ——
+  // 否则窗口一旦被缩到很小(或初始化时 innerWidth 为 0,如后台标签页/预渲染),
+  // 按钮会被夹到角落并永久卡在那里。
+  function applyPos(){
+    var vw = window.innerWidth, vh = window.innerHeight;
+    if(!vw || !vh) return;                       // 尚未完成布局,等 resize/load 再放
+    var left = pos ? pos.left : vw - SIZE - 16;
+    var top  = pos ? pos.top  : (vh - SIZE) / 2;
+    btn.style.left   = clamp(left, GAP, vw - SIZE - GAP) + 'px';
+    btn.style.top    = clamp(top,  GAP, vh - SIZE - GAP) + 'px';
     btn.style.right  = 'auto';
     btn.style.bottom = 'auto';
-    return { left: left, top: top };
   }
 
-  // 恢复上次拖动的位置,否则用默认右下角
-  var saved = null;
-  try { saved = JSON.parse(localStorage.getItem(KEY)); } catch(e){}
-  if(saved && typeof saved.left === 'number'){
-    place(saved.left, saved.top);
-  } else {
-    // 默认:右对齐、垂直居中
-    place(window.innerWidth - SIZE - 16, (window.innerHeight - SIZE) / 2);
+  // 面板贴着按钮开,并让开按钮本身(按钮在右半屏就开左侧,反之开右侧)
+  function placePanel(){
+    if(!opened) return;
+    var b = btn.getBoundingClientRect();
+    var vw = window.innerWidth, vh = window.innerHeight;
+    var w = panel.offsetWidth, h = panel.offsetHeight;
+    // 竖直:优先与按钮上缘对齐,底部超出则上移,最后夹进视口
+    var top = b.top;
+    if(top + h > vh - GAP) top = b.bottom - h;
+    top = clamp(top, GAP, Math.max(GAP, vh - h - GAP));
+    // 水平:避开按钮;窗口太窄时(手机)夹紧后允许重叠,此时按钮即为关闭键
+    var left = (b.left + b.width / 2 > vw / 2) ? (b.left - GAP - w) : (b.right + GAP);
+    left = clamp(left, GAP, Math.max(GAP, vw - w - GAP));
+    panel.style.left = left + 'px';
+    panel.style.top  = top  + 'px';
+    // 窄屏上面板会盖住按钮,此时把按钮藏起来,免得挡住会话内容(关闭走标题栏 × 或 Esc)
+    var overlap = !(left + w <= b.left || left >= b.right || top + h <= b.top || top >= b.bottom);
+    btn.style.visibility = overlap ? 'hidden' : '';
   }
+
+  function openPanel(){
+    if(opened) return;
+    opened = true;
+    panel.hidden = false;
+    if(!framed){ frame.src = CHAT_URL; framed = true; }  // 首次打开才加载,不拖慢首屏
+    placePanel();
+    requestAnimationFrame(function(){ panel.classList.add('is-open'); });
+    btn.setAttribute('aria-expanded', 'true');
+  }
+
+  function closePanel(){
+    if(!opened) return;
+    opened = false;
+    panel.classList.remove('is-open');
+    btn.style.visibility = '';
+    btn.setAttribute('aria-expanded', 'false');
+    // 保留 iframe 不重置 src,重新打开时会话还在
+    setTimeout(function(){ if(!opened) panel.hidden = true; }, 200);
+  }
+
+  // 恢复上次拖动的位置;没有则保持默认锚点,随窗口大小自适应
+  try {
+    var saved = JSON.parse(localStorage.getItem(KEY));
+    if(saved && typeof saved.left === 'number') pos = saved;
+  } catch(e){}
+  applyPos();
 
   var dragging = false, moved = false, startX = 0, startY = 0, offX = 0, offY = 0;
 
@@ -379,15 +474,18 @@
     offY = e.clientY - r.top;
     btn.dataset.dragged = '';
     btn.style.cursor = 'grabbing';
-    btn.setPointerCapture(e.pointerId);
+    // 捕获失败(部分环境/合成事件)不应中断拖动逻辑
+    try { btn.setPointerCapture(e.pointerId); } catch(err){}
   });
 
   btn.addEventListener('pointermove', function(e){
     if(!dragging) return;
     if(!moved && Math.abs(e.clientX - startX) < THRESHOLD && Math.abs(e.clientY - startY) < THRESHOLD) return;
     moved = true;
-    btn.dataset.dragged = '1';       // 标记为拖动,阻止随后的 click 打开客服
-    place(e.clientX - offX, e.clientY - offY);
+    btn.dataset.dragged = '1';       // 标记为拖动,阻止随后的 click 开关面板
+    pos = { left: e.clientX - offX, top: e.clientY - offY };
+    applyPos();
+    placePanel();                    // 面板跟着按钮走
   });
 
   function endDrag(e){
@@ -395,19 +493,33 @@
     dragging = false;
     btn.style.cursor = 'grab';
     try { btn.releasePointerCapture(e.pointerId); } catch(err){}
-    if(moved){
-      var r = btn.getBoundingClientRect();
-      try { localStorage.setItem(KEY, JSON.stringify({ left: r.left, top: r.top })); } catch(err){}
+    if(moved && pos){
+      try { localStorage.setItem(KEY, JSON.stringify(pos)); } catch(err){}
+      placePanel();
     }
   }
   btn.addEventListener('pointerup', endDrag);
   btn.addEventListener('pointercancel', endDrag);
 
-  // 窗口尺寸变化时保持在可视区域内
-  window.addEventListener('resize', function(){
-    var r = btn.getBoundingClientRect();
-    place(r.left, r.top);
+  // 点击开关面板;拖动后的那一次 click 不触发
+  btn.addEventListener('click', function(e){
+    if(btn.dataset.dragged === '1'){ btn.dataset.dragged = ''; e.preventDefault(); return; }
+    if(e.metaKey || e.ctrlKey || e.shiftKey) return;   // 保留 Ctrl/Cmd+点击在新标签打开
+    e.preventDefault();
+    if(opened) closePanel(); else openPanel();
   });
+
+  closeBtn.addEventListener('click', closePanel);
+
+  document.addEventListener('keydown', function(e){
+    if((e.key === 'Escape' || e.keyCode === 27) && opened) closePanel();
+  });
+
+  // 窗口尺寸变化时保持按钮与面板在可视区域内
+  window.addEventListener('resize', function(){ applyPos(); placePanel(); });
+  // 初始化时若页面尚未布局(后台标签页/预渲染,innerWidth 为 0),这里补一次
+  window.addEventListener('load', applyPos);
+  document.addEventListener('visibilitychange', applyPos);
 })();
 </script>
 </body>
