@@ -54,6 +54,18 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">	
     {% seo title=false %}
+
+    {% if jekyll.environment == 'production' %}
+    <!-- 51.la 统计 + 事件分析(本地化集成:两个 SDK 自托管在 /51la/ 下) -->
+    <!-- js-sdk-pro.min.js = 统计分析,js-sdk-event.min.js = 事件分析;按 51.la 要求两者均不可改名。
+         autoTrack:true  开启事件自动采集(事件分析功能靠它)。
+         prefix:"51la"   告诉统计 SDK 去哪个目录加载事件 SDK —— 默认只从站点根目录找,
+                         本站放在 /51la/ 下,不声明则事件 SDK 加载不到。
+         window.LA&&     SDK 被拦截或加载失败时不抛错。
+         51.la 建议放在 head 结束标签前,越早执行越少漏采。 -->
+    <script charset="UTF-8" id="LA_COLLECT" src="/51la/js-sdk-pro.min.js"></script>
+    <script>window.LA&&LA.init({id:"3PZw4Rp41xgprYli",ck:"3PZw4Rp41xgprYli",autoTrack:true,prefix:"51la"});</script>
+    {% endif %}
 </head>
 
 <body>
