@@ -317,77 +317,38 @@
 {% endif %}
 <!--//禁止剪切/复制-->
 <!--<script>!function(){var _0x1a=['\x63\x6f\x6e\x74\x65\x78\x74\x6d\x65\x6e\x75','\x73\x65\x6c\x65\x63\x74\x73\x74\x61\x72\x74','\x63\x6f\x70\x79','\x63\x75\x74','\x6b\x65\x79\x64\x6f\x77\x6e'],_0xd=document,_0xp=function(e){e.preventDefault();return!1};_0x1a.forEach(function(t){_0xd.addEventListener(t,_0xp,!1)});_0xd.addEventListener(_0x1a[4],function(e){if(e.ctrlKey&&(e.keyCode===67||e.keyCode===86||e.keyCode===85||e.keyCode===65||e.keyCode===83)||e.keyCode===123){e.preventDefault();return!1}},!1);var _s=_0xd.createElement('style');_s.textContent='*{-webkit-user-select:none!important;-moz-user-select:none!important;-ms-user-select:none!important;user-select:none!important;-webkit-touch-callout:none!important}';_0xd.head.appendChild(_s)}();</script>-->
-<!-- 云溪助手入口:浮动按钮 + 页面内嵌会话面板 -->
+<!-- 云溪助手入口:可拖动浮动按钮,点击在新窗口打开 -->
 <!-- ★元素 id 仍叫 dify-* 是历史遗留:最早接的是自建 Dify 页,现在指向 www.yunxilu.com
      (agent-ui)。只改了地址没改 id,免得动到样式与脚本里的一串选择器。
+     入口地址就是下面那个 href,改地址只改那一处。旧地址 /andrewyg-chat.html 已退役。
 
-     入口地址取自下面 dify-launch-btn 的 href,iframe 也从那里读,改地址只改那一处。
-     旧地址 /andrewyg-chat.html 已退役,不要再往回指。
+     ★★为什么不做页面内嵌 iframe —— 2026-08-04 完整试过并放弃,别再走一遍:
 
-     已知限制(2026-08-04 实测):面板内是空白,原因有两层,都在服务端:
-       ① 站点根 / 会 302 到 /login.html,而 /login.html 的 200 响应带
-          X-Frame-Options: SAMEORIGIN(来自 nginx 的 ayg_security.conf 片段),
-          浏览器拒绝跨源 iframe 渲染。这层与填哪个入口地址无关,博客侧绕不开。
-          解法是在该片段里把 XFO 换成:
+       ① 跨源渲染这关**已经打通**。服务端(nginx 的 ayg_security.conf)把
+          X-Frame-Options: SAMEORIGIN 换成了
             add_header Content-Security-Policy "frame-ancestors 'self' https://andrewyghub.github.io" always;
-          改片段而不是逐 location 改 —— 登录后 SPA 走 location / → /index.html,
-          那条也 include 同一个片段,只放行登录页的话登录完照样白屏。
-       ② 即使 ① 解决,访客看到的仍是登录框:agent-ui 全站有会话闸门
-          (location / 里的 if ($ayg_authed = 0) return 302)。要免登录直接对话
-          是产品决策,不是配置微调。
+          面板里确实能正常显示出登录页。所以别以为是这一层没解决。
 
-     在两层都解决之前,面板右上角的 ↗ 是唯一可用入口
-     (顶级导航不受 X-Frame-Options 限制)。 -->
-<style>
-#dify-chat-panel{
-  position:fixed; z-index:99998; display:flex; flex-direction:column;
-  width:400px; height:640px;
-  max-width:calc(100vw - 24px); max-height:calc(100vh - 24px);
-  background:#fff; border-radius:12px; overflow:hidden;
-  box-shadow:0 12px 40px rgba(0,0,0,.28);
-  opacity:0; transform:translateY(8px) scale(.98);
-  transition:opacity .18s ease, transform .18s ease;
-}
-#dify-chat-panel[hidden]{ display:none !important; }
-#dify-chat-panel.is-open{ opacity:1; transform:none; }
-#dify-chat-bar{
-  flex:0 0 auto; display:flex; align-items:center;
-  height:44px; padding:0 6px 0 14px;
-  background:#1C64F2; color:#fff; font-size:14px;
-}
-#dify-chat-title{ flex:1 1 auto; font-weight:600; letter-spacing:.5px; }
-#dify-chat-bar a, #dify-chat-bar button{
-  flex:0 0 auto; width:30px; height:30px; margin-left:2px;
-  display:flex; align-items:center; justify-content:center;
-  color:#fff; background:transparent; border:0; border-radius:6px;
-  font-size:17px; line-height:1; padding:0; cursor:pointer;
-  text-decoration:none; box-shadow:none;
-}
-#dify-chat-bar a:hover, #dify-chat-bar button:hover{ background:rgba(255,255,255,.18); }
-#dify-chat-frame{ flex:1 1 auto; width:100%; border:0; background:#fff; }
-@media (max-width:480px){
-  #dify-chat-panel{ width:calc(100vw - 16px); height:72vh; }
-}
-</style>
+       ② ★真正卡死的是**登录进不去**。会话 Cookie ayg_sess 是 SameSite=Lax
+          (实测 /auth/logout 的 Set-Cookie 可见此约定),而"博客做顶层 + yunxilu 在框内"
+          属于**跨站(第三方)上下文**,浏览器不允许在这种上下文里写入 Lax Cookie。
+          ⇒ 密码输对、登录请求也成功,Cookie 却被丢弃,下一个请求仍是未登录,弹回登录页。
+          ★★失效的样子极具误导性:看着像密码错或账号有问题,
+            实际是**登录态根本存不下来**,查账号查密码全是白费。
 
-<div id="dify-chat-panel" role="dialog" aria-label="在线客服" hidden>
-  <div id="dify-chat-bar">
-    <span id="dify-chat-title">在线客服</span>
-    <a id="dify-chat-pop" href="https://www.yunxilu.com/"
-       target="_blank" rel="noopener" title="在新窗口打开">&#8599;</a>
-    <button id="dify-chat-close" type="button" aria-label="关闭客服会话">&times;</button>
-  </div>
-  <iframe id="dify-chat-frame" title="在线客服会话"
-          allow="microphone; clipboard-write"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
+       ③ 要修得把 Cookie 改成 SameSite=None; Secure; Partitioned。代价两条:
+          Partitioned 按顶层站点分仓 —— 博客里登录的会话与直接访问 yunxilu 的
+          **互不相通**,是两个独立登录态;且 SameSite=Lax 本身是一层 CSRF 防护,
+          改成 None 会削弱它。为一个入口按钮不值得。
 
+     ⇒ 改回新窗口打开:顶级导航是**第一方上下文**,Cookie 一切正常,登录照常。
+        服务端那条 frame-ancestors 现在用不上了,但留着无害(白名单只多一个源),
+        要收回就把 ayg_security.conf 改回 X-Frame-Options。 -->
 <a id="dify-launch-btn"
    href="https://www.yunxilu.com/"
    target="_blank" rel="noopener"
    title="在线客服(可拖动)"
    aria-label="在线客服"
-   aria-expanded="false"
    style="position:fixed;right:1rem;bottom:1rem;z-index:99999;width:52px;height:52px;border-radius:50%;
           background:#1C64F2;box-shadow:0 4px 14px rgba(0,0,0,.2);cursor:grab;touch-action:none;
           display:flex;align-items:center;justify-content:center;">
@@ -398,23 +359,17 @@
 </a>
 <script>
 (function(){
-  var btn      = document.getElementById('dify-launch-btn');
-  var panel    = document.getElementById('dify-chat-panel');
-  var frame    = document.getElementById('dify-chat-frame');
-  var closeBtn = document.getElementById('dify-chat-close');
-  if(!btn || !panel || !frame) return;
-
+  var btn = document.getElementById('dify-launch-btn');
+  if(!btn) return;
   var SIZE = 52, GAP = 8, THRESHOLD = 5, KEY = 'dify-btn-pos';
-  var CHAT_URL = btn.getAttribute('href');   // 改地址只需改上面 dify-launch-btn 的 href
-  var opened = false, framed = false;
   var pos = null;   // 用户拖动后的目标位置;null 表示仍用默认锚点(右对齐、垂直居中)
 
   function clamp(v, min, max){ return Math.max(min, Math.min(max, v)); }
 
   // 用 left/top 定位(便于拖动),替换默认的 right/bottom。
-  // 注意:始终从"目标位置 pos"重新夹紧,而不是读当前 DOM 位置 ——
-  // 否则窗口一旦被缩到很小(或初始化时 innerWidth 为 0,如后台标签页/预渲染),
-  // 按钮会被夹到角落并永久卡在那里。
+  // ★始终从"目标位置 pos"重新夹紧,而不是读当前 DOM 位置 ——
+  //   否则窗口一旦被缩到很小(或初始化时 innerWidth 为 0,如后台标签页/预渲染),
+  //   按钮会被夹到角落并**永久卡在那里**(实测踩过)。
   function applyPos(){
     var vw = window.innerWidth, vh = window.innerHeight;
     if(!vw || !vh) return;                       // 尚未完成布局,等 resize/load 再放
@@ -424,46 +379,6 @@
     btn.style.top    = clamp(top,  GAP, vh - SIZE - GAP) + 'px';
     btn.style.right  = 'auto';
     btn.style.bottom = 'auto';
-  }
-
-  // 面板贴着按钮开,并让开按钮本身(按钮在右半屏就开左侧,反之开右侧)
-  function placePanel(){
-    if(!opened) return;
-    var b = btn.getBoundingClientRect();
-    var vw = window.innerWidth, vh = window.innerHeight;
-    var w = panel.offsetWidth, h = panel.offsetHeight;
-    // 竖直:优先与按钮上缘对齐,底部超出则上移,最后夹进视口
-    var top = b.top;
-    if(top + h > vh - GAP) top = b.bottom - h;
-    top = clamp(top, GAP, Math.max(GAP, vh - h - GAP));
-    // 水平:避开按钮;窗口太窄时(手机)夹紧后允许重叠,此时按钮即为关闭键
-    var left = (b.left + b.width / 2 > vw / 2) ? (b.left - GAP - w) : (b.right + GAP);
-    left = clamp(left, GAP, Math.max(GAP, vw - w - GAP));
-    panel.style.left = left + 'px';
-    panel.style.top  = top  + 'px';
-    // 窄屏上面板会盖住按钮,此时把按钮藏起来,免得挡住会话内容(关闭走标题栏 × 或 Esc)
-    var overlap = !(left + w <= b.left || left >= b.right || top + h <= b.top || top >= b.bottom);
-    btn.style.visibility = overlap ? 'hidden' : '';
-  }
-
-  function openPanel(){
-    if(opened) return;
-    opened = true;
-    panel.hidden = false;
-    if(!framed){ frame.src = CHAT_URL; framed = true; }  // 首次打开才加载,不拖慢首屏
-    placePanel();
-    requestAnimationFrame(function(){ panel.classList.add('is-open'); });
-    btn.setAttribute('aria-expanded', 'true');
-  }
-
-  function closePanel(){
-    if(!opened) return;
-    opened = false;
-    panel.classList.remove('is-open');
-    btn.style.visibility = '';
-    btn.setAttribute('aria-expanded', 'false');
-    // 保留 iframe 不重置 src,重新打开时会话还在
-    setTimeout(function(){ if(!opened) panel.hidden = true; }, 200);
   }
 
   // 恢复上次拖动的位置;没有则保持默认锚点,随窗口大小自适应
@@ -491,10 +406,9 @@
     if(!dragging) return;
     if(!moved && Math.abs(e.clientX - startX) < THRESHOLD && Math.abs(e.clientY - startY) < THRESHOLD) return;
     moved = true;
-    btn.dataset.dragged = '1';       // 标记为拖动,阻止随后的 click 开关面板
+    btn.dataset.dragged = '1';       // 标记为拖动,阻止随后的 click 打开窗口
     pos = { left: e.clientX - offX, top: e.clientY - offY };
     applyPos();
-    placePanel();                    // 面板跟着按钮走
   });
 
   function endDrag(e){
@@ -504,28 +418,30 @@
     try { btn.releasePointerCapture(e.pointerId); } catch(err){}
     if(moved && pos){
       try { localStorage.setItem(KEY, JSON.stringify(pos)); } catch(err){}
-      placePanel();
     }
   }
   btn.addEventListener('pointerup', endDrag);
   btn.addEventListener('pointercancel', endDrag);
 
-  // 点击开关面板;拖动后的那一次 click 不触发
   btn.addEventListener('click', function(e){
+    // 拖动之后的那一次 click 不算点击,否则一拖就弹窗
     if(btn.dataset.dragged === '1'){ btn.dataset.dragged = ''; e.preventDefault(); return; }
-    if(e.metaKey || e.ctrlKey || e.shiftKey) return;   // 保留 Ctrl/Cmd+点击在新标签打开
+    // Ctrl/Cmd/Shift+点击交给浏览器默认行为(新标签/新窗口),不要抢
+    if(e.metaKey || e.ctrlKey || e.shiftKey) return;
     e.preventDefault();
-    if(opened) closePanel(); else openPanel();
+    // ★window.open 的第三个参数里**不能写 noopener** —— 那样按规范返回 null,
+    //   会误触发下面的兜底,变成开两个窗口。改为开完再把 opener 置空。
+    var w = window.open(btn.href, 'yunxilu_assistant', 'width=460,height=760');
+    if(w){
+      try { w.opener = null; } catch(err){}
+      w.focus();
+    } else {
+      window.open(btn.href, '_blank');   // 弹窗被拦时退回新标签
+    }
   });
 
-  closeBtn.addEventListener('click', closePanel);
-
-  document.addEventListener('keydown', function(e){
-    if((e.key === 'Escape' || e.keyCode === 27) && opened) closePanel();
-  });
-
-  // 窗口尺寸变化时保持按钮与面板在可视区域内
-  window.addEventListener('resize', function(){ applyPos(); placePanel(); });
+  // 窗口尺寸变化时保持按钮在可视区域内
+  window.addEventListener('resize', applyPos);
   // 初始化时若页面尚未布局(后台标签页/预渲染,innerWidth 为 0),这里补一次
   window.addEventListener('load', applyPos);
   document.addEventListener('visibilitychange', applyPos);
