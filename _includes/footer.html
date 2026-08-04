@@ -317,16 +317,27 @@
 {% endif %}
 <!--//禁止剪切/复制-->
 <!--<script>!function(){var _0x1a=['\x63\x6f\x6e\x74\x65\x78\x74\x6d\x65\x6e\x75','\x73\x65\x6c\x65\x63\x74\x73\x74\x61\x72\x74','\x63\x6f\x70\x79','\x63\x75\x74','\x6b\x65\x79\x64\x6f\x77\x6e'],_0xd=document,_0xp=function(e){e.preventDefault();return!1};_0x1a.forEach(function(t){_0xd.addEventListener(t,_0xp,!1)});_0xd.addEventListener(_0x1a[4],function(e){if(e.ctrlKey&&(e.keyCode===67||e.keyCode===86||e.keyCode===85||e.keyCode===65||e.keyCode===83)||e.keyCode===123){e.preventDefault();return!1}},!1);var _s=_0xd.createElement('style');_s.textContent='*{-webkit-user-select:none!important;-moz-user-select:none!important;-ms-user-select:none!important;user-select:none!important;-webkit-touch-callout:none!important}';_0xd.head.appendChild(_s)}();</script>-->
-<!-- Dify 客服入口:浮动按钮 + 页面内嵌会话面板 -->
-<!-- 说明:Dify 已迁到 https 域名(https://www.yunxilu.com),不再有混合内容问题,
-     因此把原先的"新窗口弹出"改为页面内嵌 iframe 会话。
-     实测:/login.html 返回 200 且不带 X-Frame-Options,能正常嵌入渲染;
-     但 /andrewyg-chat.html 会 302 跳到 /login.html,所以访客当前在面板里看到的是登录页。
-     若希望访客免登录直接对话,需在 nginx 放行该页匿名访问。
-     另:那个 302 响应带 X-Frame-Options: SAMEORIGIN(重定向不渲染,不影响);
-     若登录后的聊天页 200 响应也带这个头,浏览器会拒绝渲染,届时为该 location 改成:
-       add_header Content-Security-Policy "frame-ancestors https://andrewyghub.github.io https://www.yunxilu.com" always;
-     任何情况下,面板右上角的 ↗ 都可回退到独立窗口打开。 -->
+<!-- 云溪助手入口:浮动按钮 + 页面内嵌会话面板 -->
+<!-- ★元素 id 仍叫 dify-* 是历史遗留:最早接的是自建 Dify 页,现在指向 www.yunxilu.com
+     (agent-ui)。只改了地址没改 id,免得动到样式与脚本里的一串选择器。
+
+     入口地址取自下面 dify-launch-btn 的 href,iframe 也从那里读,改地址只改那一处。
+     旧地址 /andrewyg-chat.html 已退役,不要再往回指。
+
+     已知限制(2026-08-04 实测):面板内是空白,原因有两层,都在服务端:
+       ① 站点根 / 会 302 到 /login.html,而 /login.html 的 200 响应带
+          X-Frame-Options: SAMEORIGIN(来自 nginx 的 ayg_security.conf 片段),
+          浏览器拒绝跨源 iframe 渲染。这层与填哪个入口地址无关,博客侧绕不开。
+          解法是在该片段里把 XFO 换成:
+            add_header Content-Security-Policy "frame-ancestors 'self' https://andrewyghub.github.io" always;
+          改片段而不是逐 location 改 —— 登录后 SPA 走 location / → /index.html,
+          那条也 include 同一个片段,只放行登录页的话登录完照样白屏。
+       ② 即使 ① 解决,访客看到的仍是登录框:agent-ui 全站有会话闸门
+          (location / 里的 if ($ayg_authed = 0) return 302)。要免登录直接对话
+          是产品决策,不是配置微调。
+
+     在两层都解决之前,面板右上角的 ↗ 是唯一可用入口
+     (顶级导航不受 X-Frame-Options 限制)。 -->
 <style>
 #dify-chat-panel{
   position:fixed; z-index:99998; display:flex; flex-direction:column;
@@ -362,7 +373,7 @@
 <div id="dify-chat-panel" role="dialog" aria-label="在线客服" hidden>
   <div id="dify-chat-bar">
     <span id="dify-chat-title">在线客服</span>
-    <a id="dify-chat-pop" href="https://www.yunxilu.com/andrewyg-chat.html"
+    <a id="dify-chat-pop" href="https://www.yunxilu.com/"
        target="_blank" rel="noopener" title="在新窗口打开">&#8599;</a>
     <button id="dify-chat-close" type="button" aria-label="关闭客服会话">&times;</button>
   </div>
@@ -372,7 +383,7 @@
 </div>
 
 <a id="dify-launch-btn"
-   href="https://www.yunxilu.com/andrewyg-chat.html"
+   href="https://www.yunxilu.com/"
    target="_blank" rel="noopener"
    title="在线客服(可拖动)"
    aria-label="在线客服"
