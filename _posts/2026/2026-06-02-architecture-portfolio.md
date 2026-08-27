@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 架构作品集
-excerpt: 四类系统的界面产出
+title: 部分项目作品集
+excerpt: 部分项目作品集
 categories: [作品集]
 tags: 架构  分布式  云原生  微服务
 ---
