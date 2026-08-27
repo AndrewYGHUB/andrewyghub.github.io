@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 860" width="1280" height="860" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#8b95a5"/>
+    </marker>
+    <marker id="ary" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#9e6a03"/>
+    </marker>
+    <style>
+      .bx  { fill:#161b22; stroke:#30363d; stroke-width:1.5; rx:8; }
+      .bxg { fill:#0d2818; stroke:#2ea043; stroke-width:1.6; rx:8; }
+      .bxa { fill:#1c1a0e; stroke:#d29922; stroke-width:2;   rx:8; }
+      .bxb { fill:#0d1d2e; stroke:#316dca; stroke-width:1.6; rx:8; }
+      .grp { fill:none;    stroke:#30363d; stroke-width:1.2; stroke-dasharray:4 4; rx:10; }
+      .t   { fill:#e6edf3; font-size:15px; font-weight:600; }
+      .t2  { fill:#e6edf3; font-size:13.5px; font-weight:600; }
+      .s   { fill:#8b949e; font-size:12px; }
+      .tm  { fill:#6e7681; font-size:11.5px; }
+      .lbl { fill:#7d8590; font-size:11.5px; }
+      .ln  { stroke:#8b95a5; stroke-width:1.6; fill:none; marker-end:url(#ar); }
+      .lny { stroke:#9e6a03; stroke-width:1.6; fill:none; stroke-dasharray:5 4; marker-end:url(#ary); }
+      .hd  { fill:#e6edf3; font-size:18px; font-weight:700; }
+      .sh  { fill:#8b949e; font-size:13px; font-weight:600; }
+      .cap { fill:#6e7681; font-size:12px; }
+    </style>
+  </defs>
+
+  <rect width="1280" height="860" fill="#0d1117"/>
+  <text x="40" y="44" class="hd">交付流水线 · 从提交到生产生效</text>
+  <text x="40" y="68" class="cap">并行构建 + 反向核验 + 分批部署 + 期望态对账；每个环节可独立失败并阻断后续</text>
+
+  <!-- ============ 阶段 A：前置 ============ -->
+  <text x="40" y="112" class="sh">A · 前置</text>
+
+  <rect class="bx" x="40" y="130" width="210" height="72"/>
+  <text x="60" y="158" class="t2">① 制品身份计算</text>
+  <text x="60" y="180" class="s">先确定不可变版本标识</text>
+  <text x="222" y="180" class="tm">~1min</text>
+
+  <rect class="bxg" x="40" y="222" width="210" height="72"/>
+  <text x="60" y="250" class="t2">② 仓库门禁</text>
+  <text x="60" y="272" class="s">静态检查 · 契约 · 基线</text>
+  <text x="216" y="272" class="tm">~13min</text>
+
+  <!-- ============ 阶段 B：构建 ============ -->
+  <text x="330" y="112" class="sh">B · 并行构建</text>
+
+  <rect class="grp" x="330" y="126" width="290" height="152"/>
+  <text x="348" y="150" class="s">构建矩阵 · 多服务并行</text>
+  <rect class="bx" x="348" y="162" width="254" height="34"/>
+  <text x="364" y="184" class="t2">服务 A</text><text x="556" y="184" class="tm">~2.5min</text>
+  <rect class="bx" x="348" y="204" width="254" height="34"/>
+  <text x="364" y="226" class="t2">服务 B</text><text x="556" y="226" class="tm">~2min</text>
+  <rect class="bx" x="348" y="246" width="254" height="34"/>
+  <text x="364" y="268" class="t2">前端产物</text><text x="556" y="268" class="tm">~1.5min</text>
+
+  <rect class="bx" x="330" y="308" width="290" height="62"/>
+  <text x="350" y="334" class="t2">插件构建（独立轨道）</text>
+  <text x="350" y="356" class="s">与主服务解耦，可单独发布</text>
+  <text x="560" y="356" class="tm">~2min</text>
+
+  <!-- ============ 阶段 C：反向核验 ============ -->
+  <text x="700" y="112" class="sh">C · 核验</text>
+
+  <rect class="bxa" x="700" y="180" width="230" height="110"/>
+  <text x="720" y="210" class="t">③ 反向核验闸</text>
+  <text x="720" y="234" class="s">复核该建的产物是否都已产出</text>
+  <text x="720" y="254" class="s">且与预期版本标识一致</text>
+  <text x="720" y="278" class="tm">~1min　★ 不通过则不进入部署</text>
+
+  <!-- ============ 阶段 D：部署 ============ -->
+  <text x="1000" y="112" class="sh">D · 部署</text>
+
+  <rect class="bxb" x="1000" y="180" width="240" height="110"/>
+  <text x="1020" y="210" class="t">④ 分批部署</text>
+  <text x="1020" y="234" class="s">按批次推进，每批验证后继续</text>
+  <text x="1020" y="254" class="s">保留回滚路径</text>
+  <text x="1020" y="278" class="tm">~17min</text>
+
+  <!-- 连线：前置 → 构建 -->
+  <path class="ln" d="M250,166 L290,166 L290,200 L328,200"/>
+  <path class="ln" d="M250,258 L290,258 L290,224 L328,224"/>
+  <path class="ln" d="M250,258 L290,258 L290,338 L328,338"/>
+  <!-- 构建 → 核验 -->
+  <path class="ln" d="M620,202 L660,202 L660,220 L698,220"/>
+  <path class="ln" d="M620,338 L660,338 L660,250 L698,250"/>
+  <!-- 核验 → 部署 -->
+  <line class="ln" x1="930" y1="235" x2="998" y2="235"/>
+
+  <!-- ============ 阶段 E：对账回路 ============ -->
+  <text x="40" y="440" class="hd">期望态收敛回路</text>
+  <text x="40" y="464" class="cap">部署不是"推上去就结束"，而是持续对账直至实际态与期望态一致</text>
+
+  <rect class="bx"  x="40"  y="490" width="250" height="84"/>
+  <text x="60"  y="520" class="t2">Git 仓库</text>
+  <text x="60"  y="544" class="s">集群期望态的唯一事实源</text>
+  <text x="60"  y="564" class="s">部署即向其写入版本标识</text>
+
+  <rect class="bxg" x="350" y="490" width="250" height="84"/>
+  <text x="370" y="520" class="t2">持续对账控制器</text>
+  <text x="370" y="544" class="s">周期比对期望态与实际态</text>
+  <text x="370" y="564" class="s">检出漂移即触发收敛</text>
+
+  <rect class="bx"  x="660" y="490" width="250" height="84"/>
+  <text x="680" y="520" class="t2">生产集群</text>
+  <text x="680" y="544" class="s">实际运行状态</text>
+  <text x="680" y="564" class="s">回读用于核验部署结果</text>
+
+  <rect class="bxa" x="970" y="490" width="270" height="84"/>
+  <text x="990" y="520" class="t2">绕过流程的手工变更</text>
+  <text x="990" y="544" class="s">在下一个对账周期被自动回正</text>
+  <text x="990" y="564" class="s">不设例外通道</text>
+
+  <line class="ln" x1="290" y1="532" x2="348" y2="532"/>
+  <line class="ln" x1="600" y1="532" x2="658" y2="532"/>
+  <path class="lny" d="M1105,490 L1105,452 L475,452 L475,488"/>
+  <text x="756" y="444" class="lbl">检出漂移 → 触发收敛</text>
+  <path class="ln" d="M785,574 L785,614 L475,614 L475,576"/>
+  <text x="530" y="632" class="lbl">回读实际态</text>
+
+  <!-- 部署 → Git -->
+  <path class="ln" d="M1120,290 L1120,330 L165,330 L165,488"/>
+  <text x="600" y="322" class="lbl">分批部署将版本标识写入期望态</text>
+
+  <!-- ============ 判据 ============ -->
+  <rect x="40" y="676" width="1200" height="150" fill="#161b22" stroke="#30363d" stroke-width="1.5" rx="8"/>
+  <text x="62" y="708" class="hd">三条判据</text>
+  <text x="62" y="740" class="t2">1 · 发布是否生效 — 以线上实际运行的版本标识为准，而非流水线的作业状态</text>
+  <text x="78" y="762" class="s">作业为绿不等价于目标版本已生效：对账可能只同步了配置，而版本标识并未被改写</text>
+  <text x="62" y="790" class="t2">2 · 构建是否完整 — 由反向核验闸判定，而非各构建任务各自的成功状态</text>
+  <text x="62" y="816" class="t2">3 · 环境是否可信 — 以对账控制器的收敛结果为准，任何绕过流程的变更都会被回正</text>
+</svg>
