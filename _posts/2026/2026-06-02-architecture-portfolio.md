@@ -29,8 +29,22 @@ tags: 架构  分布式  云原生  微服务
 实时指标看板、计划排程与执行指令下发。
 
 ---
+## 三 · 高并发实时通信
 
-## 三 · 持续交付流水线
+<img src="../../../images/results/portfolio-c-01.jpg" alt="实时通信总览" loading="lazy" oncontextmenu="return false" style="width:100%;height:auto;">
+
+长连接会话管理、信令分发与多方会话状态机。
+
+---
+
+## 四 · 三维可视化与空间计算
+
+<img src="../../../images/results/portfolio-d-01.jpg" alt="三维场景总览" loading="lazy" oncontextmenu="return false" style="width:100%;height:auto;">
+
+三维场景与实时数据融合、点云重建管线与分级瓦片加载。
+---
+
+## 五 · 持续交付流水线
 
 <img src="../../../images/results/cicd-pipeline.svg" alt="持续交付流水线" loading="lazy" oncontextmenu="return false" style="width:100%;height:auto;">
 
