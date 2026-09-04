@@ -31,14 +31,23 @@ tags: 架构  分布式  云原生  微服务
 
 ---
 
-## 三 · 三维可视化与空间计算
+## 三 · 物联网接入与在线交易
+
+<img src="../../../images/results/portfolio-e-01.jpg" alt="智慧停车运营总览" loading="lazy" oncontextmenu="return false" style="width:100%;height:auto;">
+
+设备统一契约接入、支付回调幂等去重与日终对账、端云双向同步与断网本地自治。
+
+---
+
+## 四 · 三维可视化与空间计算
 
 <img src="../../../images/results/portfolio-d-01.jpg" alt="三维场景总览" loading="lazy" oncontextmenu="return false" style="width:100%;height:auto;">
 
 三维场景与实时数据融合、点云重建管线与分级瓦片加载。
+
 ---
 
-## 四 · 持续交付流水线
+## 五 · 持续交付流水线
 
 <img src="../../../images/results/cicd-pipeline.svg" alt="持续交付流水线" loading="lazy" oncontextmenu="return false" style="width:100%;height:auto;">
 
