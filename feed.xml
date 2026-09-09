@@ -9,19 +9,15 @@
         <link>{{ site.url }}</link>
         <description>{{ site.description }}</description>
         <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-        {% for post in site.posts %}
+        {% for post in site.posts limit: 20 %}
         <item>
             <title>{{ post.title | escape }}</title>
-            <link>
-                {{ post.url | prepend: site.url }}
-            </link>
+            <link>{{ post.url | prepend: site.url }}</link>
             <description>
-                {{ post.content | escape }}
+                {{ post.content | strip_html | truncate: 300 | escape }}
             </description>
             <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-            <guid>
-                {{ post.url | prepend: site.url }}
-            </guid>
+            <guid isPermaLink="true">{{ post.url | prepend: site.url }}</guid>
         </item>
         {% endfor %}
     </channel>
