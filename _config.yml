@@ -48,7 +48,15 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-seo-tag
-  - jekyll-sitemap
+  # ★ jekyll-sitemap 已于 2026-09-16 按站长要求停用(原本在这里)。
+  #   停用后 /sitemap.xml 不再生成,GitHub Pages 下次构建会把该文件从站点移除。
+  #
+  # ⚠️ 这不会减少截图里那类抓取:它们伪装成普通 Chrome UA、直接打 URL,
+  #   既不读 robots.txt 也不需要 sitemap 指路。停 sitemap 影响的是
+  #   **守规矩的搜索引擎**的收录效率(634 条 URL 不再被主动告知)。
+  #
+  # 要恢复:把下面这行的注释去掉,重新构建即可。
+  # - jekyll-sitemap
   - jekyll-admin
 exclude:
   - Gemfile
