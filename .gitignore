@@ -7,3 +7,9 @@
 _site
 Gemfile.lock
 vendor
+
+# IDE / 编辑器
+.idea/
+
+# macOS Finder 产物(任意层级)
+.DS_Store
