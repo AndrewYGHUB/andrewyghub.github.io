@@ -21,16 +21,25 @@ js: [
             <div class="collapsible-header grey lighten-4">
                 <span>
                     <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
-                    {% assign page_time = page.date | date: "%H:%M" %}{% if page_time == "00:00" %}{% assign _tl = page.title | size %}{% assign _d = page.date | date: "%d" | plus: 0 %}{% assign _h = _tl | plus: _d | times: 3 | modulo: 24 %}{% assign _m = _tl | plus: _d | times: 7 | modulo: 60 %}{{page.date | date: "%d/%m/%Y"}} {% if _h < 10 %}0{% endif %}{{_h}}:{% if _m < 10 %}0{% endif %}{{_m}}{% else %}{{page.date | date: "%d/%m/%Y %H:%M"}}{% endif %}<br />
-                    <!-- 自建计数(替代不蒜子的 page_pv)。
-                         ★换掉的原因:不蒜子只返回一个数字,没有任何明细接口、也没有站长后台,
-                           "4463 次"无法回答"谁、什么时候、从哪来"。
-                         ★原实现还有个 id 不匹配的 bug:容器叫 busuanzi_container_site_pv
-                           (站点总 PV 的容器),里面却装 busuanzi_value_page_pv(本页 PV 的值),
-                           不蒜子服务不可用时该容器不会按预期隐藏,会留下"点击量：次"的空壳。
-                         ★data-path 用 page.url 而不是 location.pathname:
-                           后者会被结尾斜杠、大小写等差异污染,导致同一篇文章分裂成多条统计。 -->
-                    <div id="ayg-hit" data-path="{{ page.url }}">点击量：<span id="ayg-hit-value">—</span>次</div>
+                    {% assign page_time = page.date | date: "%H:%M" %}{% if page_time == "00:00" %}{% assign _tl = page.title | size %}{% assign _d = page.date | date: "%d" | plus: 0 %}{% assign _h = _tl | plus: _d | times: 3 | modulo: 24 %}{% assign _m = _tl | plus: _d | times: 7 | modulo: 60 %}{{page.date | date: "%d/%m/%Y"}} {% if _h < 10 %}0{% endif %}{{_h}}:{% if _m < 10 %}0{% endif %}{{_m}}{% else %}{{page.date | date: "%d/%m/%Y %H:%M"}}{% endif %}
+                    {% comment %}
+                      ★页面上不再显示「点击量」(2026-09-16 站长决定)。
+                        不蒜子只给一个数字、无明细接口,回答不了"谁、何时、从哪来";
+                        51.la 没有免鉴权的公开计数接口(API 要 key,静态页不能放),取不到数来显示。
+                        ⇒ 数字不显示,明细追溯交给 51.la 后台:
+                          · 单篇点击量 = 内容分析 → 受访页面 → 用「页面URL」过滤 → 看浏览量(PV),存 90 天
+                          · 逐次访问详情(谁/何时/从哪来) = 访问明细,只存 15 天
+                          · 免费版另有「单日储存条数上限 2,000 条」
+                        ★第 24 行行尾原有一个 <br />,作用是把「点击量」换到日期下一行。
+                          计数区移除后它成了多余换行,会把下面 id="indicate" 的 info 图标
+                          挤到日期正下方、并让它的 class="right" 失去右浮参照 —— 已一并删除。
+                        ★本段用 Liquid 注释而非 HTML 注释:Liquid 注释不会输出到页面。
+                          HTML 注释会原样进 HTML,549 篇文章各带一份,且会污染 grep 判据。
+                        ⚠️ Liquid 注释是 block 标签,段内**不要**写出 comment/endcomment 的
+                          字面标签(哪怕包在 raw 里)——会被当成嵌套 block、吞掉闭合标签。
+                        若要恢复页面数字:客户端代码已存档在仓库外的
+                        /Users/andrewyang/dockersofts/博客统计改造-交接-20260916.md
+                    {% endcomment %}
                     <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30"
                         data-tooltip="Show extra info">info</i>
                 </span>
@@ -124,56 +133,10 @@ js: [
 <!--</script>-->
 <!--{% endif %}-->
 
-<!-- ==============================================================================
-     自建点击量:上报 + 读数
-     ------------------------------------------------------------------------------
-     ★为什么不用 GitHub Pages 自己做:纯静态托管,没有后端、拿不到访问日志。
-       任何"可追溯"都必须把事件发到站外能存数据的地方 —— 这里发到自己的
-       www.yunxilu.com,数据完全自持,不受第三方保留期限制(51.la 只留 15 天)。
-
-     ★上报用 mode:'no-cors':
-       浏览器不读响应,因此**不触发 CORS 预检**,服务端不需要任何 CORS 头。
-       读 stats.json 才需要 Access-Control-Allow-Origin(那边会读响应体)。
-
-     ★keepalive:true:页面立刻关闭时请求仍会发出,避免漏记。
-
-     ⚠️ 显示的数来自定时聚合的 stats.json,**不含刚刚这一次访问** ——
-        刷新后才会涨。这是用静态 JSON 换掉后端实时查询的代价,已知并接受。
-     ============================================================================== -->
-<script>
-(function () {
-  // ★★开关:B 方案(自建计数端点)的服务端就绪后改成 true,其余一行都不用动。
-  //   当前为 false —— 2026-09-16 实测 /Users/andrewyang/dockersofts/andrewyg-agent-ui
-  //   已被归档成 andrewyg-agent-ui.zip、Docker daemon 也未运行,
-  //   www.yunxilu.com 上没有 /hit 端点。此时若开着:
-  //     · 上报会被该站全站 auth 闸 302 到登录页(静默失败,但每次访问白发一个请求)
-  //     · 读数拿不到,计数区永远显示占位符"—",比不显示更难看
-  //   ⇒ 关掉并隐藏整个计数区。A 方案下明细由 51.la 承担,不在页面上显示数字。
-  var ENABLED = false;
-
-  var el = document.getElementById('ayg-hit');
-  if (!el) return;
-  if (!ENABLED) { el.style.display = 'none'; return; }
-
-  var path = el.getAttribute('data-path') || location.pathname;
-  var API = 'https://www.yunxilu.com';
-
-  // 1) 上报:失败静默,统计挂掉不能影响页面
-  try {
-    fetch(API + '/hit?p=' + encodeURIComponent(path), {
-      mode: 'no-cors', keepalive: true, cache: 'no-store'
-    }).catch(function () {});
-  } catch (e) {}
-
-  // 2) 读数:拿不到就保持占位符,不显示 0(0 会被误读成"没人看")
-  var out = document.getElementById('ayg-hit-value');
-  if (!out) return;
-  fetch(API + '/hit/stats.json', { cache: 'no-store' })
-    .then(function (r) { return r.ok ? r.json() : null; })
-    .then(function (d) {
-      var v = d && d.pages && d.pages[path];
-      if (typeof v === 'number') out.textContent = v;
-    })
-    .catch(function () {});
-})();
-</script>
+{% comment %}
+  ★这里原有「自建点击量」的上报 + 读数脚本(B 方案客户端),2026-09-16 整体删除。
+    站长定案:51.la 后台够用,页面上不显示数字。
+    完整代码 + 设计要点已存档在仓库外的
+    /Users/andrewyang/dockersofts/博客统计改造-交接-20260916.md §6
+    解冻 B 时照 §6 恢复即可(HTML 片段 + 本脚本 + 日期行尾那个 <br />,三处一起)。
+{% endcomment %}
